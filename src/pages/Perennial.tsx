@@ -1,6 +1,7 @@
 import { Layout } from "@/components/layout/Layout";
 import { SectionHeading } from "@/components/shared/SectionHeading";
 import { ImagePlaceholder } from "@/components/shared/ImagePlaceholder";
+import wepixTeamImg from "@/assets/wepix-team.jpeg";
 import { BookingFormDialog } from "@/components/shared/BookingFormDialog";
 import { motion } from "framer-motion";
 
