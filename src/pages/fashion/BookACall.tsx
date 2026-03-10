@@ -1,6 +1,6 @@
 import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
-import { motion } from "framer-motion";
+import { useGSAP, heroReveal, gsap } from "@/hooks/useGSAP";
 import { Check, ArrowRight } from "lucide-react";
 
 const covers = [
@@ -12,43 +12,43 @@ const covers = [
 ];
 
 export default function BookACall() {
+  const containerRef = useGSAP((container) => {
+    heroReveal(container);
+    gsap.fromTo(container.querySelectorAll(".gsap-item"), { opacity: 0, x: -20 }, {
+      opacity: 1, x: 0, duration: 0.4, stagger: 0.06, ease: "power2.out",
+      scrollTrigger: { trigger: container.querySelector(".gsap-list"), start: "top 80%", toggleActions: "play none none none" },
+    });
+  });
+
   return (
     <Layout>
-      <section className="bg-hero text-hero-foreground py-24 md:py-32">
-        <div className="container max-w-3xl">
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
-            <span className="inline-block text-xs font-display font-semibold uppercase tracking-widest text-primary mb-4">Fashion</span>
-            <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">
-              Book a Free Strategy Call
-            </h1>
-            <p className="mt-4 text-lg text-hero-foreground/60">
-              30 minutes. No obligations. Just a real conversation about your fashion brand.
-            </p>
-          </motion.div>
-        </div>
-      </section>
-
-      <section className="py-20">
-        <div className="container max-w-2xl">
-          <h2 className="font-display text-2xl font-bold mb-6">What we'll cover:</h2>
-          <div className="space-y-4 mb-10">
-            {covers.map((item) => (
-              <div key={item} className="flex items-start gap-3">
-                <Check className="text-primary shrink-0 mt-0.5" size={20} />
-                <p className="text-lg">{item}</p>
-              </div>
-            ))}
+      <div ref={containerRef}>
+        <section className="gsap-hero-section py-24 md:py-32">
+          <div className="container max-w-3xl">
+            <span className="gsap-hero-tag inline-block text-sm font-medium text-muted-foreground mb-4 opacity-0 px-3 py-1 rounded-full border border-border bg-muted">Fashion</span>
+            <h1 className="gsap-hero-title font-display text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight opacity-0">Book a Free Strategy Call</h1>
+            <p className="gsap-hero-desc mt-4 text-lg text-muted-foreground opacity-0">30 minutes. No obligations.</p>
           </div>
-          <a href="https://cal.com" target="_blank" rel="noopener noreferrer">
-            <Button size="lg" className="font-display font-semibold text-base gap-2 w-full md:w-auto">
-              Schedule Your Call <ArrowRight size={18} />
-            </Button>
-          </a>
-          <p className="text-sm text-muted-foreground mt-4">
-            You'll be redirected to our Cal.com booking page.
-          </p>
-        </div>
-      </section>
+        </section>
+
+        <section className="py-24 border-t border-border">
+          <div className="container max-w-2xl gsap-list">
+            <h2 className="font-display text-2xl font-bold mb-6">What we'll cover:</h2>
+            <div className="space-y-4 mb-10">
+              {covers.map((item) => (
+                <div key={item} className="gsap-item flex items-start gap-3 opacity-0">
+                  <Check className="text-foreground shrink-0 mt-0.5" size={18} />
+                  <p className="text-lg">{item}</p>
+                </div>
+              ))}
+            </div>
+            <a href="https://cal.com" target="_blank" rel="noopener noreferrer">
+              <Button size="lg" className="rounded-lg font-medium gap-2 w-full md:w-auto">Schedule Your Call <ArrowRight size={16} /></Button>
+            </a>
+            <p className="text-sm text-muted-foreground mt-4">You'll be redirected to our Cal.com booking page.</p>
+          </div>
+        </section>
+      </div>
     </Layout>
   );
 }

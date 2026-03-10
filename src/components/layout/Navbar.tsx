@@ -46,10 +46,10 @@ export function Navbar() {
 
   return (
     <>
-      <nav className="sticky top-0 z-50 bg-hero/95 backdrop-blur-md border-b border-border/10">
+      <nav className="sticky top-0 z-50 bg-background/80 backdrop-blur-lg border-b border-border">
         <div className="container flex items-center justify-between h-16">
-          <Link to="/" className="font-display text-2xl font-bold text-hero-foreground tracking-tight">
-            We<span className="text-primary">Pix</span>
+          <Link to="/" className="font-display text-xl font-bold tracking-tight text-foreground">
+            WePix
           </Link>
 
           {/* Desktop */}
@@ -59,16 +59,16 @@ export function Navbar() {
                 key={link.href}
                 to={link.href}
                 className={cn(
-                  "px-4 py-2 text-sm font-medium rounded-md transition-colors text-hero-foreground/70 hover:text-hero-foreground",
+                  "px-3 py-2 text-sm font-medium rounded-lg transition-colors text-muted-foreground hover:text-foreground hover:bg-muted",
                   (location.pathname === link.href || (link.href !== "/" && location.pathname.startsWith(link.href))) &&
-                    "text-primary"
+                    "text-foreground bg-muted"
                 )}
               >
                 {link.label}
               </Link>
             ))}
             <a href="https://cal.com" target="_blank" rel="noopener noreferrer">
-              <Button size="sm" className="ml-4 font-display font-semibold">
+              <Button size="sm" className="ml-3 rounded-lg font-medium">
                 Book a Call
               </Button>
             </a>
@@ -76,7 +76,7 @@ export function Navbar() {
 
           {/* Mobile toggle */}
           <button
-            className="md:hidden text-hero-foreground"
+            className="md:hidden text-foreground"
             onClick={() => setMobileOpen(!mobileOpen)}
           >
             {mobileOpen ? <X size={24} /> : <Menu size={24} />}
@@ -85,16 +85,16 @@ export function Navbar() {
 
         {/* Mobile menu */}
         {mobileOpen && (
-          <div className="md:hidden bg-hero border-t border-border/10 pb-4">
+          <div className="md:hidden bg-background border-t border-border pb-4">
             {mainLinks.map((link) => (
               <Link
                 key={link.href}
                 to={link.href}
                 onClick={() => setMobileOpen(false)}
                 className={cn(
-                  "block px-6 py-3 text-sm font-medium text-hero-foreground/70 hover:text-hero-foreground",
+                  "block px-6 py-3 text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-muted",
                   (location.pathname === link.href || (link.href !== "/" && location.pathname.startsWith(link.href))) &&
-                    "text-primary"
+                    "text-foreground"
                 )}
               >
                 {link.label}
@@ -102,7 +102,7 @@ export function Navbar() {
             ))}
             <div className="px-6 pt-2">
               <a href="https://cal.com" target="_blank" rel="noopener noreferrer">
-                <Button size="sm" className="w-full font-display font-semibold">
+                <Button size="sm" className="w-full rounded-lg font-medium">
                   Book a Call
                 </Button>
               </a>
@@ -113,15 +113,15 @@ export function Navbar() {
 
       {/* Context subnav */}
       {subLinks && (
-        <div className="sticky top-16 z-40 bg-background/95 backdrop-blur-md border-b border-border">
+        <div className="sticky top-16 z-40 bg-background/80 backdrop-blur-lg border-b border-border">
           <div className="container flex items-center gap-1 overflow-x-auto py-2">
             {subLinks.map((link) => (
               <Link
                 key={link.href}
                 to={link.href}
                 className={cn(
-                  "px-3 py-1.5 text-sm font-medium rounded-md whitespace-nowrap transition-colors text-muted-foreground hover:text-foreground",
-                  location.pathname === link.href && "bg-primary/10 text-primary"
+                  "px-3 py-1.5 text-sm font-medium rounded-lg whitespace-nowrap transition-colors text-muted-foreground hover:text-foreground hover:bg-muted",
+                  location.pathname === link.href && "bg-muted text-foreground"
                 )}
               >
                 {link.label}
