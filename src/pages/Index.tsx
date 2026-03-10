@@ -48,6 +48,8 @@ const caseStudies = [
 ];
 
 const Index = () => {
+  const { displayText, showCursor } = useTypewriter();
+
   return (
     <Layout>
       {/* Hero */}
