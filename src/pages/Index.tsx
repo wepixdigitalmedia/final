@@ -75,9 +75,21 @@ const Index = () => {
                 Digital Media Group
               </span>
               <h1 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.15]">
-                We don't just run ads.{" "}
-                <span className="text-gradient">{displayText}</span>
-                <span className={`inline-block w-[3px] h-[0.85em] bg-foreground ml-0.5 align-middle rounded-sm transition-opacity duration-100 ${showCursor ? "opacity-100" : "opacity-0"}`} />
+                WePix.{" "}
+                <span className="inline-block relative h-[1.2em] overflow-hidden align-bottom">
+                  <AnimatePresence mode="wait">
+                    <motion.span
+                      key={rotatingWords[wordIndex]}
+                      initial={{ y: "100%", opacity: 0 }}
+                      animate={{ y: 0, opacity: 1 }}
+                      exit={{ y: "-100%", opacity: 0 }}
+                      transition={{ type: "spring", stiffness: 400, damping: 30 }}
+                      className="inline-block text-gradient"
+                    >
+                      {rotatingWords[wordIndex]}
+                    </motion.span>
+                  </AnimatePresence>
+                </span>
               </h1>
               <p className="mt-5 text-base md:text-lg text-hero-foreground/60">
                 Picture this: you've got an amazing product, but your marketing looks like it was done by your cousin's friend who "knows Canva." Yeah, we fix that. Fashion, education, business — one crew that handles everything so you can stop losing sleep over your Instagram reach. 😮‍💨
