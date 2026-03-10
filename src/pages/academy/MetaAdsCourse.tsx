@@ -2,6 +2,8 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { ImagePlaceholder } from "@/components/shared/ImagePlaceholder";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { Navbar } from "@/components/layout/Navbar";
+import { Footer } from "@/components/layout/Footer";
 import { WhatsAppButton } from "@/components/layout/WhatsAppButton";
 import { useGSAP, heroReveal, scrollFadeIn } from "@/hooks/useGSAP";
 import { Check, Star, ArrowRight } from "lucide-react";
