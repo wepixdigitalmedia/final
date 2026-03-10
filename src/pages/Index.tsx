@@ -114,12 +114,14 @@ const Index = () => {
       </section>
 
       {/* Client Logos */}
-      <section className="py-16 border-b border-border">
+      <section className="py-16 border-b border-border overflow-hidden">
         <div className="container">
           <p className="text-xs font-medium uppercase tracking-widest text-muted-foreground text-center mb-8">Trusted by brands like</p>
-          <div className="grid grid-cols-3 md:grid-cols-6 gap-6">
-            {Array.from({ length: 6 }).map((_, i) => (
-              <ImagePlaceholder key={i} label={`Logo ${i + 1}`} aspectRatio="video" className="border border-border rounded-lg" />
+        </div>
+        <div className="relative">
+          <div className="flex animate-marquee gap-6 w-max">
+            {Array.from({ length: 12 }).map((_, i) => (
+              <ImagePlaceholder key={i} label={`Logo ${(i % 6) + 1}`} aspectRatio="video" className="border border-border rounded-lg w-40 shrink-0" />
             ))}
           </div>
         </div>
