@@ -80,6 +80,15 @@ const Index = () => {
                 </Button>
               </a>
             </div>
+
+            <div className="mt-12 rounded-xl overflow-hidden border border-border shadow-lg">
+              <img
+                src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/21eDkPqQcXCF2sJcyeMn/media/68a62b3d280b9e3bebb53f6c.gif"
+                alt="WePix VSL"
+                className="w-full h-auto"
+                loading="eager"
+              />
+            </div>
           </motion.div>
         </div>
       </section>
