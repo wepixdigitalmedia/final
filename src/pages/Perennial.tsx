@@ -1,6 +1,7 @@
 import { Layout } from "@/components/layout/Layout";
 import { SectionHeading } from "@/components/shared/SectionHeading";
 import { ImagePlaceholder } from "@/components/shared/ImagePlaceholder";
+import wepixTeamImg from "@/assets/wepix-team.jpeg";
 import { BookingFormDialog } from "@/components/shared/BookingFormDialog";
 import { motion } from "framer-motion";
 
@@ -40,7 +41,7 @@ export default function Perennial() {
       <section className="py-20">
         <div className="container max-w-4xl">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-            <ImagePlaceholder label="Abstract engineering systems" aspectRatio="square" className="rounded-xl" />
+            <img src={wepixTeamImg} alt="WePix team photo" className="rounded-xl w-full h-auto object-cover aspect-square lg:aspect-auto" loading="lazy" />
             <div className="space-y-4 text-muted-foreground leading-relaxed">
               <p>Most organisations are built to win a moment. Very few are built to survive change.</p>
               <p>Perennial Group exists for the second kind of work.</p>
