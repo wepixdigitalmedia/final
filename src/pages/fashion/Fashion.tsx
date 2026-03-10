@@ -47,10 +47,10 @@ export default function Fashion() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div>
                 <span className="gsap-hero-tag inline-block text-sm font-medium text-muted-foreground mb-4 opacity-0 px-3 py-1 rounded-full border border-border bg-muted">WePix Fashion</span>
-                <h1 className="gsap-hero-title font-display text-4xl md:text-5xl lg:text-6xl font-semibold leading-[1.1] opacity-0">
+                <h1 className="gsap-hero-title font-display text-3xl md:text-4xl lg:text-5xl font-semibold leading-[1.15] opacity-0">
                   Your product is fire. Your marketing? Let's talk about that. 🔥
                 </h1>
-                <p className="gsap-hero-desc mt-6 text-lg text-muted-foreground opacity-0">
+                <p className="gsap-hero-desc mt-5 text-base text-muted-foreground opacity-0">
                   Here's the thing — you've spent months perfecting your designs, sourcing the best fabric, getting the stitching just right. And then your marketing is... a Canva template with Comic Sans vibes? Nah fam. We help D2C fashion brands create content that stops thumbs, run ads that convert wallets, and build a brand that people actually want to wear.
                 </p>
                 <div className="flex flex-wrap gap-3 mt-8">
