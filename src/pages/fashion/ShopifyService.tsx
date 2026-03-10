@@ -8,7 +8,7 @@ import { ImagePlaceholder } from "@/components/shared/ImagePlaceholder";
 import { useGSAP, heroReveal, scrollFadeIn } from "@/hooks/useGSAP";
 import { ArrowRight, Check, ShoppingBag, Palette, Zap, BarChart3, Search, Smartphone, Shield, Headphones } from "lucide-react";
 import { motion } from "framer-motion";
-import shopifyPartnerBadge from "@/assets/shopify-partner-badge.png";
+import shopifyPartnerBadge from "@/assets/shopify-partner.svg";
 
 const CTA_URL = "https://cal.com";
 
