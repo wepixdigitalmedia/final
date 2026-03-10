@@ -68,10 +68,10 @@ export function Footer() {
 
         <div className="mt-12 pt-8 border-t border-border grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {[
-            { city: "Tirupur", flag: "🇮🇳", address: "WePix Digital Media, Tirupur, Tamil Nadu, India" },
-            { city: "Bangalore", flag: "🇮🇳", address: "WePix Digital Media, Bangalore, Karnataka, India" },
-            { city: "Chennai", flag: "🇮🇳", address: "WePix Digital Media, Chennai, Tamil Nadu, India" },
-            { city: "Dubai", flag: "🇦🇪", address: "WePix Digital Media, Dubai, United Arab Emirates" },
+            { city: "Tirupur", flag: "🇮🇳", address: "Sheriff Colony, Tirupur" },
+            { city: "Bangalore", flag: "🇮🇳", address: "HSR Layout, Bangalore" },
+            { city: "Chennai", flag: "🇮🇳", address: "Casagrand Amberly, Navalur, Chennai" },
+            { city: "Dubai", flag: "🇦🇪", address: "Al Safa St - Downtown Dubai" },
           ].map((loc) => (
             <div key={loc.city} className="flex items-start gap-2.5">
               <div className="shrink-0 w-8 h-8 rounded-lg bg-muted flex items-center justify-center mt-0.5">
