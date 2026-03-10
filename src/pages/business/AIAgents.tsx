@@ -83,6 +83,28 @@ export default function AIAgents() {
             </div>
           </div>
         </section>
+
+        <section className="py-24 bg-muted/30">
+          <div className="container">
+            <SectionHeading tag="Our Agents" title="Implement your AI Agent today" />
+            <div className="grid grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+              {agents.map((agent) => (
+                <div key={agent.title} className="gsap-agent opacity-0">
+                  <Card className="h-full rounded-xl border-border overflow-hidden">
+                    <ImagePlaceholder label={agent.img} aspectRatio="video" />
+                    <CardContent className="p-5">
+                      <h3 className="font-display text-base font-semibold">{agent.title}</h3>
+                      <p className="text-sm text-muted-foreground mt-2">{agent.description}</p>
+                      <a href="#" className="inline-flex items-center gap-1 text-sm font-medium text-primary mt-4 hover:underline">
+                        Implement Today <ArrowRight size={14} />
+                      </a>
+                    </CardContent>
+                  </Card>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
       </div>
       <CTABanner headline="Ready to deploy your AI army?" subtext="Book a consultation. We'll discuss your use case and show you exactly how an AI agent would work for your business." ctaLabel="Book a Consultation" />
     </Layout>
