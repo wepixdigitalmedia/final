@@ -9,31 +9,27 @@ import { Link } from "react-router-dom";
 import { useGSAP, heroReveal, scrollFadeIn, gsap } from "@/hooks/useGSAP";
 
 const offerings = [
-  { icon: GraduationCap, title: "Meta Ads Mastery Course", description: "The complete, no-BS course on running profitable Meta Ads. Built from thousands of hours of actually running campaigns, not reading about them. 🎓", href: "/academy/meta-ads-course", img: "Course preview" },
-  { icon: Video, title: "Live Webinars", description: "Weekly live sessions where we break down real campaigns, share what's working RIGHT NOW, and answer your burning questions. Free to attend, packed with value. 📺", href: "/academy/webinar", img: "Webinar screenshot" },
-  { icon: Users, title: "Skool Community", description: "500+ marketers and brand owners sharing wins, losses, and everything in between. It's like a group chat, but actually useful. 👥", href: "/academy/community", img: "Community screenshot" },
+  { icon: GraduationCap, title: "Meta Ads Mastery Course", description: "The complete, no-BS course on running profitable Meta Ads. Built from thousands of hours of actually running campaigns, not reading about them.", href: "/academy/meta-ads-course", img: "Course preview" },
+  { icon: Video, title: "Live Webinars", description: "Weekly live sessions where we break down real campaigns, share what's working RIGHT NOW, and answer your burning questions. Free to attend, packed with value.", href: "/academy/webinar", img: "Webinar screenshot" },
+  { icon: Users, title: "Skool Community", description: "500+ marketers and brand owners sharing wins, losses, and everything in between. It's like a group chat, but actually useful.", href: "/academy/community", img: "Community screenshot" },
 ];
 
 const whoItsFor = [
-  "D2C brand founders who are tired of agencies eating their budget and want to run their own ads (smart move btw) 💡",
-  "Marketing managers who need to level up their Meta Ads game before their boss notices they've been boosting posts 😅",
-  "Freelancers who want to offer ad services to clients and actually deliver results (rare breed) 🦄",
-  "Agency owners building or scaling their ad teams who need a proven framework (not another YouTube hack) 🏗️",
-  "Anyone who's ever looked at their ad dashboard and thought 'what do these numbers even mean?' 🤷",
+  "D2C brand founders who are tired of agencies eating their budget and want to run their own ads (smart move btw)",
+  "Marketing managers who need to level up their Meta Ads game before their boss notices they've been boosting posts",
+  "Freelancers who want to offer ad services to clients and actually deliver results (rare breed)",
+  "Agency owners building or scaling their ad teams who need a proven framework (not another YouTube hack)",
+  "Anyone who's ever looked at their ad dashboard and thought 'what do these numbers even mean?'",
 ];
 
 export default function Academy() {
   const containerRef = useGSAP((container) => {
     heroReveal(container);
     scrollFadeIn(".gsap-offering-card", container, { stagger: 0.1, y: 30 });
-    gsap.fromTo(
-      container.querySelectorAll(".gsap-check-item"),
-      { opacity: 0, x: -20 },
-      {
-        opacity: 1, x: 0, duration: 0.4, stagger: 0.06, ease: "power2.out",
-        scrollTrigger: { trigger: container.querySelector(".gsap-checklist"), start: "top 80%", toggleActions: "play none none none" },
-      }
-    );
+    gsap.fromTo(container.querySelectorAll(".gsap-check-item"), { opacity: 0, x: -20 }, {
+      opacity: 1, x: 0, duration: 0.4, stagger: 0.06, ease: "power2.out",
+      scrollTrigger: { trigger: container.querySelector(".gsap-checklist"), start: "top 80%", toggleActions: "play none none none" },
+    });
   });
 
   return (
@@ -45,7 +41,7 @@ export default function Academy() {
               <div>
                 <span className="gsap-hero-tag inline-block text-sm font-medium text-muted-foreground mb-4 opacity-0 px-3 py-1 rounded-full border border-border bg-muted">WePix Academy</span>
                 <h1 className="gsap-hero-title font-display text-3xl md:text-4xl lg:text-5xl font-semibold leading-[1.15] opacity-0">
-                  Learn from people who actually run the ads. Not from people who make courses about running ads. 🎯
+                  Learn from people who actually run the ads. Not from people who make courses about running ads.
                 </h1>
                 <p className="gsap-hero-desc mt-5 text-base text-muted-foreground opacity-0">
                   Here's the tea: most marketing courses are taught by people whose main income IS the course. Ours is different. We manage crores in ad spend every month. We run campaigns for real brands. And then we teach you exactly what we learned — mistakes, wins, and all the stuff nobody talks about on YouTube.
@@ -101,7 +97,6 @@ export default function Academy() {
           </div>
         </section>
 
-        {/* Social Proof */}
         <section className="py-24">
           <div className="container max-w-5xl">
             <SectionHeading tag="Student Wins" title="What our students are saying" />
@@ -119,7 +114,7 @@ export default function Academy() {
         </section>
       </div>
 
-      <CTABanner headline="Ready to stop guessing and start scaling? 🚀" subtext="Start with our Meta Ads course or hop into a free webinar. Either way, your ads are about to get way better." ctaLabel="Get Started" ctaHref="https://cal.com" />
+      <CTABanner headline="Ready to stop guessing and start scaling?" subtext="Start with our Meta Ads course or hop into a free webinar. Either way, your ads are about to get way better." ctaLabel="Get Started" />
     </Layout>
   );
 }
