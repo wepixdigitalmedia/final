@@ -48,6 +48,7 @@ const App = () => (
           <Route path="/fashion/kickstarter" element={<Kickstarter />} />
           <Route path="/fashion/wepixstudio" element={<WePixStudio />} />
           <Route path="/fashion/case-studies" element={<CaseStudies />} />
+          <Route path="/fashion/shopify" element={<ShopifyService />} />
           <Route path="/fashion/book" element={<BookACall />} />
           <Route path="/academy" element={<Academy />} />
           <Route path="/academy/meta-ads-course" element={<MetaAdsCourse />} />
