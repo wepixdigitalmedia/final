@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -7,8 +8,7 @@ import { CTABanner } from "@/components/shared/CTABanner";
 import { ImagePlaceholder } from "@/components/shared/ImagePlaceholder";
 import { ArrowRight, Sparkles, GraduationCap, Briefcase, ShoppingBag } from "lucide-react";
 import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
-import { useTypewriter } from "@/hooks/useTypewriter";
+import { motion, AnimatePresence } from "framer-motion";
 
 const brandCards = [
   {
