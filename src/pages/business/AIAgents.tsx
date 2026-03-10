@@ -27,6 +27,7 @@ export default function AIAgents() {
   const containerRef = useGSAP((container) => {
     heroReveal(container);
     scrollFadeIn(".gsap-usecase", container, { stagger: 0.08, y: 25 });
+    scrollFadeIn(".gsap-agent", container, { stagger: 0.1, y: 30 });
   });
 
   return (
