@@ -51,9 +51,7 @@ export function Navbar() {
     <>
       <nav className="sticky top-0 z-50 bg-background/80 backdrop-blur-lg border-b border-border">
         <div className="container flex items-center justify-between h-16">
-          <Link to="/" className="font-display text-xl font-bold tracking-tight text-foreground">
-            WePix
-          </Link>
+          <AnimatedLogo />
 
           {/* Desktop */}
           <div className="hidden md:flex items-center gap-1">
