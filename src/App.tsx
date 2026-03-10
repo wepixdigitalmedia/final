@@ -14,6 +14,7 @@ import DigitalStore from "./pages/DigitalStore";
 import Fashion from "./pages/fashion/Fashion";
 import Kickstarter from "./pages/fashion/Kickstarter";
 import WePixStudio from "./pages/fashion/WePixStudio";
+import ShopifyService from "./pages/fashion/ShopifyService";
 import CaseStudies from "./pages/fashion/CaseStudies";
 import BookACall from "./pages/fashion/BookACall";
 import Academy from "./pages/academy/Academy";
@@ -47,6 +48,7 @@ const App = () => (
           <Route path="/fashion/kickstarter" element={<Kickstarter />} />
           <Route path="/fashion/wepixstudio" element={<WePixStudio />} />
           <Route path="/fashion/case-studies" element={<CaseStudies />} />
+          <Route path="/fashion/shopify" element={<ShopifyService />} />
           <Route path="/fashion/book" element={<BookACall />} />
           <Route path="/academy" element={<Academy />} />
           <Route path="/academy/meta-ads-course" element={<MetaAdsCourse />} />

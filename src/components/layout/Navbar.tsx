@@ -18,6 +18,7 @@ const subNavs: Record<string, { label: string; href: string }[]> = {
     { label: "Overview", href: "/fashion" },
     { label: "Kickstarter", href: "/fashion/kickstarter" },
     { label: "WePixStudio", href: "/fashion/wepixstudio" },
+    { label: "Shopify", href: "/fashion/shopify" },
     { label: "Case Studies", href: "/fashion/case-studies" },
     { label: "Book a Call", href: "/fashion/book" },
   ],
