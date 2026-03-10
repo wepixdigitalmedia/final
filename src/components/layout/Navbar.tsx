@@ -69,11 +69,7 @@ export function Navbar() {
                 {link.label}
               </Link>
             ))}
-            <a href="https://cal.com" target="_blank" rel="noopener noreferrer">
-              <Button size="sm" className="ml-3 rounded-lg font-medium">
-                Book a Call
-              </Button>
-            </a>
+            <BookingFormDialog triggerLabel="Book a Call" triggerSize="sm" triggerClassName="ml-3" />
           </div>
 
           {/* Mobile toggle */}
