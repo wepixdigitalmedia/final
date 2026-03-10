@@ -4,7 +4,14 @@ import { SectionHeading } from "@/components/shared/SectionHeading";
 import { CTABanner } from "@/components/shared/CTABanner";
 import { ImagePlaceholder } from "@/components/shared/ImagePlaceholder";
 import { useGSAP, heroReveal, scrollFadeIn } from "@/hooks/useGSAP";
-import { Bot, MessageSquare, Users, BarChart3, Clock } from "lucide-react";
+import { Bot, MessageSquare, Users, BarChart3, Clock, ArrowRight } from "lucide-react";
+
+const agents = [
+  { title: "Sales Call Setter Agent", description: "Automatically books qualified sales calls on your calendar. It handles objections, finds the right time slots, and sends confirmations — so your sales team only shows up to close.", img: "Sales call setter interface" },
+  { title: "Lead Qualifier Agent", description: "Scores and qualifies every inbound lead in real-time. Asks the right questions, captures key data, and routes hot prospects straight to your closers. No more chasing dead ends.", img: "Lead qualifier dashboard" },
+  { title: "WhatsApp Chat Agent", description: "Engages customers on WhatsApp 24/7 — answers queries, shares catalogs, processes orders, and escalates when needed. Feels like texting a real person, works like a machine.", img: "WhatsApp chat agent demo" },
+  { title: "Instagram DM Agent", description: "Responds to every DM instantly. Handles product inquiries, captures leads from story replies, and turns casual browsers into paying customers — all on autopilot.", img: "Instagram DM agent interface" },
+];
 
 const useCases = [
   { icon: MessageSquare, title: "Customer Support", description: "24/7 AI agents across WhatsApp, web, and email. They never sleep, never get grumpy, and never say 'let me check with my supervisor.' Your customers will think you hired a whole support army." },
@@ -20,6 +27,7 @@ export default function AIAgents() {
   const containerRef = useGSAP((container) => {
     heroReveal(container);
     scrollFadeIn(".gsap-usecase", container, { stagger: 0.08, y: 25 });
+    scrollFadeIn(".gsap-agent", container, { stagger: 0.1, y: 30 });
   });
 
   return (
@@ -71,6 +79,28 @@ export default function AIAgents() {
             <div className="flex flex-wrap gap-2">
               {industries.map((ind) => (
                 <span key={ind} className="px-4 py-2 rounded-lg bg-muted text-sm font-medium border border-border">{ind}</span>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="py-24 bg-muted/30">
+          <div className="container">
+            <SectionHeading tag="Our Agents" title="Implement your AI Agent today" />
+            <div className="grid grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+              {agents.map((agent) => (
+                <div key={agent.title} className="gsap-agent opacity-0">
+                  <Card className="h-full rounded-xl border-border overflow-hidden">
+                    <ImagePlaceholder label={agent.img} aspectRatio="video" />
+                    <CardContent className="p-5">
+                      <h3 className="font-display text-base font-semibold">{agent.title}</h3>
+                      <p className="text-sm text-muted-foreground mt-2">{agent.description}</p>
+                      <a href="#" className="inline-flex items-center gap-1 text-sm font-medium text-primary mt-4 hover:underline">
+                        Implement Today <ArrowRight size={14} />
+                      </a>
+                    </CardContent>
+                  </Card>
+                </div>
               ))}
             </div>
           </div>
