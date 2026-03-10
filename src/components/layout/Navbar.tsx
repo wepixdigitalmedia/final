@@ -4,6 +4,7 @@ import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { AnimatedLogo } from "@/components/shared/AnimatedLogo";
+import { BookingFormDialog } from "@/components/shared/BookingFormDialog";
 
 const mainLinks = [
   { label: "Home", href: "/" },
@@ -68,11 +69,7 @@ export function Navbar() {
                 {link.label}
               </Link>
             ))}
-            <a href="https://cal.com" target="_blank" rel="noopener noreferrer">
-              <Button size="sm" className="ml-3 rounded-lg font-medium">
-                Book a Call
-              </Button>
-            </a>
+            <BookingFormDialog triggerLabel="Book a Call" triggerSize="sm" triggerClassName="ml-3" />
           </div>
 
           {/* Mobile toggle */}
@@ -102,11 +99,7 @@ export function Navbar() {
               </Link>
             ))}
             <div className="px-6 pt-2">
-              <a href="https://cal.com" target="_blank" rel="noopener noreferrer">
-                <Button size="sm" className="w-full rounded-lg font-medium">
-                  Book a Call
-                </Button>
-              </a>
+              <BookingFormDialog triggerLabel="Book a Call" triggerSize="sm" triggerClassName="w-full" />
             </div>
           </div>
         )}
