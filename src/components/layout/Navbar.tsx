@@ -1,10 +1,10 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { AnimatedLogo } from "@/components/shared/AnimatedLogo";
 import { BookingFormDialog } from "@/components/shared/BookingFormDialog";
+import { gsap } from "@/hooks/useGSAP";
 
 const mainLinks = [
   { label: "Home", href: "/" },
