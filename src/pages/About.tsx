@@ -16,12 +16,17 @@ const values = [
 ];
 
 const timeline = [
-  { year: "2019", event: "Two friends from Tirupur said 'we can do marketing better than these agencies' and WePix was born. (Spoiler: they were right.)" },
-  { year: "2020", event: "First D2C fashion clients came in. We burned through a lot of trial-and-error (and chai) figuring out what actually works in fashion marketing." },
-  { year: "2021", event: "Launched WePixStudio — our AI-powered content creation tool. Because hiring photographers for 200 SKUs is insane." },
-  { year: "2022", event: "Expanded to Bangalore because we needed better coffee. (Also, the business vertical launched. That too.)" },
-  { year: "2023", event: "Academy launched — because people kept DM-ing us 'bro teach me Meta Ads' so we made a whole course out of it." },
-  { year: "2024", event: "50+ brands served. AI Agents division created. At this point, we're basically a tech company that happens to be really good at marketing." },
+  { year: "2016", event: "Abdul started his first brand — Drooling Baby. A kids' fashion label born out of passion and zero marketing knowledge. Spoiler: it didn't go as planned. But every failure was a lesson disguised as a loss. 👶" },
+  { year: "2017", event: "Drooling Baby hit its first wall. Sales weren't moving, ads weren't working, and the 'boost post' button was doing absolutely nothing. Abdul started studying digital marketing obsessively — YouTube university, late nights, and a lot of chai. ☕" },
+  { year: "2018", event: "Second attempt. Pivoted the brand, tried new strategies, burned more money on ads. Failed again. But this time, the lessons were deeper — understanding margins, customer psychology, and why most agencies deliver garbage. 📉" },
+  { year: "2019", event: "The penny dropped. After years of trial-and-error, Abdul cracked the code on what actually works in fashion marketing. Started helping other Tirupur brands informally. People noticed. The demand was real. 💡" },
+  { year: "2020", event: "COVID hit, but online D2C exploded. Abdul went all-in on helping fashion brands sell online — content, ads, Shopify stores. The results spoke louder than any pitch deck ever could. 🚀" },
+  { year: "2021", event: "Built WePixStudio — an AI-powered content tool — because hiring photographers for 200 SKUs is insane. Also started building the team. No more one-man-army. 🤖" },
+  { year: "2022", event: "December 10th — WePix Digital Media LLP was officially born. What started as one guy failing with a baby brand became a registered company with a real team, real clients, and a real mission. The grind became a business. 🎉" },
+  { year: "2023", event: "Expanded to Bangalore. Launched the Academy because people kept DM-ing 'bro teach me Meta Ads.' Business vertical went live. 50+ brands served. The snowball was rolling. ❄️" },
+  { year: "2024", event: "AI Agents division created. Managed ₹2Cr+ in ad spend. Built systems and SOPs that actually scale. At this point, we're basically a tech company that happens to be really good at marketing. 📈" },
+  { year: "2025", event: "Opened operations in Chennai and UAE. Launched the Digital Store, Mentorship program, and the Handbook. WePix stopped being a 'Tirupur agency' and became a pan-India digital media group. 🌍" },
+  { year: "2026", event: "3 years and 5 months since Day 1. Countless lessons, ups, downs, sleepless nights, and celebrations. We've been broke, been blessed, and been everything in between. And we're just getting started. The best chapters haven't been written yet. ✍️" },
 ];
 
 export default function About() {
