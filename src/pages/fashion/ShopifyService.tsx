@@ -5,12 +5,11 @@ import { Badge } from "@/components/ui/badge";
 import { SectionHeading } from "@/components/shared/SectionHeading";
 import { CTABanner } from "@/components/shared/CTABanner";
 import { ImagePlaceholder } from "@/components/shared/ImagePlaceholder";
+import { BookingFormDialog } from "@/components/shared/BookingFormDialog";
 import { useGSAP, heroReveal, scrollFadeIn } from "@/hooks/useGSAP";
 import { ArrowRight, Check, ShoppingBag, Palette, Zap, BarChart3, Search, Smartphone, Shield, Headphones } from "lucide-react";
 import { motion } from "framer-motion";
 import shopifyPartnerBadge from "@/assets/shopify-partner.svg";
-
-const CTA_URL = "https://cal.com";
 
 const services = [
   { icon: Palette, title: "Custom Theme Development", desc: "Bespoke Shopify themes designed for fashion — not generic templates that look like everyone else's store." },
@@ -98,9 +97,7 @@ export default function ShopifyService() {
                 Beautiful D2C Shopify stores AND high-end model content generated from your raw iPhone shots using <a href="https://wepixstudio.app" target="_blank" rel="noopener noreferrer" className="font-medium text-foreground underline underline-offset-2 hover:text-primary transition-colors">WePixStudio.App</a> — our proprietary AI tool. From store design to product photography, we handle the full visual stack so your brand looks premium from day one.
               </p>
               <div className="gsap-hero-cta mt-8 flex gap-4 opacity-0">
-                <a href={CTA_URL} target="_blank" rel="noopener noreferrer">
-                  <Button size="lg" className="font-medium gap-2">Get a Free Consultation <ArrowRight size={16} /></Button>
-                </a>
+                <BookingFormDialog triggerLabel="Get a Free Consultation" showArrow />
               </div>
             </div>
           </div>
@@ -186,11 +183,7 @@ export default function ShopifyService() {
                           </li>
                         ))}
                       </ul>
-                      <a href={CTA_URL} target="_blank" rel="noopener noreferrer">
-                        <Button className="w-full font-medium" variant={i === 1 ? "default" : "outline"}>
-                          Get Started
-                        </Button>
-                      </a>
+                      <BookingFormDialog triggerLabel="Get Started" triggerVariant={i === 1 ? "default" : "outline"} triggerSize="default" triggerClassName="w-full" />
                     </CardContent>
                   </Card>
                 </motion.div>
@@ -241,10 +234,9 @@ export default function ShopifyService() {
       </div>
 
       <CTABanner
-        headline="Ready to build a store that actually sells? 🛍️"
+        headline="Ready to build a store that actually sells?"
         subtext="Book a free consultation call. We'll audit your current setup and share a roadmap — no obligations, no pushy sales."
         ctaLabel="Book Free Consultation"
-        ctaHref={CTA_URL}
       />
     </Layout>
   );

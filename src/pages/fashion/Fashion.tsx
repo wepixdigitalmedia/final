@@ -4,14 +4,15 @@ import { Card, CardContent } from "@/components/ui/card";
 import { SectionHeading } from "@/components/shared/SectionHeading";
 import { CTABanner } from "@/components/shared/CTABanner";
 import { ImagePlaceholder } from "@/components/shared/ImagePlaceholder";
+import { BookingFormDialog } from "@/components/shared/BookingFormDialog";
 import { ArrowRight, Camera, Rocket, BarChart3 } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useGSAP, heroReveal, scrollFadeIn, gsap } from "@/hooks/useGSAP";
 
 const services = [
-  { icon: Rocket, title: "Kickstarter Program", description: "60 days. Zero to selling. We build your store, shoot your products, run your ads, and hold your hand through the whole thing. It's like a bootcamp, but for your brand. 🚀", href: "/fashion/kickstarter", img: "Kickstarter program" },
-  { icon: Camera, title: "WePixStudio", description: "AI-powered content creation that makes your ₹500 product look like it belongs in Vogue. Seriously, your competitors will be confused. 📸", href: "/fashion/wepixstudio", img: "WePixStudio demo" },
-  { icon: BarChart3, title: "Meta Ads Management", description: "Full-funnel ad management powered by our MCS Framework. We don't just run ads — we build a system that prints money (legally). 💰", href: "/fashion/book", img: "Ads dashboard" },
+  { icon: Rocket, title: "Kickstarter Program", description: "60 days. Zero to selling. We build your store, shoot your products, run your ads, and hold your hand through the whole thing. It's like a bootcamp, but for your brand.", href: "/fashion/kickstarter", img: "Kickstarter program" },
+  { icon: Camera, title: "WePixStudio", description: "AI-powered content creation that makes your ₹500 product look like it belongs in Vogue. Seriously, your competitors will be confused.", href: "/fashion/wepixstudio", img: "WePixStudio demo" },
+  { icon: BarChart3, title: "Meta Ads Management", description: "Full-funnel ad management powered by our MCS Framework. We don't just run ads — we build a system that prints money (legally).", href: "/fashion/book", img: "Ads dashboard" },
 ];
 
 const mcsSteps = [
@@ -48,7 +49,7 @@ export default function Fashion() {
               <div>
                 <span className="gsap-hero-tag inline-block text-sm font-medium text-muted-foreground mb-4 opacity-0 px-3 py-1 rounded-full border border-border bg-muted">WePix Fashion</span>
                 <h1 className="gsap-hero-title font-display text-3xl md:text-4xl lg:text-5xl font-semibold leading-[1.15] opacity-0">
-                  Your product is fire. Your marketing? Let's talk about that. 🔥
+                  Your product is fire. Your marketing? Let's talk about that.
                 </h1>
                 <p className="gsap-hero-desc mt-5 text-base text-muted-foreground opacity-0">
                   Here's the thing — you've spent months perfecting your designs, sourcing the best fabric, getting the stitching just right. And then your marketing is... a Canva template with Comic Sans vibes? Nah fam. We help D2C fashion brands create content that stops thumbs, run ads that convert wallets, and build a brand that people actually want to wear.
@@ -57,9 +58,9 @@ export default function Fashion() {
                   <Link to="/fashion/kickstarter" className="gsap-hero-cta opacity-0">
                     <Button size="lg" className="rounded-lg font-medium gap-2">Start with Kickstarter <ArrowRight size={16} /></Button>
                   </Link>
-                  <a href="https://cal.com" target="_blank" rel="noopener noreferrer" className="gsap-hero-cta opacity-0">
-                    <Button size="lg" variant="outline" className="rounded-lg font-medium">Book a Call</Button>
-                  </a>
+                  <span className="gsap-hero-cta opacity-0">
+                    <BookingFormDialog triggerLabel="Book a Call" triggerVariant="outline" />
+                  </span>
                 </div>
               </div>
               <ImagePlaceholder label="Fashion hero image" aspectRatio="square" className="gsap-hero-cta opacity-0" />
@@ -80,7 +81,7 @@ export default function Fashion() {
 
         <section className="py-24 border-t border-border">
           <div className="container max-w-3xl text-center gsap-problem opacity-0">
-            <h2 className="font-display text-3xl md:text-4xl font-semibold">You've got a killer product. So why isn't anyone buying? 🤔</h2>
+            <h2 className="font-display text-3xl md:text-4xl font-semibold">You've got a killer product. So why isn't anyone buying?</h2>
             <p className="mt-6 text-lg text-muted-foreground">Because in 2024, having great products isn't enough. You need scroll-stopping content, ads that don't look like ads, a store that converts, and a strategy that doesn't involve praying to the algorithm gods. That's literally what we do — and we're embarrassingly good at it.</p>
           </div>
         </section>
@@ -110,7 +111,7 @@ export default function Fashion() {
 
         <section className="gsap-mcs-section py-24">
           <div className="container">
-            <SectionHeading tag="Our Secret Sauce" title="The MCS Framework 🧪" description="Media, Creative, Strategy — and never-ending iteration. This is the system behind every successful campaign we've ever run." />
+            <SectionHeading tag="Our Secret Sauce" title="The MCS Framework" description="Media, Creative, Strategy — and never-ending iteration. This is the system behind every successful campaign we've ever run." />
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 max-w-4xl mx-auto">
               {mcsSteps.map((step) => (
                 <div key={step.step} className="gsap-mcs-step text-center opacity-0">
@@ -126,7 +127,7 @@ export default function Fashion() {
         </section>
       </div>
 
-      <CTABanner headline="Ready to make your fashion brand unforgettable? 👗" subtext="Book a free strategy call. We'll roast your current marketing (lovingly) and show you what's possible." ctaLabel="Book a Free Call" ctaHref="https://cal.com" />
+      <CTABanner headline="Ready to make your fashion brand unforgettable?" subtext="Book a free strategy call. We'll roast your current marketing (lovingly) and show you what's possible." ctaLabel="Book a Free Call" />
     </Layout>
   );
 }
