@@ -165,6 +165,44 @@ export default function Manifesto() {
           </div>
         </div>
       </section>
+
+      {/* Image break */}
+      <section className="py-16">
+        <div className="container max-w-4xl">
+          <ImagePlaceholder label="Team culture visual" aspectRatio="wide" className="rounded-xl" />
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-20 border-t border-border">
+        <div className="container max-w-3xl">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="text-center space-y-6"
+          >
+            <h2 className="font-display text-3xl md:text-4xl font-semibold">Ready to Be Part of the Journey?</h2>
+            <p className="text-lg text-muted-foreground max-w-xl mx-auto">
+              Whether you want to join our team or grow your brand, we'd love to hear from you.
+            </p>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
+              <Button asChild size="lg">
+                <Link to="/careers">
+                  Join WePix <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+              </Button>
+              <BookingFormDialog
+                triggerLabel="Having a Brand? Book a Call"
+                triggerVariant="outline"
+                triggerSize="lg"
+                showArrow
+              />
+            </div>
+          </motion.div>
+        </div>
+      </section>
     </Layout>
   );
 }
