@@ -6,13 +6,17 @@ const footerLinks = {
     { label: "Fashion", href: "/fashion" },
     { label: "Academy", href: "/academy" },
     { label: "Business", href: "/business" },
+    { label: "Digital Store", href: "/digital-store" },
   ],
   Company: [
     { label: "About", href: "/about" },
+    { label: "People", href: "/people" },
+    { label: "Handbook", href: "/handbook" },
     { label: "Manifesto", href: "/manifesto" },
     { label: "Contact", href: "/contact" },
   ],
   Resources: [
+    { label: "Blog", href: "/blogs" },
     { label: "Case Studies", href: "/fashion/case-studies" },
     { label: "Community", href: "/academy/community" },
     { label: "Webinar", href: "/academy/webinar" },
