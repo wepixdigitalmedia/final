@@ -94,14 +94,33 @@ const Index = () => {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.7, delay: 0.3 }}
-              className="rounded-xl overflow-hidden border border-border shadow-lg">
+              className="rounded-xl overflow-hidden border border-border shadow-lg cursor-pointer group relative"
+              onClick={() => setVslOpen(true)}
+            >
               <img
                 src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/21eDkPqQcXCF2sJcyeMn/media/68a62b3d280b9e3bebb53f6c.gif"
                 alt="WePix VSL"
                 className="w-full h-auto"
                 loading="eager"
               />
+              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors duration-300 flex items-center justify-center">
+                <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-primary text-primary-foreground rounded-full p-3">
+                  <Play className="h-6 w-6 fill-current" />
+                </div>
+              </div>
             </motion.div>
+
+            <Dialog open={vslOpen} onOpenChange={setVslOpen}>
+              <DialogContent className="sm:max-w-lg max-h-[90vh] p-0 overflow-hidden">
+                <DialogTitle className="sr-only">LP VSL Opt-In</DialogTitle>
+                <iframe
+                  src="https://portal.wepix.in/widget/form/p4gfS3Vcg7tDEWAgjyYF"
+                  className="w-full border-none rounded-lg"
+                  style={{ height: "600px", minHeight: "400px" }}
+                  title="LP VSL Opt-In"
+                />
+              </DialogContent>
+            </Dialog>
           </div>
         </div>
       </section>
