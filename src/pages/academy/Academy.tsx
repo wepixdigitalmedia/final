@@ -44,10 +44,10 @@ export default function Academy() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div>
                 <span className="gsap-hero-tag inline-block text-sm font-medium text-muted-foreground mb-4 opacity-0 px-3 py-1 rounded-full border border-border bg-muted">WePix Academy</span>
-                <h1 className="gsap-hero-title font-display text-4xl md:text-5xl lg:text-6xl font-semibold leading-[1.1] opacity-0">
+                <h1 className="gsap-hero-title font-display text-3xl md:text-4xl lg:text-5xl font-semibold leading-[1.15] opacity-0">
                   Learn from people who actually run the ads. Not from people who make courses about running ads. 🎯
                 </h1>
-                <p className="gsap-hero-desc mt-6 text-lg text-muted-foreground opacity-0">
+                <p className="gsap-hero-desc mt-5 text-base text-muted-foreground opacity-0">
                   Here's the tea: most marketing courses are taught by people whose main income IS the course. Ours is different. We manage crores in ad spend every month. We run campaigns for real brands. And then we teach you exactly what we learned — mistakes, wins, and all the stuff nobody talks about on YouTube.
                 </p>
                 <div className="flex flex-wrap gap-3 mt-8">
