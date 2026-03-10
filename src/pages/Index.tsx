@@ -70,12 +70,12 @@ const Index = () => {
             </p>
             <div className="flex flex-wrap gap-4 mt-10">
               <Link to="/fashion">
-                <Button size="lg" className="font-display font-semibold text-base gap-2">
+                <Button size="lg" className="font-display font-semibold text-base gap-2 px-8 py-6 text-lg bg-primary text-primary-foreground hover:bg-primary/80 hover:scale-105 transition-all duration-200 shadow-[0_0_20px_hsl(var(--primary)/0.4)]">
                   Explore WePix <ArrowRight size={18} />
                 </Button>
               </Link>
               <a href="https://cal.com" target="_blank" rel="noopener noreferrer">
-                <Button size="lg" className="font-display font-semibold text-base bg-primary text-primary-foreground hover:bg-primary/90">
+                <Button size="lg" variant="outline" className="font-display font-semibold text-base px-8 py-6 text-lg border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground hover:scale-105 transition-all duration-200">
                   Book a Free Strategy Call
                 </Button>
               </a>
