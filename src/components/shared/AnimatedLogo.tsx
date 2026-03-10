@@ -23,9 +23,9 @@ export function AnimatedLogo() {
   }, []);
 
   return (
-    <Link to="/" className="flex items-baseline gap-1.5 font-display text-xl font-semibold tracking-[0.04em] text-foreground">
+    <Link to="/" className="flex items-baseline font-display text-xl font-semibold tracking-[0.04em] text-foreground">
       <span>WePix.</span>
-      <span className="relative inline-flex overflow-hidden h-[1.5em] items-end pb-0.5 pl-0.5">
+      <span className="relative inline-flex overflow-hidden h-[1.5em] items-end pb-0.5 ml-1">
         <AnimatePresence mode="wait">
           <motion.span
             key={categories[index]}
