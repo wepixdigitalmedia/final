@@ -6,15 +6,21 @@ import { useGSAP, heroReveal, scrollFadeIn } from "@/hooks/useGSAP";
 import { TrendingUp } from "lucide-react";
 
 const studies = [
-  { brand: "Taasza", category: "Ethnic Wear", problem: "Brand new. Zero online presence. The founder had amazing sarees but was selling them only through local shops. Classic 'great product, invisible brand' syndrome.", approach: "We went full send — built a gorgeous Shopify store, did a complete product shoot, and launched Meta Ads using our MCS Framework. Think of it as a brand makeover montage, but with spreadsheets.", results: [{ metric: "ROAS", value: "3x" }, { metric: "Monthly Revenue", value: "₹5L" }, { metric: "Timeline", value: "60 days" }] },
-  { brand: "BoonBabies", category: "Kids Fashion", problem: "Adorable kids' clothing with zero brand consistency. Their Instagram looked like it was run by five different people (it was). Great products, but the marketing was giving 'we just started yesterday' energy.", approach: "Complete brand refresh from scratch. WePixStudio for consistent, premium content. Targeted Meta campaigns aimed at millennial parents who spend their weekends on Instagram while their kids nap.", results: [{ metric: "Monthly Revenue", value: "₹10L+" }, { metric: "Ad Creatives", value: "50+" }, { metric: "Content Pieces", value: "200+" }] },
-  { brand: "Nutmeg", category: "Premium Menswear", problem: "A premium menswear brand with fabric quality that would make Italian tailors jealous — but their online presence? Let's just say their website was doing the heavy lifting of scaring customers away.", approach: "Repositioned the entire brand. Created chef's-kiss content that screamed 'luxury but approachable.' Ran conversion campaigns targeting men who actually care about what they wear (they exist, we found them).", results: [{ metric: "Revenue Growth", value: "2.5x" }, { metric: "CPA Reduction", value: "40%" }, { metric: "ROAS", value: "4.2x" }] },
+  { brand: "Taasza", category: "Ethnic Wear", stat: "3x ROAS", description: "From local saree shop to thriving D2C brand with a gorgeous Shopify store and Meta Ads using our MCS Framework." },
+  { brand: "BoonBabies", category: "Kids Fashion", stat: "₹10L+ / mo", description: "Complete brand refresh and premium content strategy targeting millennial parents. Consistency is king (or queen)." },
+  { brand: "Nutmeg", category: "Premium Menswear", stat: "2.5x Growth", description: "Repositioned the brand from 'invisible' to 'irresistible.' Luxury content + conversion campaigns that actually convert." },
+  { brand: "ThreadCraft", category: "Sustainable Fashion", stat: "4x ROAS", description: "Eco-conscious brand that needed the world to know about their mission. We made sustainability look as good as it feels." },
+  { brand: "Kalakriti", category: "Handloom Sarees", stat: "₹8L+ / mo", description: "Heritage handloom brand taken digital. AI-generated model shots via WePixStudio turned raw product images into showstoppers." },
+  { brand: "UrbanKnot", category: "Streetwear", stat: "5x ROAS", description: "Bold streetwear brand with zero paid strategy. We built a full Meta funnel and scaled from ₹0 to ₹1L/day ad spend profitably." },
+  { brand: "LilBloom", category: "Baby Accessories", stat: "₹12L+ / mo", description: "Cute products, chaotic branding. We unified everything — content, store, ads — and turned them into a category leader." },
+  { brand: "Maison Luxe", category: "Luxury Ethnic", stat: "3.8x ROAS", description: "High-ticket ethnic wear brand. Premium Shopify store + catalog ads targeting NRI audiences across the US and UK." },
+  { brand: "DapperDen", category: "Men's Grooming", stat: "60% CPA ↓", description: "Grooming brand burning cash on ads. We restructured campaigns, refreshed creatives, and cut their CPA by more than half." },
 ];
 
 export default function CaseStudies() {
   const containerRef = useGSAP((container) => {
     heroReveal(container);
-    scrollFadeIn(".gsap-study", container, { stagger: 0.12, y: 30 });
+    scrollFadeIn(".gsap-study", container, { stagger: 0.06, y: 20 });
   });
 
   return (
@@ -29,30 +35,26 @@ export default function CaseStudies() {
         </section>
 
         <section className="py-24 border-t border-border">
-          <div className="container max-w-4xl space-y-8">
-            {studies.map((study) => (
-              <div key={study.brand} className="gsap-study opacity-0">
-                <Card className="rounded-xl border-border overflow-hidden">
-                  <div className="grid grid-cols-1 md:grid-cols-[1fr_1.5fr]">
-                    <ImagePlaceholder label={`${study.brand} brand imagery`} aspectRatio="square" className="rounded-none border-0 border-r-2 md:border-b-0 border-b-2" />
-                    <CardContent className="p-8">
-                      <div className="flex items-center gap-3 mb-4">
-                        <TrendingUp className="text-foreground" size={18} />
-                        <span className="text-xs font-medium uppercase tracking-widest text-muted-foreground">{study.category}</span>
+          <div className="container">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+              {studies.map((study) => (
+                <div key={study.brand} className="gsap-study opacity-0">
+                  <Card className="rounded-xl border-border overflow-hidden h-full hover:shadow-lg transition-shadow duration-300">
+                    <ImagePlaceholder label={`${study.brand} brand imagery`} aspectRatio="square" className="rounded-none border-0" />
+                    <CardContent className="p-5">
+                      <div className="flex items-center justify-between mb-3">
+                        <span className="text-[10px] font-medium uppercase tracking-widest text-muted-foreground">{study.category}</span>
+                        <span className="flex items-center gap-1 text-xs font-semibold text-foreground">
+                          <TrendingUp size={12} /> {study.stat}
+                        </span>
                       </div>
-                      <h2 className="font-display text-3xl font-semibold mb-6">{study.brand}</h2>
-                      <div className="space-y-4">
-                        <div><p className="text-xs font-medium uppercase tracking-wider text-muted-foreground mb-2">The Problem 😩</p><p className="text-sm">{study.problem}</p></div>
-                        <div><p className="text-xs font-medium uppercase tracking-wider text-muted-foreground mb-2">What We Did 🛠️</p><p className="text-sm">{study.approach}</p></div>
-                        <div><p className="text-xs font-medium uppercase tracking-wider text-muted-foreground mb-2">The Results 🎉</p>
-                          <div className="space-y-2">{study.results.map((r) => (<div key={r.metric} className="flex justify-between"><span className="text-sm text-muted-foreground">{r.metric}</span><span className="font-display font-semibold">{r.value}</span></div>))}</div>
-                        </div>
-                      </div>
+                      <h3 className="font-display text-xl font-semibold mb-2">{study.brand}</h3>
+                      <p className="text-sm text-muted-foreground leading-relaxed">{study.description}</p>
                     </CardContent>
-                  </div>
-                </Card>
-              </div>
-            ))}
+                  </Card>
+                </div>
+              ))}
+            </div>
           </div>
         </section>
       </div>
