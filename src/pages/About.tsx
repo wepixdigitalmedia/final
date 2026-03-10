@@ -49,8 +49,8 @@ export default function About() {
                 <h1 className="gsap-hero-title font-display text-3xl md:text-4xl lg:text-5xl font-semibold leading-[1.15] opacity-0">
                   Two guys from Tirupur who got tired of trash marketing and decided to fix it. 🛠️
                 </h1>
-                <p className="gsap-hero-desc mt-6 text-lg text-muted-foreground opacity-0">
-                  WePix started because we were frustrated. Frustrated with agencies charging lakhs for mediocre work. Frustrated with marketers who couldn't tell the difference between reach and revenue. So we thought, "How hard can it be?" Turns out, very hard — but we figured it out anyway, and now we're helping 50+ brands do the same.
+                <p className="gsap-hero-desc mt-5 text-base text-muted-foreground opacity-0">
+                  WePix started because we were frustrated. Frustrated with agencies charging lakhs for mediocre work. Frustrated with marketers who couldn't tell the difference between reach and revenue.
                 </p>
               </div>
               <ImagePlaceholder label="Team photo" aspectRatio="square" className="gsap-hero-cta opacity-0" />
