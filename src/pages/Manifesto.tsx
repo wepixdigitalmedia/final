@@ -1,7 +1,7 @@
 import { Layout } from "@/components/layout/Layout";
 import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
-import { motion } from "framer-motion";
+import { useGSAP, heroReveal, gsap, ScrollTrigger } from "@/hooks/useGSAP";
 
 const chapters = [
   { id: "why", title: "Why WePix Exists", content: "We started WePix because the digital marketing industry is broken. Agencies charge you ₹50K/month, run the same boring ads, send you a PDF report, and call it 'strategy.' We've been on the receiving end. We've seen brands waste lakhs on agencies that couldn't tell a ROAS from a reach metric. So we built something different — an agency that actually gives a damn about your brand." },
@@ -36,65 +36,91 @@ export default function Manifesto() {
     return () => observer.disconnect();
   }, []);
 
+  const containerRef = useGSAP((ctx, container) => {
+    heroReveal(container.querySelector(".gsap-hero-section")!);
+
+    // Each chapter fades in with text reveal on scroll
+    container.querySelectorAll(".gsap-chapter").forEach((el) => {
+      gsap.fromTo(
+        el,
+        { opacity: 0, y: 40 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.8,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: el,
+            start: "top 85%",
+            toggleActions: "play none none none",
+          },
+        }
+      );
+    });
+
+    // Sidebar link highlight animation
+    gsap.fromTo(
+      container.querySelectorAll(".gsap-toc-link"),
+      { opacity: 0, x: -20 },
+      { opacity: 1, x: 0, duration: 0.4, stagger: 0.05, ease: "power2.out", delay: 0.8 }
+    );
+  });
+
   return (
     <Layout>
-      <section className="bg-hero text-hero-foreground py-20 md:py-28">
-        <div className="container max-w-3xl">
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
-            <span className="inline-block text-xs font-display font-semibold uppercase tracking-widest text-primary mb-4">The WePix Manifesto</span>
-            <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">
+      <div ref={containerRef}>
+        <section className="gsap-hero-section bg-hero text-hero-foreground py-20 md:py-28">
+          <div className="container max-w-3xl">
+            <span className="gsap-hero-tag inline-block text-xs font-display font-semibold uppercase tracking-widest text-primary mb-4 opacity-0">The WePix Manifesto</span>
+            <h1 className="gsap-hero-title font-display text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight opacity-0">
               What we believe in.
             </h1>
-            <p className="mt-4 text-hero-foreground/60 text-lg">10 principles that guide everything we do.</p>
-          </motion.div>
-        </div>
-      </section>
+            <p className="gsap-hero-desc mt-4 text-hero-foreground/60 text-lg opacity-0">10 principles that guide everything we do.</p>
+          </div>
+        </section>
 
-      <div className="container py-16">
-        <div className="flex gap-12">
-          {/* Sidebar TOC */}
-          <aside className="hidden lg:block w-64 shrink-0">
-            <div className="sticky top-36">
-              <p className="text-xs font-display font-semibold uppercase tracking-widest text-muted-foreground mb-4">Chapters</p>
-              <nav className="space-y-1">
-                {chapters.map((ch, i) => (
-                  <a
-                    key={ch.id}
-                    href={`#${ch.id}`}
-                    className={cn(
-                      "block text-sm py-1.5 px-3 rounded-md transition-colors",
-                      activeChapter === ch.id
-                        ? "bg-primary/10 text-primary font-medium"
-                        : "text-muted-foreground hover:text-foreground"
-                    )}
-                  >
-                    <span className="text-muted-foreground/50 mr-2">{String(i + 1).padStart(2, "0")}</span>
-                    {ch.title}
-                  </a>
-                ))}
-              </nav>
+        <div className="container py-16">
+          <div className="flex gap-12">
+            {/* Sidebar TOC */}
+            <aside className="hidden lg:block w-64 shrink-0">
+              <div className="sticky top-36">
+                <p className="text-xs font-display font-semibold uppercase tracking-widest text-muted-foreground mb-4">Chapters</p>
+                <nav className="space-y-1">
+                  {chapters.map((ch, i) => (
+                    <a
+                      key={ch.id}
+                      href={`#${ch.id}`}
+                      className={cn(
+                        "gsap-toc-link block text-sm py-1.5 px-3 rounded-md transition-colors opacity-0",
+                        activeChapter === ch.id
+                          ? "bg-primary/10 text-primary font-medium"
+                          : "text-muted-foreground hover:text-foreground"
+                      )}
+                    >
+                      <span className="text-muted-foreground/50 mr-2">{String(i + 1).padStart(2, "0")}</span>
+                      {ch.title}
+                    </a>
+                  ))}
+                </nav>
+              </div>
+            </aside>
+
+            {/* Content */}
+            <div className="flex-1 max-w-2xl">
+              {chapters.map((ch, i) => (
+                <article
+                  key={ch.id}
+                  id={ch.id}
+                  className="gsap-chapter mb-16 scroll-mt-40 opacity-0"
+                >
+                  <span className="text-xs font-display font-semibold text-primary uppercase tracking-widest">
+                    Chapter {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <h2 className="font-display text-2xl md:text-3xl font-bold mt-2 mb-4">{ch.title}</h2>
+                  <p className="text-muted-foreground leading-relaxed text-lg">{ch.content}</p>
+                </article>
+              ))}
             </div>
-          </aside>
-
-          {/* Content */}
-          <div className="flex-1 max-w-2xl">
-            {chapters.map((ch, i) => (
-              <motion.article
-                key={ch.id}
-                id={ch.id}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5 }}
-                className="mb-16 scroll-mt-40"
-              >
-                <span className="text-xs font-display font-semibold text-primary uppercase tracking-widest">
-                  Chapter {String(i + 1).padStart(2, "0")}
-                </span>
-                <h2 className="font-display text-2xl md:text-3xl font-bold mt-2 mb-4">{ch.title}</h2>
-                <p className="text-muted-foreground leading-relaxed text-lg">{ch.content}</p>
-              </motion.article>
-            ))}
           </div>
         </div>
       </div>
