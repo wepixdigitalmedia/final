@@ -70,11 +70,13 @@ const Index = () => {
               <span className="inline-block text-xs font-display font-medium uppercase tracking-widest text-primary mb-6">
                 Digital Media Group
               </span>
-              <h1 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.15] min-h-[4.6em] md:min-h-[3.45em] lg:min-h-[2.3em]">
-                We don't just run ads.{" "}
-                <span className="text-gradient">{displayText}</span>
-                <span className={`inline-block w-[3px] h-[0.85em] bg-foreground ml-0.5 align-middle rounded-sm transition-opacity duration-100 ${showCursor ? "opacity-100" : "opacity-0"}`} />
-              </h1>
+              <div className="min-h-[10rem] md:min-h-[9rem] lg:min-h-[7.5rem]">
+                <h1 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.15]">
+                  We don't just run ads.{" "}
+                  <span className="text-gradient">{displayText}</span>
+                  <span className={`inline-block w-[3px] h-[0.85em] bg-foreground ml-0.5 align-middle rounded-sm transition-opacity duration-100 ${showCursor ? "opacity-100" : "opacity-0"}`} />
+                </h1>
+              </div>
               <p className="mt-5 text-base md:text-lg text-hero-foreground/60">
                 Picture this: you've got an amazing product, but your marketing looks like it was done by your cousin's friend who "knows Canva." Yeah, we fix that. Fashion, education, business — one crew that handles everything so you can stop losing sleep over your Instagram reach.
               </p>
