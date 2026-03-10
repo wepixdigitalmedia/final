@@ -2,6 +2,7 @@ import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { CTABanner } from "@/components/shared/CTABanner";
 import { ImagePlaceholder } from "@/components/shared/ImagePlaceholder";
+import { BookingFormDialog } from "@/components/shared/BookingFormDialog";
 import { Card, CardContent } from "@/components/ui/card";
 import { useGSAP, heroReveal, gsap } from "@/hooks/useGSAP";
 import { Check, ArrowRight, Users, Video, BookOpen, ShieldCheck } from "lucide-react";
@@ -39,7 +40,7 @@ export default function Mentorship() {
           <div className="container max-w-3xl">
             <span className="gsap-hero-tag inline-block text-sm font-medium text-muted-foreground mb-4 opacity-0 px-3 py-1 rounded-full border border-border bg-muted">Mentorship</span>
             <h1 className="gsap-hero-title font-display text-3xl md:text-4xl lg:text-5xl font-semibold leading-[1.15] opacity-0">
-              Stop figuring it out alone. Get the playbook WePix actually uses. 🧭
+              Stop figuring it out alone. Get the playbook WePix actually uses.
             </h1>
             <p className="gsap-hero-desc mt-4 text-base text-muted-foreground opacity-0">
               For agency owners who are done with generic advice and LinkedIn gurus. This is a structured mentorship built around WePix's real internal frameworks — the same systems we use to manage ₹2Cr+ in ad spend across 50+ brands. Live Q&A sessions, a private community of operators, and hands-on support from people who've actually built what you're building.
@@ -69,7 +70,7 @@ export default function Mentorship() {
               ))}
             </div>
 
-            <h2 className="font-display text-xl md:text-2xl font-semibold mb-6">What's Included ✨</h2>
+            <h2 className="font-display text-xl md:text-2xl font-semibold mb-6">What's Included</h2>
             <div className="space-y-3 mb-10 gsap-list">
               {includes.map((item) => (
                 <div key={item} className="gsap-item flex items-start gap-3 opacity-0">
@@ -84,14 +85,12 @@ export default function Mentorship() {
               <p className="text-sm text-muted-foreground mb-4">
                 This is an application-based program — selective by design. We keep the group intentionally small so every member gets real, personalized attention. Apply below and we'll schedule a quick fit call to see if we're the right match.
               </p>
-              <a href="https://cal.com" target="_blank" rel="noopener noreferrer">
-                <Button size="lg" className="rounded-lg font-medium gap-2">Apply for Mentorship <ArrowRight size={16} /></Button>
-              </a>
+              <BookingFormDialog triggerLabel="Apply for Mentorship" showArrow />
             </div>
           </div>
         </section>
       </div>
-      <CTABanner headline="Serious about scaling your agency? 🚀" subtext="Limited spots. Application-based. For agency owners who want real frameworks, not motivational quotes." ctaLabel="Apply Now" ctaHref="https://cal.com" />
+      <CTABanner headline="Serious about scaling your agency?" subtext="Limited spots. Application-based. For agency owners who want real frameworks, not motivational quotes." ctaLabel="Apply Now" />
     </Layout>
   );
 }

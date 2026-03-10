@@ -1,15 +1,17 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { useGSAP, gsap } from "@/hooks/useGSAP";
+import { BookingFormDialog } from "./BookingFormDialog";
 
 interface CTABannerProps {
   headline: string;
   subtext?: string;
   ctaLabel: string;
-  ctaHref: string;
+  ctaHref?: string;
+  useDialog?: boolean;
 }
 
-export function CTABanner({ headline, subtext, ctaLabel, ctaHref }: CTABannerProps) {
+export function CTABanner({ headline, subtext, ctaLabel, ctaHref, useDialog = true }: CTABannerProps) {
   const containerRef = useGSAP((container) => {
     gsap.fromTo(
       container.querySelectorAll(".gsap-cta-el"),
@@ -36,11 +38,17 @@ export function CTABanner({ headline, subtext, ctaLabel, ctaHref }: CTABannerPro
           {headline}
         </h2>
         {subtext && <p className="gsap-cta-el mt-4 text-muted-foreground text-lg max-w-xl mx-auto opacity-0">{subtext}</p>}
-        <a href={ctaHref} target="_blank" rel="noopener noreferrer">
-          <Button size="lg" className="gsap-cta-el mt-8 font-medium gap-2 rounded-lg opacity-0">
-            {ctaLabel} <ArrowRight size={16} />
-          </Button>
-        </a>
+        <div className="gsap-cta-el mt-8 opacity-0">
+          {useDialog ? (
+            <BookingFormDialog triggerLabel={ctaLabel} showArrow triggerSize="lg" />
+          ) : ctaHref ? (
+            <a href={ctaHref} target="_blank" rel="noopener noreferrer">
+              <Button size="lg" className="font-medium gap-2 rounded-lg">
+                {ctaLabel} <ArrowRight size={16} />
+              </Button>
+            </a>
+          ) : null}
+        </div>
       </div>
     </section>
   );

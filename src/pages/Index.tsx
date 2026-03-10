@@ -5,6 +5,8 @@ import { AnimatedCounter } from "@/components/shared/AnimatedCounter";
 import { SectionHeading } from "@/components/shared/SectionHeading";
 import { CTABanner } from "@/components/shared/CTABanner";
 import { ImagePlaceholder } from "@/components/shared/ImagePlaceholder";
+import { BookingFormDialog } from "@/components/shared/BookingFormDialog";
+import { TirupurTooltip } from "@/components/shared/TirupurTooltip";
 import { ArrowRight, Sparkles, GraduationCap, Briefcase, ShoppingBag } from "lucide-react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
@@ -14,37 +16,37 @@ const brandCards = [
   {
     icon: ShoppingBag,
     title: "Fashion",
-    description: "Your clothes deserve better than a boring Instagram grid. We do content, ads, and growth — the whole shebang. 🔥",
+    description: "Your clothes deserve better than a boring Instagram grid. We do content, ads, and growth — the whole shebang.",
     href: "/fashion",
     color: "from-primary/20 to-primary/5"
   },
   {
     icon: GraduationCap,
     title: "Academy",
-    description: "Learn Meta Ads from people who've actually burned their own money figuring it out. No cap, just real playbooks. 📚",
+    description: "Learn Meta Ads from people who've actually burned their own money figuring it out. No cap, just real playbooks.",
     href: "/academy",
     color: "from-blue-500/20 to-blue-500/5"
   },
   {
     icon: Briefcase,
     title: "Business",
-    description: "B2B doesn't have to be boring. AI agents, lead gen, and marketing that makes your competitors nervous. 💼",
+    description: "B2B doesn't have to be boring. AI agents, lead gen, and marketing that makes your competitors nervous.",
     href: "/business",
     color: "from-purple-500/20 to-purple-500/5"
   },
   {
     icon: Sparkles,
     title: "Sourcing",
-    description: "Straight from Tirupur — the garment capital. Quality fabrics, honest pricing, no middleman drama. 🧵",
+    description: (<>Straight from <TirupurTooltip /> — the garment capital. Quality fabrics, honest pricing, no middleman drama.</>),
     href: "/contact",
     color: "from-orange-500/20 to-orange-500/5"
   }
 ];
 
 const caseStudies = [
-  { brand: "Taasza", stat: "3x ROAS in 60 days", description: "They came to us with zero online presence and a prayer. We gave them a Shopify store, fire content, and Meta Ads that actually slapped. Two months later? ₹5L/month rolling in. 📈" },
-  { brand: "BoonBabies", stat: "₹10L+ monthly revenue", description: "A kids' fashion brand with adorable products but zero marketing game. We built everything from scratch — branding, content, store, ads. Now their DMs are busier than a Mumbai local train. 🚂" },
-  { brand: "Nutmeg", stat: "2.5x revenue growth", description: "Premium menswear brand that was criminally underperforming online. We repositioned them, created chef's-kiss content, and doubled their digital presence. The founder literally sent us biryani. 🍛" }
+  { brand: "Taasza", stat: "3x ROAS in 60 days", description: "They came to us with zero online presence and a prayer. We gave them a Shopify store, fire content, and Meta Ads that actually slapped. Two months later? ₹5L/month rolling in." },
+  { brand: "BoonBabies", stat: "₹10L+ monthly revenue", description: "A kids' fashion brand with adorable products but zero marketing game. We built everything from scratch — branding, content, store, ads. Now their DMs are busier than a Mumbai local train." },
+  { brand: "Nutmeg", stat: "2.5x revenue growth", description: "Premium menswear brand that was criminally underperforming online. We repositioned them, created chef's-kiss content, and doubled their digital presence. The founder literally sent us biryani." }
 ];
 
 const Index = () => {
@@ -71,7 +73,7 @@ const Index = () => {
                 <span className={`inline-block w-[3px] h-[0.85em] bg-foreground ml-0.5 align-middle rounded-sm transition-opacity duration-100 ${showCursor ? "opacity-100" : "opacity-0"}`} />
               </h1>
               <p className="mt-5 text-base md:text-lg text-hero-foreground/60">
-                Picture this: you've got an amazing product, but your marketing looks like it was done by your cousin's friend who "knows Canva." Yeah, we fix that. Fashion, education, business — one crew that handles everything so you can stop losing sleep over your Instagram reach. 😮‍💨
+                Picture this: you've got an amazing product, but your marketing looks like it was done by your cousin's friend who "knows Canva." Yeah, we fix that. Fashion, education, business — one crew that handles everything so you can stop losing sleep over your Instagram reach.
               </p>
               <div className="flex flex-wrap gap-4 mt-10">
                 <Link to="/fashion">
@@ -79,11 +81,10 @@ const Index = () => {
                     Explore WePix <ArrowRight size={18} />
                   </Button>
                 </Link>
-                <a href="https://cal.com" target="_blank" rel="noopener noreferrer">
-                  <Button size="lg" className="font-display font-medium text-base bg-primary text-primary-foreground hover:bg-primary/90">
-                    Book a Free Strategy Call
-                  </Button>
-                </a>
+                <BookingFormDialog
+                  triggerLabel="Book a Free Strategy Call"
+                  triggerClassName="font-display font-medium text-base bg-primary text-primary-foreground hover:bg-primary/90"
+                />
               </div>
             </motion.div>
 
@@ -206,7 +207,7 @@ const Index = () => {
         <div className="container max-w-3xl text-center">
           <SectionHeading tag="Our Philosophy" title="We have opinions. Strong ones." />
           <p className="text-lg text-muted-foreground -mt-6">
-            "We don't believe in cookie-cutter marketing. We don't believe in 'just boost the post bro.' We believe in building brands that people genuinely care about — the kind where customers slide into your DMs saying 'I NEED this.' We wrote a whole manifesto about it because we're dramatic like that." ✍️
+            "We don't believe in cookie-cutter marketing. We don't believe in 'just boost the post bro.' We believe in building brands that people genuinely care about — the kind where customers slide into your DMs saying 'I NEED this.' We wrote a whole manifesto about it because we're dramatic like that."
           </p>
           <Link to="/manifesto">
             <Button variant="outline" className="mt-8 font-display font-medium gap-2">
@@ -225,12 +226,12 @@ const Index = () => {
               {
                 name: "Abdul Navas",
                 role: "Co-Founder & CEO",
-                bio: "Grew up surrounded by textile factories in Tirupur, where the air smells like cotton and hustle. Turned that garment background into a digital media powerhouse because he was tired of seeing amazing products marketed terribly. His superpower? Making D2C fashion brands go from 'meh' to 'take my money.' Also, he's weirdly good at predicting which ad creative will win. 🎯"
+                bio: (<>Grew up surrounded by textile factories in <TirupurTooltip />, where the air smells like cotton and hustle. Turned that garment background into a digital media powerhouse because he was tired of seeing amazing products marketed terribly. His superpower? Making D2C fashion brands go from 'meh' to 'take my money.' Also, he's weirdly good at predicting which ad creative will win.</>)
               },
               {
                 name: "Santhosh",
                 role: "Co-Founder & COO",
-                bio: "The guy who makes sure nothing falls apart. While Abdul's out there dreaming big, Santhosh is the one building the engine that makes everything run. Ad accounts, client delivery, team ops — if something's working smoothly, it's because he lost sleep over it. Clients love him because he actually replies to messages. (A rare skill in this industry, apparently.) 😄"
+                bio: "The guy who makes sure nothing falls apart. While Abdul's out there dreaming big, Santhosh is the one building the engine that makes everything run. Ad accounts, client delivery, team ops — if something's working smoothly, it's because he lost sleep over it. Clients love him because he actually replies to messages. (A rare skill in this industry, apparently.)"
               }
             ].map((founder) =>
               <Card key={founder.name} className="border-border/50 overflow-hidden">
@@ -247,10 +248,10 @@ const Index = () => {
       </section>
 
       <CTABanner
-        headline="Ready to stop winging it? 🚀"
+        headline="Ready to stop winging it?"
         subtext="Book a free strategy call. No pitch decks, no corporate jargon, no 'let me circle back' — just a real conversation about your brand over virtual chai."
         ctaLabel="Book a Free Call"
-        ctaHref="https://cal.com" />
+      />
     </Layout>
   );
 };

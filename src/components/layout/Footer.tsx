@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Instagram, Youtube, Linkedin, MapPin } from "lucide-react";
+import { TirupurTooltip } from "@/components/shared/TirupurTooltip";
 
 const footerLinks = {
   "Brand Verticals": [
@@ -68,10 +69,10 @@ export function Footer() {
 
         <div className="mt-12 pt-8 border-t border-border grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {[
-            { city: "Tirupur", flag: "🇮🇳", address: "Sheriff Colony, Tirupur" },
-            { city: "Bangalore", flag: "🇮🇳", address: "HSR Layout, Bangalore" },
-            { city: "Chennai", flag: "🇮🇳", address: "Casagrand Amberly, Navalur, Chennai" },
-            { city: "Dubai", flag: "🇦🇪", address: "Al Safa St - Downtown Dubai" },
+            { city: "திருப்பூர்", flag: "\u{1F1EE}\u{1F1F3}", address: "Sheriff Colony, Tirupur" },
+            { city: "Bangalore", flag: "\u{1F1EE}\u{1F1F3}", address: "HSR Layout, Bangalore" },
+            { city: "Chennai", flag: "\u{1F1EE}\u{1F1F3}", address: "Casagrand Amberly, Navalur, Chennai" },
+            { city: "Dubai", flag: "\u{1F1E6}\u{1F1EA}", address: "Al Safa St - Downtown Dubai" },
           ].map((loc) => (
             <div key={loc.city} className="flex items-start gap-2.5">
               <div className="shrink-0 w-8 h-8 rounded-lg bg-muted flex items-center justify-center mt-0.5">

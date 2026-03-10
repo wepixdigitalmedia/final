@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { SectionHeading } from "@/components/shared/SectionHeading";
 import { CTABanner } from "@/components/shared/CTABanner";
+import { ImagePlaceholder } from "@/components/shared/ImagePlaceholder";
 import { useGSAP, heroReveal, scrollFadeIn } from "@/hooks/useGSAP";
 import { Sparkles, Image, Zap, Sliders, Camera, Sun, Monitor, Award, ArrowRight, Check, X } from "lucide-react";
 import { motion } from "framer-motion";
@@ -127,7 +128,7 @@ export default function WePixStudio() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <Card className="border-destructive/20 bg-destructive/5">
                 <CardContent className="p-6">
-                  <h3 className="font-display text-base font-semibold mb-4 text-destructive">The Old Way 😩</h3>
+                  <h3 className="font-display text-base font-semibold mb-4 text-destructive">The Old Way</h3>
                   <div className="space-y-3">
                     {problems.map((p, i) => (
                       <div key={i} className="flex items-start gap-2">
@@ -140,7 +141,7 @@ export default function WePixStudio() {
               </Card>
               <Card className="border-primary/20 bg-primary/5">
                 <CardContent className="p-6">
-                  <h3 className="font-display text-base font-semibold mb-4">With WePixStudio ✨</h3>
+                  <h3 className="font-display text-base font-semibold mb-4">With WePixStudio</h3>
                   <div className="space-y-3">
                     {solutions.map((s, i) => (
                       <div key={i} className="flex items-start gap-2">
@@ -281,10 +282,11 @@ export default function WePixStudio() {
       </div>
 
       <CTABanner
-        headline="Ready to transform your product photography? 📸"
+        headline="Ready to transform your product photography?"
         subtext="Join 500+ brands already using WePixStudio. Start creating AI-powered photoshoots in minutes."
         ctaLabel="Get Started Free"
         ctaHref={REGISTER_URL}
+        useDialog={false}
       />
     </Layout>
   );

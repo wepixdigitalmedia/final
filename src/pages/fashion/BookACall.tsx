@@ -1,14 +1,15 @@
 import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { useGSAP, heroReveal, gsap } from "@/hooks/useGSAP";
+import { BookingFormDialog } from "@/components/shared/BookingFormDialog";
 import { Check, ArrowRight } from "lucide-react";
 
 const covers = [
-  "Your brand's current challenges and goals — we want the real tea, not the LinkedIn version ☕",
-  "Which WePix services are the right fit — we'll be honest if something isn't for you 🎯",
-  "A rough roadmap for the first 60 days — so you know exactly what happens next 🗺️",
-  "Budget expectations and timeline — no surprises, no hidden costs, no 'oh btw' moments 💰",
-  "Q&A — ask us literally anything. We love questions. The weirder the better. 🤷",
+  "Your brand's current challenges and goals — we want the real tea, not the LinkedIn version",
+  "Which WePix services are the right fit — we'll be honest if something isn't for you",
+  "A rough roadmap for the first 60 days — so you know exactly what happens next",
+  "Budget expectations and timeline — no surprises, no hidden costs, no 'oh btw' moments",
+  "Q&A — ask us literally anything. We love questions. The weirder the better.",
 ];
 
 export default function BookACall() {
@@ -26,7 +27,7 @@ export default function BookACall() {
         <section className="gsap-hero-section py-24 md:py-32">
           <div className="container max-w-3xl">
             <span className="gsap-hero-tag inline-block text-sm font-medium text-muted-foreground mb-4 opacity-0 px-3 py-1 rounded-full border border-border bg-muted">Fashion</span>
-            <h1 className="gsap-hero-title font-display text-4xl md:text-5xl lg:text-6xl font-semibold opacity-0">Book a Free Strategy Call. It's like therapy, but for your brand. 🛋️</h1>
+            <h1 className="gsap-hero-title font-display text-4xl md:text-5xl lg:text-6xl font-semibold opacity-0">Book a Free Strategy Call. It's like therapy, but for your brand.</h1>
             <p className="gsap-hero-desc mt-4 text-lg text-muted-foreground opacity-0">30 minutes. No obligations. No awkward sales pitches. Just a genuine conversation about your brand and how we can help make it the brand you've always envisioned.</p>
           </div>
         </section>
@@ -42,10 +43,8 @@ export default function BookACall() {
                 </div>
               ))}
             </div>
-            <a href="https://cal.com" target="_blank" rel="noopener noreferrer">
-              <Button size="lg" className="rounded-lg font-medium gap-2 w-full md:w-auto">Schedule Your Call <ArrowRight size={16} /></Button>
-            </a>
-            <p className="text-sm text-muted-foreground mt-4">You'll be redirected to our Cal.com booking page. Pick a time that works, and we'll be there. ✌️</p>
+            <BookingFormDialog triggerLabel="Schedule Your Call" showArrow triggerClassName="w-full md:w-auto" />
+            <p className="text-sm text-muted-foreground mt-4">Fill out the form and we'll get back to you within 24 hours to schedule your call.</p>
           </div>
         </section>
       </div>

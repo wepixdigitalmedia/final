@@ -1,6 +1,7 @@
 import { Layout } from "@/components/layout/Layout";
 import { SectionHeading } from "@/components/shared/SectionHeading";
 import { ImagePlaceholder } from "@/components/shared/ImagePlaceholder";
+import { TirupurTooltip } from "@/components/shared/TirupurTooltip";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -23,7 +24,7 @@ const products = [
     type: "Digital Product",
     price: "₹7,999",
     originalPrice: "₹14,999",
-    description: "Everything you need to launch a fashion brand online — Shopify checklist, content calendar, ad strategy framework, and supplier contacts in Tirupur.",
+    description: (<>Everything you need to launch a fashion brand online — Shopify checklist, content calendar, ad strategy framework, and supplier contacts in <TirupurTooltip />.</>),
     features: ["Launch checklist", "Content templates", "Ad frameworks", "Supplier database"],
     badge: "New",
     link: "https://razorpay.me/@wepix/7999",

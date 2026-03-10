@@ -29,7 +29,7 @@ export default function CaseStudies() {
         <section className="gsap-hero-section py-24 md:py-32">
           <div className="container max-w-3xl">
             <span className="gsap-hero-tag inline-block text-sm font-medium text-muted-foreground mb-4 opacity-0 px-3 py-1 rounded-full border border-border bg-muted">Case Studies</span>
-            <h1 className="gsap-hero-title font-display text-4xl md:text-5xl lg:text-6xl font-semibold opacity-0">Real brands. Real money. Real receipts. 🧾</h1>
+            <h1 className="gsap-hero-title font-display text-4xl md:text-5xl lg:text-6xl font-semibold opacity-0">Real brands. Real money. Real receipts.</h1>
             <p className="gsap-hero-desc mt-4 text-lg text-muted-foreground opacity-0">No fluff, no vanity metrics, no 'we increased engagement by 500%' (engagement doesn't pay rent). Here's what actually happened when these brands trusted us with their growth.</p>
           </div>
         </section>
@@ -58,7 +58,7 @@ export default function CaseStudies() {
           </div>
         </section>
       </div>
-      <CTABanner headline="Want your brand to be the next case study? 📈" subtext="Book a call. We'll look at your brand and tell you honestly if we can help." ctaLabel="Book a Free Call" ctaHref="https://cal.com" />
+      <CTABanner headline="Want your brand to be the next case study?" subtext="Book a call. We'll look at your brand and tell you honestly if we can help." ctaLabel="Book a Free Call" />
     </Layout>
   );
 }
