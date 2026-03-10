@@ -1,10 +1,10 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { AnimatedLogo } from "@/components/shared/AnimatedLogo";
 import { BookingFormDialog } from "@/components/shared/BookingFormDialog";
+import { gsap } from "@/hooks/useGSAP";
 
 const mainLinks = [
   { label: "Home", href: "/" },
@@ -43,11 +43,22 @@ const subNavs: Record<string, { label: string; href: string }[]> = {
 export function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const location = useLocation();
+  const subNavRef = useRef<HTMLDivElement>(null);
 
   const activeSection = Object.keys(subNavs).find((key) =>
     location.pathname.startsWith(key)
   );
   const subLinks = activeSection ? subNavs[activeSection] : null;
+
+  useEffect(() => {
+    if (!subNavRef.current || window.innerWidth >= 768) return;
+    const el = subNavRef.current;
+    if (el.scrollWidth <= el.clientWidth) return;
+    const tl = gsap.timeline({ delay: 0.3 });
+    tl.to(el, { scrollLeft: 80, duration: 0.4, ease: "power2.inOut" })
+      .to(el, { scrollLeft: 0, duration: 0.4, ease: "power2.inOut" });
+    return () => { tl.kill(); };
+  }, [activeSection]);
 
   return (
     <>
@@ -109,7 +120,7 @@ export function Navbar() {
       {/* Context subnav */}
       {subLinks && (
         <div className="sticky top-16 z-40 bg-background/80 backdrop-blur-lg border-b border-border">
-          <div className="container flex items-center gap-1 overflow-x-auto py-2">
+          <div ref={subNavRef} className="container flex items-center gap-1 overflow-x-auto py-2">
             {subLinks.map((link) => (
               <Link
                 key={link.href}
