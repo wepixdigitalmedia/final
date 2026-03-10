@@ -3,7 +3,9 @@ import { SectionHeading } from "@/components/shared/SectionHeading";
 import { CTABanner } from "@/components/shared/CTABanner";
 import { ImagePlaceholder } from "@/components/shared/ImagePlaceholder";
 import { Card, CardContent } from "@/components/ui/card";
-import { Users, Lightbulb, Target, Heart } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Users, Lightbulb, Target, Heart, ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 import { useGSAP, heroReveal, scrollFadeIn, gsap } from "@/hooks/useGSAP";
 
 const values = [
@@ -44,11 +46,11 @@ export default function About() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div>
                 <span className="gsap-hero-tag inline-block text-sm font-medium text-muted-foreground mb-4 opacity-0 px-3 py-1 rounded-full border border-border bg-muted">About Us</span>
-                <h1 className="gsap-hero-title font-display text-4xl md:text-5xl lg:text-6xl font-semibold leading-[1.1] opacity-0">
+                <h1 className="gsap-hero-title font-display text-3xl md:text-4xl lg:text-5xl font-semibold leading-[1.15] opacity-0">
                   Two guys from Tirupur who got tired of trash marketing and decided to fix it. 🛠️
                 </h1>
-                <p className="gsap-hero-desc mt-6 text-lg text-muted-foreground opacity-0">
-                  WePix started because we were frustrated. Frustrated with agencies charging lakhs for mediocre work. Frustrated with marketers who couldn't tell the difference between reach and revenue. So we thought, "How hard can it be?" Turns out, very hard — but we figured it out anyway, and now we're helping 50+ brands do the same.
+                <p className="gsap-hero-desc mt-5 text-base text-muted-foreground opacity-0">
+                  WePix started because we were frustrated. Frustrated with agencies charging lakhs for mediocre work. Frustrated with marketers who couldn't tell the difference between reach and revenue.
                 </p>
               </div>
               <ImagePlaceholder label="Team photo" aspectRatio="square" className="gsap-hero-cta opacity-0" />
@@ -64,6 +66,13 @@ export default function About() {
               <ImagePlaceholder label="Office life 2" aspectRatio="square" />
               <ImagePlaceholder label="Team meeting" aspectRatio="square" />
               <ImagePlaceholder label="Behind the scenes" aspectRatio="square" />
+            </div>
+            <div className="mt-6 text-center">
+              <Link to="/people">
+                <Button variant="outline" className="font-display font-medium gap-2">
+                  Meet the Full Team <ArrowRight size={16} />
+                </Button>
+              </Link>
             </div>
           </div>
         </section>

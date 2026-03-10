@@ -62,11 +62,11 @@ const Index = () => {
               <span className="inline-block text-xs font-display font-medium uppercase tracking-widest text-primary mb-6">
                 Digital Media Group
               </span>
-              <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.1]">
+              <h1 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.15]">
                 We don't just run ads.{" "}
                 <span className="text-gradient">We build brands that people actually remember.</span>
               </h1>
-              <p className="mt-6 text-lg md:text-xl text-hero-foreground/60">
+              <p className="mt-5 text-base md:text-lg text-hero-foreground/60">
                 Picture this: you've got an amazing product, but your marketing looks like it was done by your cousin's friend who "knows Canva." Yeah, we fix that. Fashion, education, business — one crew that handles everything so you can stop losing sleep over your Instagram reach. 😮‍💨
               </p>
               <div className="flex flex-wrap gap-4 mt-10">

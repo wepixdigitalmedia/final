@@ -7,6 +7,10 @@ import Index from "./pages/Index";
 import About from "./pages/About";
 import Manifesto from "./pages/Manifesto";
 import Contact from "./pages/Contact";
+import People from "./pages/People";
+import Handbook from "./pages/Handbook";
+import Blogs from "./pages/Blogs";
+import DigitalStore from "./pages/DigitalStore";
 import Fashion from "./pages/fashion/Fashion";
 import Kickstarter from "./pages/fashion/Kickstarter";
 import WePixStudio from "./pages/fashion/WePixStudio";
@@ -33,6 +37,10 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/about" element={<About />} />
+          <Route path="/people" element={<People />} />
+          <Route path="/handbook" element={<Handbook />} />
+          <Route path="/blogs" element={<Blogs />} />
+          <Route path="/digital-store" element={<DigitalStore />} />
           <Route path="/manifesto" element={<Manifesto />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/fashion" element={<Fashion />} />

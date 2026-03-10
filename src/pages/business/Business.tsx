@@ -40,10 +40,10 @@ export default function Business() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div>
                 <span className="gsap-hero-tag inline-block text-sm font-medium text-muted-foreground mb-4 opacity-0 px-3 py-1 rounded-full border border-border bg-muted">WePix Business</span>
-                <h1 className="gsap-hero-title font-display text-4xl md:text-5xl lg:text-6xl font-semibold leading-[1.1] opacity-0">
+                <h1 className="gsap-hero-title font-display text-3xl md:text-4xl lg:text-5xl font-semibold leading-[1.15] opacity-0">
                   B2B growth that your CFO will actually be happy about. 📈
                 </h1>
-                <p className="gsap-hero-desc mt-6 text-lg text-muted-foreground opacity-0">
+                <p className="gsap-hero-desc mt-5 text-base text-muted-foreground opacity-0">
                   Let's be honest — most B2B marketing is boring enough to cure insomnia. Ours isn't. We bring the same energy we put into fashion brands to the B2B world: killer lead gen, ads that don't feel corporate, websites people actually enjoy visiting, and AI agents that do the work of five interns. All measurable. All ROI-positive. All without the buzzword bingo.
                 </p>
                 <div className="flex flex-wrap gap-3 mt-8">
