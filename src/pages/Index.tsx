@@ -52,44 +52,49 @@ const Index = () => {
       <section className="bg-hero text-hero-foreground relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-hero via-hero to-primary/10" />
         <div className="container relative py-24 md:py-36">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7 }}
-            className="max-w-3xl">
-            
-            <span className="inline-block text-xs font-display font-medium uppercase tracking-widest text-primary mb-6">
-              Digital Media Group
-            </span>
-            <h1 className="font-display text-4xl md:text-6xl lg:text-7xl font-bold leading-[1.1]">
-              We don't just run ads.{" "}
-              <span className="text-gradient">We build brands that people actually remember.</span>
-            </h1>
-            <p className="mt-6 text-lg md:text-xl text-hero-foreground/60 max-w-xl">
-              Picture this: you've got an amazing product, but your marketing looks like it was done by your cousin's friend who "knows Canva." Yeah, we fix that. Fashion, education, business — one crew that handles everything so you can stop losing sleep over your Instagram reach. 😮‍💨
-            </p>
-            <div className="flex flex-wrap gap-4 mt-10">
-              <Link to="/fashion">
-                <Button size="lg" className="font-display font-medium text-base gap-2">
-                  Explore WePix <ArrowRight size={18} />
-                </Button>
-              </Link>
-              <a href="https://cal.com" target="_blank" rel="noopener noreferrer">
-                <Button size="lg" className="font-display font-medium text-base bg-primary text-primary-foreground hover:bg-primary/90">
-                  Book a Free Strategy Call
-                </Button>
-              </a>
-            </div>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7 }}>
+              
+              <span className="inline-block text-xs font-display font-medium uppercase tracking-widest text-primary mb-6">
+                Digital Media Group
+              </span>
+              <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.1]">
+                We don't just run ads.{" "}
+                <span className="text-gradient">We build brands that people actually remember.</span>
+              </h1>
+              <p className="mt-6 text-lg md:text-xl text-hero-foreground/60">
+                Picture this: you've got an amazing product, but your marketing looks like it was done by your cousin's friend who "knows Canva." Yeah, we fix that. Fashion, education, business — one crew that handles everything so you can stop losing sleep over your Instagram reach. 😮‍💨
+              </p>
+              <div className="flex flex-wrap gap-4 mt-10">
+                <Link to="/fashion">
+                  <Button size="lg" className="font-display font-medium text-base gap-2">
+                    Explore WePix <ArrowRight size={18} />
+                  </Button>
+                </Link>
+                <a href="https://cal.com" target="_blank" rel="noopener noreferrer">
+                  <Button size="lg" className="font-display font-medium text-base bg-primary text-primary-foreground hover:bg-primary/90">
+                    Book a Free Strategy Call
+                  </Button>
+                </a>
+              </div>
+            </motion.div>
 
-            <div className="mt-12 rounded-xl overflow-hidden border border-border shadow-lg">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.7, delay: 0.3 }}
+              className="rounded-xl overflow-hidden border border-border shadow-lg">
               <img
                 src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/21eDkPqQcXCF2sJcyeMn/media/68a62b3d280b9e3bebb53f6c.gif"
                 alt="WePix VSL"
                 className="w-full h-auto"
                 loading="eager"
               />
-            </div>
-          </motion.div>
+            </motion.div>
+          </div>
         </div>
       </section>
 
