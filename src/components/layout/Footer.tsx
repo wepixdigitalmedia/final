@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Instagram, Youtube, Linkedin } from "lucide-react";
+import { Instagram, Youtube, Linkedin, MapPin } from "lucide-react";
 
 const footerLinks = {
   "Brand Verticals": [
@@ -67,22 +67,24 @@ export function Footer() {
         </div>
 
         <div className="mt-12 pt-8 border-t border-border grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          <div>
-            <p className="text-xs text-muted-foreground uppercase tracking-wider mb-1">Tirupur</p>
-            <p className="text-sm text-muted-foreground">WePix Digital Media, Tirupur, Tamil Nadu, India</p>
-          </div>
-          <div>
-            <p className="text-xs text-muted-foreground uppercase tracking-wider mb-1">Bangalore</p>
-            <p className="text-sm text-muted-foreground">WePix Digital Media, Bangalore, Karnataka, India</p>
-          </div>
-          <div>
-            <p className="text-xs text-muted-foreground uppercase tracking-wider mb-1">Chennai</p>
-            <p className="text-sm text-muted-foreground">WePix Digital Media, Chennai, Tamil Nadu, India</p>
-          </div>
-          <div>
-            <p className="text-xs text-muted-foreground uppercase tracking-wider mb-1">UAE</p>
-            <p className="text-sm text-muted-foreground">WePix Digital Media, Dubai, United Arab Emirates</p>
-          </div>
+          {[
+            { city: "Tirupur", flag: "🇮🇳", address: "WePix Digital Media, Tirupur, Tamil Nadu, India" },
+            { city: "Bangalore", flag: "🇮🇳", address: "WePix Digital Media, Bangalore, Karnataka, India" },
+            { city: "Chennai", flag: "🇮🇳", address: "WePix Digital Media, Chennai, Tamil Nadu, India" },
+            { city: "Dubai", flag: "🇦🇪", address: "WePix Digital Media, Dubai, United Arab Emirates" },
+          ].map((loc) => (
+            <div key={loc.city} className="flex items-start gap-2.5">
+              <div className="shrink-0 w-8 h-8 rounded-lg bg-muted flex items-center justify-center mt-0.5">
+                <MapPin size={14} className="text-muted-foreground" />
+              </div>
+              <div>
+                <p className="text-xs text-muted-foreground uppercase tracking-wider mb-0.5 flex items-center gap-1.5">
+                  {loc.city} <span className="text-sm">{loc.flag}</span>
+                </p>
+                <p className="text-sm text-muted-foreground">{loc.address}</p>
+              </div>
+            </div>
+          ))}
         </div>
 
         <div className="mt-8 pt-8 border-t border-border flex flex-col md:flex-row justify-between items-center gap-4">
