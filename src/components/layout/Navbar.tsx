@@ -120,7 +120,7 @@ export function Navbar() {
       {/* Context subnav */}
       {subLinks && (
         <div className="sticky top-16 z-40 bg-background/80 backdrop-blur-lg border-b border-border">
-          <div ref={subNavRef} className="container flex items-center gap-1 overflow-x-auto py-2">
+          <div ref={subNavRef} className="container flex items-center gap-1 overflow-x-auto py-2 scrollbar-hide">
             {subLinks.map((link) => (
               <Link
                 key={link.href}
