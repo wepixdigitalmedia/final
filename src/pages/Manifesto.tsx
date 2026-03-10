@@ -1,5 +1,10 @@
 import { Layout } from "@/components/layout/Layout";
+import { ImagePlaceholder } from "@/components/shared/ImagePlaceholder";
+import { BookingFormDialog } from "@/components/shared/BookingFormDialog";
+import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import { ArrowRight } from "lucide-react";
 
 const principles = [
   {
