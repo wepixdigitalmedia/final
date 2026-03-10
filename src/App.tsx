@@ -68,6 +68,10 @@ const App = () => (
           <Route path="/business/ai-agents" element={<AIAgents />} />
           <Route path="/business/mentorship" element={<Mentorship />} />
           <Route path="/business/contact" element={<BusinessContact />} />
+          <Route path="/privacy" element={<Privacy />} />
+          <Route path="/terms" element={<Terms />} />
+          <Route path="/cookie" element={<CookiePolicy />} />
+          <Route path="/legal" element={<Legal />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
