@@ -34,89 +34,97 @@ export default function MetaAdsCourse() {
   });
 
   return (
-    <div ref={containerRef} className="min-h-screen bg-background">
-      <WhatsAppButton />
+    <div className="min-h-screen flex flex-col bg-background">
+      <Navbar />
 
-      <section className="gsap-hero-section py-24 md:py-36 border-b border-border">
-        <div className="container max-w-3xl text-center">
-          <span className="gsap-hero-tag inline-block text-sm font-medium text-muted-foreground mb-4 opacity-0 px-3 py-1 rounded-full border border-border bg-muted">WePix Academy</span>
-          <h1 className="gsap-hero-title font-display text-4xl md:text-5xl lg:text-6xl font-semibold opacity-0">Meta Ads Mastery Course 🎓</h1>
-          <p className="gsap-hero-desc mt-6 text-lg text-muted-foreground max-w-xl mx-auto opacity-0">The complete, no-BS playbook on running profitable Meta Ads. Built from years of actually running campaigns (and losing money, so you don't have to).</p>
-          <div className="gsap-hero-cta mt-8 flex flex-col items-center gap-4 opacity-0">
-            <div className="flex items-center gap-1">{[...Array(5)].map((_, i) => <Star key={i} size={18} fill="currentColor" className="text-foreground" />)}</div>
-            <a href="https://cal.com" target="_blank" rel="noopener noreferrer">
-              <Button size="lg" className="rounded-lg font-medium text-base gap-2 px-8">Enroll Now <ArrowRight size={16} /></Button>
-            </a>
-          </div>
-          <div className="mt-10 max-w-2xl mx-auto">
-            <ImagePlaceholder label="Course preview video thumbnail" aspectRatio="video" />
-          </div>
-        </div>
-      </section>
+      <main className="flex-1">
+        <div ref={containerRef}>
+          <WhatsAppButton />
 
-      <section className="py-24">
-        <div className="container max-w-3xl text-center">
-          <h2 className="font-display text-3xl md:text-4xl font-semibold">Tired of wasting money on ads that get zero results? 😤</h2>
-          <p className="mt-6 text-lg text-muted-foreground">You've watched all the YouTube videos. You've tried boosting posts. You've even asked that one friend who 'knows digital marketing.' And your ROAS is still looking sadder than a Monday morning. This course fixes that. For real this time.</p>
-          <div className="mt-10">
-            <ImagePlaceholder label="Ad dashboard before vs after" aspectRatio="wide" />
-          </div>
-        </div>
-      </section>
-
-      <section className="py-24 bg-muted/30">
-        <div className="container max-w-3xl">
-          <h2 className="font-display text-3xl font-semibold text-center mb-10">What You Get (it's a LOT) 🎁</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-            {["8 in-depth modules (no filler, no fluff) 📚", "Lifetime access + continuous updates 🔄", "Private Skool community (500+ marketers) 👥", "Real campaign breakdowns (our actual campaigns) 🔍", "Templates & frameworks (steal our homework) 📋", "Direct instructor access (yes, really) 🎤", "Weekly live Q&A sessions 📺", "7-day money-back guarantee (zero risk) 💸"].map((item) => (
-              <div key={item} className="flex items-start gap-3"><Check className="text-foreground shrink-0 mt-0.5" size={18} /><p>{item}</p></div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="py-24">
-        <div className="container max-w-3xl">
-          <h2 className="font-display text-3xl font-semibold text-center mb-10">The Curriculum 📖</h2>
-          <div className="space-y-3">
-            {curriculum.map((mod) => (
-              <div key={mod.module} className="gsap-mod opacity-0">
-                <Card className="rounded-xl border-border">
-                  <CardContent className="p-5">
-                    <span className="text-xs font-medium text-muted-foreground uppercase tracking-wider">{mod.module}</span>
-                    <h3 className="font-display text-base font-semibold mt-1">{mod.title}</h3>
-                    <p className="text-sm text-muted-foreground mt-2">{mod.topics}</p>
-                  </CardContent>
-                </Card>
+          <section className="gsap-hero-section py-24 md:py-36 border-b border-border">
+            <div className="container max-w-3xl text-center">
+              <span className="gsap-hero-tag inline-block text-sm font-medium text-muted-foreground mb-4 opacity-0 px-3 py-1 rounded-full border border-border bg-muted">WePix Academy</span>
+              <h1 className="gsap-hero-title font-display text-4xl md:text-5xl lg:text-6xl font-semibold opacity-0">Meta Ads Mastery Course 🎓</h1>
+              <p className="gsap-hero-desc mt-6 text-lg text-muted-foreground max-w-xl mx-auto opacity-0">The complete, no-BS playbook on running profitable Meta Ads. Built from years of actually running campaigns (and losing money, so you don't have to).</p>
+              <div className="gsap-hero-cta mt-8 flex flex-col items-center gap-4 opacity-0">
+                <div className="flex items-center gap-1">{[...Array(5)].map((_, i) => <Star key={i} size={18} fill="currentColor" className="text-foreground" />)}</div>
+                <a href="https://cal.com" target="_blank" rel="noopener noreferrer">
+                  <Button size="lg" className="rounded-lg font-medium text-base gap-2 px-8">Enroll Now <ArrowRight size={16} /></Button>
+                </a>
               </div>
-            ))}
-          </div>
-        </div>
-      </section>
+              <div className="mt-10 max-w-2xl mx-auto">
+                <ImagePlaceholder label="Course preview video thumbnail" aspectRatio="video" />
+              </div>
+            </div>
+          </section>
 
-      <section className="py-24 bg-muted/30">
-        <div className="container max-w-3xl">
-          <h2 className="font-display text-3xl font-semibold text-center mb-10">Got Questions? We got answers. 🙋</h2>
-          <Accordion type="single" collapsible>
-            {faqs.map((faq, i) => (
-              <AccordionItem key={i} value={`faq-${i}`}>
-                <AccordionTrigger className="text-left font-display font-medium">{faq.q}</AccordionTrigger>
-                <AccordionContent className="text-muted-foreground">{faq.a}</AccordionContent>
-              </AccordionItem>
-            ))}
-          </Accordion>
-        </div>
-      </section>
+          <section className="py-24">
+            <div className="container max-w-3xl text-center">
+              <h2 className="font-display text-3xl md:text-4xl font-semibold">Tired of wasting money on ads that get zero results? 😤</h2>
+              <p className="mt-6 text-lg text-muted-foreground">You've watched all the YouTube videos. You've tried boosting posts. You've even asked that one friend who 'knows digital marketing.' And your ROAS is still looking sadder than a Monday morning. This course fixes that. For real this time.</p>
+              <div className="mt-10">
+                <ImagePlaceholder label="Ad dashboard before vs after" aspectRatio="wide" />
+              </div>
+            </div>
+          </section>
 
-      <section className="border-t border-border py-24">
-        <div className="container text-center">
-          <h2 className="font-display text-3xl md:text-4xl font-semibold">Stop guessing. Start scaling. Join the club. 🚀</h2>
-          <p className="mt-4 text-muted-foreground text-lg max-w-xl mx-auto">Hundreds of marketers and brand owners have transformed their ad game with this course. Your turn.</p>
-          <a href="https://cal.com" target="_blank" rel="noopener noreferrer">
-            <Button size="lg" className="mt-8 rounded-lg font-medium text-base gap-2 px-8">Enroll Now <ArrowRight size={16} /></Button>
-          </a>
+          <section className="py-24 bg-muted/30">
+            <div className="container max-w-3xl">
+              <h2 className="font-display text-3xl font-semibold text-center mb-10">What You Get (it's a LOT) 🎁</h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                {["8 in-depth modules (no filler, no fluff) 📚", "Lifetime access + continuous updates 🔄", "Private Skool community (500+ marketers) 👥", "Real campaign breakdowns (our actual campaigns) 🔍", "Templates & frameworks (steal our homework) 📋", "Direct instructor access (yes, really) 🎤", "Weekly live Q&A sessions 📺", "7-day money-back guarantee (zero risk) 💸"].map((item) => (
+                  <div key={item} className="flex items-start gap-3"><Check className="text-foreground shrink-0 mt-0.5" size={18} /><p>{item}</p></div>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          <section className="py-24">
+            <div className="container max-w-3xl">
+              <h2 className="font-display text-3xl font-semibold text-center mb-10">The Curriculum 📖</h2>
+              <div className="space-y-3">
+                {curriculum.map((mod) => (
+                  <div key={mod.module} className="gsap-mod opacity-0">
+                    <Card className="rounded-xl border-border">
+                      <CardContent className="p-5">
+                        <span className="text-xs font-medium text-muted-foreground uppercase tracking-wider">{mod.module}</span>
+                        <h3 className="font-display text-base font-semibold mt-1">{mod.title}</h3>
+                        <p className="text-sm text-muted-foreground mt-2">{mod.topics}</p>
+                      </CardContent>
+                    </Card>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          <section className="py-24 bg-muted/30">
+            <div className="container max-w-3xl">
+              <h2 className="font-display text-3xl font-semibold text-center mb-10">Got Questions? We got answers. 🙋</h2>
+              <Accordion type="single" collapsible>
+                {faqs.map((faq, i) => (
+                  <AccordionItem key={i} value={`faq-${i}`}>
+                    <AccordionTrigger className="text-left font-display font-medium">{faq.q}</AccordionTrigger>
+                    <AccordionContent className="text-muted-foreground">{faq.a}</AccordionContent>
+                  </AccordionItem>
+                ))}
+              </Accordion>
+            </div>
+          </section>
+
+          <section className="border-t border-border py-24">
+            <div className="container text-center">
+              <h2 className="font-display text-3xl md:text-4xl font-semibold">Stop guessing. Start scaling. Join the club. 🚀</h2>
+              <p className="mt-4 text-muted-foreground text-lg max-w-xl mx-auto">Hundreds of marketers and brand owners have transformed their ad game with this course. Your turn.</p>
+              <a href="https://cal.com" target="_blank" rel="noopener noreferrer">
+                <Button size="lg" className="mt-8 rounded-lg font-medium text-base gap-2 px-8">Enroll Now <ArrowRight size={16} /></Button>
+              </a>
+            </div>
+          </section>
         </div>
-      </section>
+      </main>
+
+      <Footer />
     </div>
   );
 }
