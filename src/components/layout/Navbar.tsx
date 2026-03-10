@@ -4,6 +4,7 @@ import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { AnimatedLogo } from "@/components/shared/AnimatedLogo";
+import { BookingFormDialog } from "@/components/shared/BookingFormDialog";
 
 const mainLinks = [
   { label: "Home", href: "/" },
