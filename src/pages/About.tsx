@@ -67,6 +67,13 @@ export default function About() {
               <ImagePlaceholder label="Team meeting" aspectRatio="square" />
               <ImagePlaceholder label="Behind the scenes" aspectRatio="square" />
             </div>
+            <div className="mt-6 text-center">
+              <Link to="/people">
+                <Button variant="outline" className="font-display font-medium gap-2">
+                  Meet the Full Team <ArrowRight size={16} />
+                </Button>
+              </Link>
+            </div>
           </div>
         </section>
 
