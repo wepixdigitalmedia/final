@@ -95,7 +95,7 @@ export default function ShopifyService() {
                 Build your premium Shopify store for Fashion & D2C
               </h1>
               <p className="gsap-hero-desc mt-4 text-base text-muted-foreground max-w-2xl opacity-0">
-                We're not just another Shopify agency. We're an official Shopify Partner that specializes in fashion and D2C brands — building stores that look premium, load fast, and convert like crazy. From Tirupur startups to pan-India fashion labels, we've built stores that collectively do crores in revenue.
+                Beautiful D2C Shopify stores AND high-end model content generated from your raw iPhone shots using <a href="https://wepixstudio.app" target="_blank" rel="noopener noreferrer" className="font-medium text-foreground underline underline-offset-2 hover:text-primary transition-colors">WePixStudio.App</a> — our proprietary AI tool. From store design to product photography, we handle the full visual stack so your brand looks premium from day one.
               </p>
               <div className="gsap-hero-cta mt-8 flex gap-4 opacity-0">
                 <a href={CTA_URL} target="_blank" rel="noopener noreferrer">
