@@ -46,6 +46,9 @@ export default function MetaAdsCourse() {
               <Button size="lg" className="rounded-lg font-medium text-base gap-2 px-8">Enroll Now <ArrowRight size={16} /></Button>
             </a>
           </div>
+          <div className="mt-10 max-w-2xl mx-auto">
+            <ImagePlaceholder label="Course preview video thumbnail" aspectRatio="video" />
+          </div>
         </div>
       </section>
 
