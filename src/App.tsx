@@ -29,6 +29,10 @@ import AIAgents from "./pages/business/AIAgents";
 import Mentorship from "./pages/business/Mentorship";
 import BusinessContact from "./pages/business/BusinessContact";
 import NotFound from "./pages/NotFound";
+import Privacy from "./pages/Privacy";
+import Terms from "./pages/Terms";
+import CookiePolicy from "./pages/CookiePolicy";
+import Legal from "./pages/Legal";
 
 const queryClient = new QueryClient();
 
