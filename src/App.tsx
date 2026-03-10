@@ -14,6 +14,7 @@ import DigitalStore from "./pages/DigitalStore";
 import Fashion from "./pages/fashion/Fashion";
 import Kickstarter from "./pages/fashion/Kickstarter";
 import WePixStudio from "./pages/fashion/WePixStudio";
+import ShopifyService from "./pages/fashion/ShopifyService";
 import CaseStudies from "./pages/fashion/CaseStudies";
 import BookACall from "./pages/fashion/BookACall";
 import Academy from "./pages/academy/Academy";
