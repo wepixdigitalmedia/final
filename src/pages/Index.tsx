@@ -8,6 +8,7 @@ import { ImagePlaceholder } from "@/components/shared/ImagePlaceholder";
 import { ArrowRight, Sparkles, GraduationCap, Briefcase, ShoppingBag } from "lucide-react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import { useTypewriter } from "@/hooks/useTypewriter";
 
 const brandCards = [
   {
