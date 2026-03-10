@@ -8,13 +8,13 @@ import { Link } from "react-router-dom";
 import { useGSAP, heroReveal, scrollFadeIn, gsap } from "@/hooks/useGSAP";
 
 const services = [
-  { icon: Target, title: "Organic Lead Gen", description: "LinkedIn, email, and content-driven lead generation." },
-  { icon: BarChart3, title: "Meta Ads (B2B)", description: "Lead gen campaigns tailored for B2B funnels." },
-  { icon: Globe, title: "Google Ads", description: "Search, display, and YouTube campaigns." },
-  { icon: Zap, title: "Enterprise Ads", description: "Large-scale campaigns for complex funnels." },
-  { icon: Monitor, title: "Websites", description: "High-converting websites and landing pages." },
-  { icon: Bot, title: "AI Agents", description: "Custom AI agents for support and automation." },
-  { icon: Video, title: "Video Production", description: "Corporate videos, explainers, and social content." },
+  { icon: Target, title: "Organic Lead Gen", description: "LinkedIn outreach, email campaigns, and content that makes decision-makers actually respond to your DMs. No spammy vibes. 🎯" },
+  { icon: BarChart3, title: "Meta Ads (B2B)", description: "Yes, Meta Ads work for B2B. We've cracked the code on lead gen campaigns that fill your pipeline. Your sales team will love us. 📊" },
+  { icon: Globe, title: "Google Ads", description: "Search, display, YouTube — we put you exactly where your customers are looking. It's basically being everywhere at once, but on a budget. 🌍" },
+  { icon: Zap, title: "Enterprise Ads", description: "Large-scale campaigns for complex funnels. The kind of stuff that makes spreadsheet lovers weep with joy. ⚡" },
+  { icon: Monitor, title: "Websites", description: "Websites that don't just look pretty but actually convert visitors into customers. Revolutionary concept, we know. 🖥️" },
+  { icon: Bot, title: "AI Agents", description: "Custom AI agents that handle customer support, qualify leads, and work 24/7 without asking for a raise. Your new favorite employees. 🤖" },
+  { icon: Video, title: "Video Production", description: "Corporate videos that people actually watch instead of alt-tabbing. Explainers, testimonials, social content — all of it. 🎬" },
 ];
 
 export default function Business() {
@@ -39,11 +39,11 @@ export default function Business() {
         <section className="gsap-hero-section py-24 md:py-36">
           <div className="container max-w-3xl">
             <span className="gsap-hero-tag inline-block text-sm font-medium text-muted-foreground mb-4 opacity-0 px-3 py-1 rounded-full border border-border bg-muted">WePix Business</span>
-            <h1 className="gsap-hero-title font-display text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.1] opacity-0">
-              B2B growth that's actually measurable.
+            <h1 className="gsap-hero-title font-display text-4xl md:text-5xl lg:text-6xl font-semibold leading-[1.1] opacity-0">
+              B2B growth that your CFO will actually be happy about. 📈
             </h1>
             <p className="gsap-hero-desc mt-6 text-lg text-muted-foreground opacity-0">
-              Lead gen, ads, websites, AI agents, and video — everything your B2B company needs to grow.
+              Let's be honest — most B2B marketing is boring enough to cure insomnia. Ours isn't. We bring the same energy we put into fashion brands to the B2B world: killer lead gen, ads that don't feel corporate, websites people actually enjoy visiting, and AI agents that do the work of five interns. All measurable. All ROI-positive. All without the buzzword bingo.
             </p>
             <div className="flex flex-wrap gap-3 mt-8">
               <Link to="/business/contact" className="gsap-hero-cta opacity-0">
@@ -58,14 +58,14 @@ export default function Business() {
 
         <section className="py-24 border-t border-border">
           <div className="container">
-            <SectionHeading tag="Services" title="7 ways we help B2B companies grow" />
+            <SectionHeading tag="Services" title="7 ways we help B2B companies stop being boring" />
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-5xl mx-auto">
               {services.map((s) => (
                 <div key={s.title} className="gsap-service-card opacity-0">
                   <Card className="h-full rounded-xl border-border">
                     <CardContent className="p-6">
                       <s.icon className="text-foreground mb-3" size={22} />
-                      <h3 className="font-display text-base font-bold">{s.title}</h3>
+                      <h3 className="font-display text-base font-semibold">{s.title}</h3>
                       <p className="text-sm text-muted-foreground mt-2">{s.description}</p>
                     </CardContent>
                   </Card>
@@ -77,7 +77,7 @@ export default function Business() {
 
         <section className="py-24 bg-muted/30">
           <div className="container max-w-3xl text-center gsap-spotlight opacity-0">
-            <SectionHeading tag="Spotlight" title="AI Agents: The future of business ops" description="Custom-built AI agents that handle support, qualify leads, and automate workflows." />
+            <SectionHeading tag="Spotlight" title="AI Agents: Your team's new best friend 🤖" description="Imagine having employees who never sleep, never complain, and qualify leads at 3 AM. That's what our custom-built AI agents do. Support, lead qualification, workflow automation — all trained on YOUR data." />
             <Link to="/business/ai-agents">
               <Button size="lg" className="rounded-lg font-medium gap-2">Learn About AI Agents <ArrowRight size={16} /></Button>
             </Link>
@@ -86,7 +86,7 @@ export default function Business() {
 
         <section className="py-24">
           <div className="container max-w-3xl text-center gsap-mentorship opacity-0">
-            <SectionHeading tag="Premium" title="1:1 Business Mentorship" description="Strategy, accountability, and execution support." />
+            <SectionHeading tag="Premium" title="1:1 Business Mentorship 🎓" description="For founders who are done with guesswork. Strategy sessions, accountability, and execution support from people who've actually built stuff." />
             <Link to="/business/mentorship">
               <Button variant="outline" className="rounded-lg font-medium gap-2">Learn More <ArrowRight size={14} /></Button>
             </Link>
@@ -94,7 +94,7 @@ export default function Business() {
         </section>
       </div>
 
-      <CTABanner headline="Ready to grow your B2B business?" subtext="Let's have a conversation about your goals." ctaLabel="Contact Business Team" ctaHref="https://cal.com" />
+      <CTABanner headline="Ready to make B2B exciting? 🚀" subtext="Let's have a real conversation about your goals. No jargon, no 'synergy' — just results." ctaLabel="Contact Business Team" ctaHref="https://cal.com" />
     </Layout>
   );
 }

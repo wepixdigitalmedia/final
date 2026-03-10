@@ -8,17 +8,17 @@ import { Link } from "react-router-dom";
 import { useGSAP, heroReveal, scrollFadeIn, gsap } from "@/hooks/useGSAP";
 
 const offerings = [
-  { icon: GraduationCap, title: "Meta Ads Mastery Course", description: "The complete course on running profitable Meta Ads.", href: "/academy/meta-ads-course" },
-  { icon: Video, title: "Live Webinars", description: "Weekly live sessions on ads, content, and growth.", href: "/academy/webinar" },
-  { icon: Users, title: "Skool Community", description: "Join 500+ marketers and brand owners.", href: "/academy/community" },
+  { icon: GraduationCap, title: "Meta Ads Mastery Course", description: "The complete, no-BS course on running profitable Meta Ads. Built from thousands of hours of actually running campaigns, not reading about them. 🎓", href: "/academy/meta-ads-course" },
+  { icon: Video, title: "Live Webinars", description: "Weekly live sessions where we break down real campaigns, share what's working RIGHT NOW, and answer your burning questions. Free to attend, packed with value. 📺", href: "/academy/webinar" },
+  { icon: Users, title: "Skool Community", description: "500+ marketers and brand owners sharing wins, losses, and everything in between. It's like a group chat, but actually useful. 👥", href: "/academy/community" },
 ];
 
 const whoItsFor = [
-  "D2C brand founders who want to run their own ads",
-  "Marketing managers who need to level up their Meta Ads game",
-  "Freelancers who want to offer ad services to clients",
-  "Agency owners building or scaling their ad teams",
-  "Anyone tired of generic marketing courses that don't work",
+  "D2C brand founders who are tired of agencies eating their budget and want to run their own ads (smart move btw) 💡",
+  "Marketing managers who need to level up their Meta Ads game before their boss notices they've been boosting posts 😅",
+  "Freelancers who want to offer ad services to clients and actually deliver results (rare breed) 🦄",
+  "Agency owners building or scaling their ad teams who need a proven framework (not another YouTube hack) 🏗️",
+  "Anyone who's ever looked at their ad dashboard and thought 'what do these numbers even mean?' 🤷",
 ];
 
 export default function Academy() {
@@ -42,11 +42,11 @@ export default function Academy() {
         <section className="gsap-hero-section py-24 md:py-36">
           <div className="container max-w-3xl">
             <span className="gsap-hero-tag inline-block text-sm font-medium text-muted-foreground mb-4 opacity-0 px-3 py-1 rounded-full border border-border bg-muted">WePix Academy</span>
-            <h1 className="gsap-hero-title font-display text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.1] opacity-0">
-              Learn from people who actually run the ads.
+            <h1 className="gsap-hero-title font-display text-4xl md:text-5xl lg:text-6xl font-semibold leading-[1.1] opacity-0">
+              Learn from people who actually run the ads. Not from people who make courses about running ads. 🎯
             </h1>
             <p className="gsap-hero-desc mt-6 text-lg text-muted-foreground opacity-0">
-              No theory. No fluff. Learn Meta Ads and digital marketing from practitioners who manage crores in ad spend.
+              Here's the tea: most marketing courses are taught by people whose main income IS the course. Ours is different. We manage crores in ad spend every month. We run campaigns for real brands. And then we teach you exactly what we learned — mistakes, wins, and all the stuff nobody talks about on YouTube.
             </p>
             <div className="flex flex-wrap gap-3 mt-8">
               <Link to="/academy/meta-ads-course" className="gsap-hero-cta opacity-0">
@@ -61,7 +61,7 @@ export default function Academy() {
 
         <section className="py-24 border-t border-border">
           <div className="container">
-            <SectionHeading tag="What We Offer" title="Three ways to learn" />
+            <SectionHeading tag="What We Offer" title="Three ways to level up your game" />
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-5xl mx-auto">
               {offerings.map((o) => (
                 <div key={o.title} className="gsap-offering-card opacity-0">
@@ -69,7 +69,7 @@ export default function Academy() {
                     <Card className="h-full hover:shadow-md transition-all rounded-xl border-border group">
                       <CardContent className="p-6">
                         <o.icon className="text-foreground mb-4" size={24} />
-                        <h3 className="font-display text-lg font-bold mb-2">{o.title}</h3>
+                        <h3 className="font-display text-lg font-semibold mb-2">{o.title}</h3>
                         <p className="text-sm text-muted-foreground">{o.description}</p>
                         <div className="mt-4 flex items-center text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity">Learn more <ArrowRight size={14} className="ml-1" /></div>
                       </CardContent>
@@ -83,7 +83,7 @@ export default function Academy() {
 
         <section className="py-24 bg-muted/30">
           <div className="container max-w-3xl gsap-checklist">
-            <SectionHeading tag="Is this for you?" title="Who WePix Academy is for" align="left" />
+            <SectionHeading tag="Is this for you?" title="If any of these sound like you, you're in the right place" align="left" />
             <div className="space-y-3">
               {whoItsFor.map((item) => (
                 <div key={item} className="gsap-check-item flex items-start gap-3 opacity-0">
@@ -96,7 +96,7 @@ export default function Academy() {
         </section>
       </div>
 
-      <CTABanner headline="Ready to learn from the best?" subtext="Start with our Meta Ads course or join a free webinar." ctaLabel="Get Started" ctaHref="https://cal.com" />
+      <CTABanner headline="Ready to stop guessing and start scaling? 🚀" subtext="Start with our Meta Ads course or hop into a free webinar. Either way, your ads are about to get way better." ctaLabel="Get Started" ctaHref="https://cal.com" />
     </Layout>
   );
 }

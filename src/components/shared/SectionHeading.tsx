@@ -36,7 +36,7 @@ export function SectionHeading({ tag, title, description, className, align = "ce
           {tag}
         </span>
       )}
-      <h2 className="font-display text-3xl md:text-4xl font-bold tracking-tight opacity-0">{title}</h2>
+      <h2 className="font-display text-3xl md:text-4xl font-semibold opacity-0">{title}</h2>
       {description && (
         <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto opacity-0">{description}</p>
       )}

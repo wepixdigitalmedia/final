@@ -18,8 +18,8 @@ export default function Contact() {
         <section className="gsap-hero-section py-24 md:py-32">
           <div className="container max-w-3xl">
             <span className="gsap-hero-tag inline-block text-sm font-medium text-muted-foreground mb-4 opacity-0 px-3 py-1 rounded-full border border-border bg-muted">Contact</span>
-            <h1 className="gsap-hero-title font-display text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight opacity-0">Let's talk.</h1>
-            <p className="gsap-hero-desc mt-4 text-lg text-muted-foreground opacity-0">Book a free strategy call or drop us a message.</p>
+            <h1 className="gsap-hero-title font-display text-4xl md:text-5xl lg:text-6xl font-semibold opacity-0">Let's talk. We promise we're friendly. 😊</h1>
+            <p className="gsap-hero-desc mt-4 text-lg text-muted-foreground opacity-0">Book a free strategy call (30 mins, no pitch decks, no awkward silences) or just drop us a message. We reply faster than most people reply to their family WhatsApp groups.</p>
           </div>
         </section>
 
@@ -27,8 +27,8 @@ export default function Contact() {
           <div className="container">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-5xl mx-auto">
               <div>
-                <h2 className="font-display text-2xl font-bold mb-4">Book a Strategy Call</h2>
-                <p className="text-muted-foreground mb-6">30 minutes. No obligations. We'll talk about your brand.</p>
+                <h2 className="font-display text-2xl font-semibold mb-4">Book a Strategy Call ☕</h2>
+                <p className="text-muted-foreground mb-6">30 minutes. No obligations. No sales pitch. Just a genuine conversation about your brand, your goals, and whether we're the right fit. Think of it as a first date, but for marketing.</p>
                 <a href="https://cal.com" target="_blank" rel="noopener noreferrer">
                   <Button size="lg" className="rounded-lg font-medium w-full">Schedule on Cal.com →</Button>
                 </a>
@@ -37,20 +37,20 @@ export default function Contact() {
                   <div className="flex items-center gap-3 text-sm text-muted-foreground"><Mail size={16} /> hello@wepix.in</div>
                   <div className="flex items-start gap-3 text-sm text-muted-foreground">
                     <MapPin size={16} className="shrink-0 mt-0.5" />
-                    <div><p>Tirupur, Tamil Nadu (HQ)</p><p>Bangalore, Karnataka</p></div>
+                    <div><p>Tirupur, Tamil Nadu (HQ — the OG)</p><p>Bangalore, Karnataka (the fancy one)</p></div>
                   </div>
                 </div>
               </div>
               <Card className="rounded-xl border-border">
                 <CardContent className="p-6">
-                  <h2 className="font-display text-2xl font-bold mb-4">Drop a Message</h2>
+                  <h2 className="font-display text-2xl font-semibold mb-4">Drop a Message 💬</h2>
                   <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
-                    <div><Label htmlFor="name">Name</Label><Input id="name" placeholder="Your name" className="mt-1 rounded-lg" /></div>
-                    <div><Label htmlFor="email">Email</Label><Input id="email" type="email" placeholder="you@brand.com" className="mt-1 rounded-lg" /></div>
-                    <div><Label htmlFor="brand">Brand / Company</Label><Input id="brand" placeholder="Your brand name" className="mt-1 rounded-lg" /></div>
-                    <div><Label htmlFor="message">Message</Label><Textarea id="message" placeholder="Tell us about your brand..." rows={4} className="mt-1 rounded-lg" /></div>
+                    <div><Label htmlFor="name">Name</Label><Input id="name" placeholder="What should we call you?" className="mt-1 rounded-lg" /></div>
+                    <div><Label htmlFor="email">Email</Label><Input id="email" type="email" placeholder="you@yourbrand.com" className="mt-1 rounded-lg" /></div>
+                    <div><Label htmlFor="brand">Brand / Company</Label><Input id="brand" placeholder="Your brand's name" className="mt-1 rounded-lg" /></div>
+                    <div><Label htmlFor="message">Message</Label><Textarea id="message" placeholder="Tell us about your brand and what you're looking for. The more detail, the better our first conversation will be!" rows={4} className="mt-1 rounded-lg" /></div>
                     <Button type="submit" className="w-full rounded-lg font-medium">Send Message</Button>
-                    <p className="text-xs text-muted-foreground text-center">This form is for display only. Please use the booking link or WhatsApp.</p>
+                    <p className="text-xs text-muted-foreground text-center">This form is for display only. Please use the booking link or WhatsApp — we're way faster there! 🏃</p>
                   </form>
                 </CardContent>
               </Card>

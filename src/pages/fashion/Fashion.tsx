@@ -8,16 +8,16 @@ import { Link } from "react-router-dom";
 import { useGSAP, heroReveal, scrollFadeIn, gsap } from "@/hooks/useGSAP";
 
 const services = [
-  { icon: Rocket, title: "Kickstarter Program", description: "60-day launch program for new D2C fashion brands.", href: "/fashion/kickstarter" },
-  { icon: Camera, title: "WePixStudio", description: "AI-powered content creation at scale.", href: "/fashion/wepixstudio" },
-  { icon: BarChart3, title: "Meta Ads Management", description: "Full-funnel ad management built on our MCS Framework.", href: "/fashion/book" },
+  { icon: Rocket, title: "Kickstarter Program", description: "60 days. Zero to selling. We build your store, shoot your products, run your ads, and hold your hand through the whole thing. It's like a bootcamp, but for your brand. 🚀", href: "/fashion/kickstarter" },
+  { icon: Camera, title: "WePixStudio", description: "AI-powered content creation that makes your ₹500 product look like it belongs in Vogue. Seriously, your competitors will be confused. 📸", href: "/fashion/wepixstudio" },
+  { icon: BarChart3, title: "Meta Ads Management", description: "Full-funnel ad management powered by our MCS Framework. We don't just run ads — we build a system that prints money (legally). 💰", href: "/fashion/book" },
 ];
 
 const mcsSteps = [
-  { step: "M", title: "Media", description: "Platform strategy, audience targeting, budget allocation." },
-  { step: "C", title: "Creative", description: "Scroll-stopping ad creatives, UGC, product shoots." },
-  { step: "S", title: "Strategy", description: "Full-funnel approach: awareness → conversion → retention." },
-  { step: "4", title: "Iterate", description: "Weekly data reviews and continuous optimization." },
+  { step: "M", title: "Media", description: "Where to show up, who to target, and how much to spend without crying. Platform strategy that actually makes sense." },
+  { step: "C", title: "Creative", description: "The stuff that makes people stop scrolling. UGC, product shoots, carousel ads — content so good people screenshot it." },
+  { step: "S", title: "Strategy", description: "Full-funnel thinking: from 'who are you?' to 'take my money!' — awareness, consideration, conversion, retention." },
+  { step: "4", title: "Iterate", description: "Weekly data reviews because ads aren't a 'set it and forget it' crockpot. We optimize obsessively." },
 ];
 
 export default function Fashion() {
@@ -46,11 +46,11 @@ export default function Fashion() {
         <section className="gsap-hero-section py-24 md:py-36">
           <div className="container max-w-3xl">
             <span className="gsap-hero-tag inline-block text-sm font-medium text-muted-foreground mb-4 opacity-0 px-3 py-1 rounded-full border border-border bg-muted">WePix Fashion</span>
-            <h1 className="gsap-hero-title font-display text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.1] opacity-0">
-              Your product is fire. Your marketing shouldn't be mid.
+            <h1 className="gsap-hero-title font-display text-4xl md:text-5xl lg:text-6xl font-semibold leading-[1.1] opacity-0">
+              Your product is fire. Your marketing? Let's talk about that. 🔥
             </h1>
             <p className="gsap-hero-desc mt-6 text-lg text-muted-foreground opacity-0">
-              We help D2C fashion brands build real presence, create scroll-stopping content, and run ads that actually convert.
+              Here's the thing — you've spent months perfecting your designs, sourcing the best fabric, getting the stitching just right. And then your marketing is... a Canva template with Comic Sans vibes? Nah fam. We help D2C fashion brands create content that stops thumbs, run ads that convert wallets, and build a brand that people actually want to wear.
             </p>
             <div className="flex flex-wrap gap-3 mt-8">
               <Link to="/fashion/kickstarter" className="gsap-hero-cta opacity-0">
@@ -65,14 +65,14 @@ export default function Fashion() {
 
         <section className="py-24 border-t border-border">
           <div className="container max-w-3xl text-center gsap-problem opacity-0">
-            <h2 className="font-display text-3xl md:text-4xl font-bold">You've got a great product. So why aren't you selling?</h2>
-            <p className="mt-6 text-lg text-muted-foreground">Because having a great product isn't enough anymore. You need content, ads, a store, and strategy. That's where we come in.</p>
+            <h2 className="font-display text-3xl md:text-4xl font-semibold">You've got a killer product. So why isn't anyone buying? 🤔</h2>
+            <p className="mt-6 text-lg text-muted-foreground">Because in 2024, having great products isn't enough. You need scroll-stopping content, ads that don't look like ads, a store that converts, and a strategy that doesn't involve praying to the algorithm gods. That's literally what we do — and we're embarrassingly good at it.</p>
           </div>
         </section>
 
         <section className="py-24 bg-muted/30">
           <div className="container">
-            <SectionHeading tag="Services" title="Everything your fashion brand needs" />
+            <SectionHeading tag="Services" title="Everything your fashion brand needs (and then some)" />
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-5xl mx-auto">
               {services.map((s) => (
                 <div key={s.title} className="gsap-service-card opacity-0">
@@ -80,7 +80,7 @@ export default function Fashion() {
                     <Card className="h-full hover:shadow-md transition-all rounded-xl border-border group">
                       <CardContent className="p-6">
                         <s.icon className="text-foreground mb-4" size={24} />
-                        <h3 className="font-display text-lg font-bold mb-2">{s.title}</h3>
+                        <h3 className="font-display text-lg font-semibold mb-2">{s.title}</h3>
                         <p className="text-sm text-muted-foreground">{s.description}</p>
                         <div className="mt-4 flex items-center text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity">Learn more <ArrowRight size={14} className="ml-1" /></div>
                       </CardContent>
@@ -94,14 +94,14 @@ export default function Fashion() {
 
         <section className="gsap-mcs-section py-24">
           <div className="container">
-            <SectionHeading tag="Our Framework" title="The MCS Framework" description="Media, Creative, Strategy — and constant iteration." />
+            <SectionHeading tag="Our Secret Sauce" title="The MCS Framework 🧪" description="Media, Creative, Strategy — and never-ending iteration. This is the system behind every successful campaign we've ever run." />
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 max-w-4xl mx-auto">
               {mcsSteps.map((step) => (
                 <div key={step.step} className="gsap-mcs-step text-center opacity-0">
                   <div className="w-14 h-14 rounded-xl bg-muted flex items-center justify-center mx-auto mb-4">
-                    <span className="font-display text-xl font-bold">{step.step}</span>
+                    <span className="font-display text-xl font-semibold">{step.step}</span>
                   </div>
-                  <h3 className="font-display text-base font-bold">{step.title}</h3>
+                  <h3 className="font-display text-base font-semibold">{step.title}</h3>
                   <p className="text-sm text-muted-foreground mt-2">{step.description}</p>
                 </div>
               ))}
@@ -110,7 +110,7 @@ export default function Fashion() {
         </section>
       </div>
 
-      <CTABanner headline="Ready to make your fashion brand unforgettable?" subtext="Book a free strategy call." ctaLabel="Book a Free Call" ctaHref="https://cal.com" />
+      <CTABanner headline="Ready to make your fashion brand unforgettable? 👗" subtext="Book a free strategy call. We'll roast your current marketing (lovingly) and show you what's possible." ctaLabel="Book a Free Call" ctaHref="https://cal.com" />
     </Layout>
   );
 }

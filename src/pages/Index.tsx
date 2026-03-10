@@ -9,41 +9,41 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 
 const brandCards = [
-{
-  icon: ShoppingBag,
-  title: "Fashion",
-  description: "D2C fashion brands. Content, ads, and growth — end to end.",
-  href: "/fashion",
-  color: "from-primary/20 to-primary/5"
-},
-{
-  icon: GraduationCap,
-  title: "Academy",
-  description: "Learn Meta Ads, content strategy, and digital marketing from practitioners.",
-  href: "/academy",
-  color: "from-blue-500/20 to-blue-500/5"
-},
-{
-  icon: Briefcase,
-  title: "Business",
-  description: "B2B growth, AI agents, lead gen, and enterprise-grade marketing.",
-  href: "/business",
-  color: "from-purple-500/20 to-purple-500/5"
-},
-{
-  icon: Sparkles,
-  title: "Sourcing",
-  description: "Tirupur-based garment sourcing for global brands.",
-  href: "/contact",
-  color: "from-orange-500/20 to-orange-500/5"
-}];
-
+  {
+    icon: ShoppingBag,
+    title: "Fashion",
+    description: "Your clothes deserve better than a boring Instagram grid. We do content, ads, and growth — the whole shebang. 🔥",
+    href: "/fashion",
+    color: "from-primary/20 to-primary/5"
+  },
+  {
+    icon: GraduationCap,
+    title: "Academy",
+    description: "Learn Meta Ads from people who've actually burned their own money figuring it out. No cap, just real playbooks. 📚",
+    href: "/academy",
+    color: "from-blue-500/20 to-blue-500/5"
+  },
+  {
+    icon: Briefcase,
+    title: "Business",
+    description: "B2B doesn't have to be boring. AI agents, lead gen, and marketing that makes your competitors nervous. 💼",
+    href: "/business",
+    color: "from-purple-500/20 to-purple-500/5"
+  },
+  {
+    icon: Sparkles,
+    title: "Sourcing",
+    description: "Straight from Tirupur — the garment capital. Quality fabrics, honest pricing, no middleman drama. 🧵",
+    href: "/contact",
+    color: "from-orange-500/20 to-orange-500/5"
+  }
+];
 
 const caseStudies = [
-{ brand: "Taasza", stat: "3x ROAS in 60 days", description: "Scaled a Tirupur-based ethnic wear brand from ₹0 to ₹5L/month revenue." },
-{ brand: "BoonBabies", stat: "₹10L+ monthly revenue", description: "Built and launched a kids' fashion brand from scratch — content, store, and ads." },
-{ brand: "Nutmeg", stat: "2.5x revenue growth", description: "Repositioned a premium menswear brand and doubled their online presence." }];
-
+  { brand: "Taasza", stat: "3x ROAS in 60 days", description: "They came to us with zero online presence and a prayer. We gave them a Shopify store, fire content, and Meta Ads that actually slapped. Two months later? ₹5L/month rolling in. 📈" },
+  { brand: "BoonBabies", stat: "₹10L+ monthly revenue", description: "A kids' fashion brand with adorable products but zero marketing game. We built everything from scratch — branding, content, store, ads. Now their DMs are busier than a Mumbai local train. 🚂" },
+  { brand: "Nutmeg", stat: "2.5x revenue growth", description: "Premium menswear brand that was criminally underperforming online. We repositioned them, created chef's-kiss content, and doubled their digital presence. The founder literally sent us biryani. 🍛" }
+];
 
 const Index = () => {
   return (
@@ -58,24 +58,24 @@ const Index = () => {
             transition={{ duration: 0.7 }}
             className="max-w-3xl">
             
-            <span className="inline-block text-xs font-display font-semibold uppercase tracking-widest text-primary mb-6">
+            <span className="inline-block text-xs font-display font-medium uppercase tracking-widest text-primary mb-6">
               Digital Media Group
             </span>
-            <h1 className="font-display text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.1]">
+            <h1 className="font-display text-4xl md:text-6xl lg:text-7xl font-bold leading-[1.1]">
               We don't just run ads.{" "}
-              <span className="text-gradient">We build brands.</span>
+              <span className="text-gradient">We build brands that people actually remember.</span>
             </h1>
             <p className="mt-6 text-lg md:text-xl text-hero-foreground/60 max-w-xl">
-              Fashion. Education. Business. One crew that does content, ads, stores, and strategy — so you don't have to juggle five agencies.
+              Picture this: you've got an amazing product, but your marketing looks like it was done by your cousin's friend who "knows Canva." Yeah, we fix that. Fashion, education, business — one crew that handles everything so you can stop losing sleep over your Instagram reach. 😮‍💨
             </p>
-            <div className="flex flex-wrap gap-4 mt-10 font-bold">
+            <div className="flex flex-wrap gap-4 mt-10">
               <Link to="/fashion">
-                <Button size="lg" className="font-display font-semibold text-base gap-2">
+                <Button size="lg" className="font-display font-medium text-base gap-2">
                   Explore WePix <ArrowRight size={18} />
                 </Button>
               </Link>
               <a href="https://cal.com" target="_blank" rel="noopener noreferrer">
-                <Button size="lg" className="font-display font-semibold text-base bg-primary text-primary-foreground hover:bg-primary/90">
+                <Button size="lg" className="font-display font-medium text-base bg-primary text-primary-foreground hover:bg-primary/90">
                   Book a Free Strategy Call
                 </Button>
               </a>
@@ -87,10 +87,10 @@ const Index = () => {
       {/* Numbers Bar */}
       <section className="py-16 border-b border-border">
         <div className="container grid grid-cols-2 md:grid-cols-4 gap-8">
-          <AnimatedCounter end={50} suffix="+" label="Brands Served" />
-          <AnimatedCounter end={2} suffix="Cr+" prefix="₹" label="Ad Spend Managed" />
-          <AnimatedCounter end={10} suffix="K+" label="Creatives Made" />
-          <AnimatedCounter end={3} suffix="x" label="Avg. ROAS" />
+          <AnimatedCounter end={50} suffix="+" label="Brands Who Trust Us" />
+          <AnimatedCounter end={2} suffix="Cr+" prefix="₹" label="Ad Spend We've Managed" />
+          <AnimatedCounter end={10} suffix="K+" label="Creatives Crafted" />
+          <AnimatedCounter end={3} suffix="x" label="Avg. ROAS (yeah, really)" />
         </div>
       </section>
 
@@ -99,25 +99,24 @@ const Index = () => {
         <div className="container">
           <SectionHeading
             tag="What We Do"
-            title="Four verticals. One vision."
-            description="We're not a one-trick agency. WePix operates across fashion, education, business, and sourcing — each with dedicated teams and strategies." />
+            title="Four verticals. One obsession."
+            description="We're not your average agency that slaps a logo on everything and calls it a day. WePix runs four distinct verticals — each with its own team, strategy, and unhealthy amount of passion. Think of us as the Avengers of marketing, minus the capes (okay, sometimes capes)." />
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {brandCards.map((card, i) =>
-            <motion.div
-              key={card.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1, duration: 0.5 }}>
-              
+              <motion.div
+                key={card.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1, duration: 0.5 }}>
                 <Link to={card.href}>
                   <Card className="group h-full hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border-border/50">
                     <CardContent className="p-6">
                       <div className={`w-12 h-12 rounded-lg bg-gradient-to-br ${card.color} flex items-center justify-center mb-4`}>
                         <card.icon className="text-foreground" size={24} />
                       </div>
-                      <h3 className="font-display text-xl font-bold mb-2">{card.title}</h3>
+                      <h3 className="font-display text-xl font-semibold mb-2">{card.title}</h3>
                       <p className="text-sm text-muted-foreground">{card.description}</p>
                       <div className="mt-4 flex items-center text-sm font-medium text-primary opacity-0 group-hover:opacity-100 transition-opacity">
                         Explore <ArrowRight size={14} className="ml-1" />
@@ -136,22 +135,21 @@ const Index = () => {
         <div className="container">
           <SectionHeading
             tag="Results"
-            title="Real brands. Real numbers."
-            description="We don't do vanity metrics. Here's what happened when brands trusted us with their growth." />
+            title="Real brands. Real money. Real stories."
+            description="We don't do vanity metrics. Nobody cares about your 'reach' when you can't pay rent. Here's what happened when brands stopped settling for mid agencies and trusted us with their growth." />
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {caseStudies.map((study, i) =>
-            <motion.div
-              key={study.brand}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1, duration: 0.5 }}>
-              
+              <motion.div
+                key={study.brand}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1, duration: 0.5 }}>
                 <Card className="h-full border-border/50">
                   <CardContent className="p-6">
-                    <span className="text-xs font-display font-semibold uppercase tracking-widest text-primary">{study.brand}</span>
-                    <p className="font-display text-2xl font-bold mt-2">{study.stat}</p>
+                    <span className="text-xs font-display font-medium uppercase tracking-widest text-primary">{study.brand}</span>
+                    <p className="font-display text-2xl font-semibold mt-2">{study.stat}</p>
                     <p className="text-sm text-muted-foreground mt-3">{study.description}</p>
                   </CardContent>
                 </Card>
@@ -160,7 +158,7 @@ const Index = () => {
           </div>
           <div className="text-center mt-10">
             <Link to="/fashion/case-studies">
-              <Button variant="outline" className="font-display font-semibold gap-2">
+              <Button variant="outline" className="font-display font-medium gap-2">
                 View All Case Studies <ArrowRight size={16} />
               </Button>
             </Link>
@@ -171,12 +169,12 @@ const Index = () => {
       {/* Manifesto Teaser */}
       <section className="py-20">
         <div className="container max-w-3xl text-center">
-          <SectionHeading tag="Our Philosophy" title="We have opinions." />
+          <SectionHeading tag="Our Philosophy" title="We have opinions. Strong ones." />
           <p className="text-lg text-muted-foreground -mt-6">
-            "We don't believe in cookie-cutter marketing. We don't believe in 'just run ads.' We believe in building brands that people actually care about — and we wrote a whole manifesto about it."
+            "We don't believe in cookie-cutter marketing. We don't believe in 'just boost the post bro.' We believe in building brands that people genuinely care about — the kind where customers slide into your DMs saying 'I NEED this.' We wrote a whole manifesto about it because we're dramatic like that." ✍️
           </p>
           <Link to="/manifesto">
-            <Button variant="outline" className="mt-8 font-display font-semibold gap-2">
+            <Button variant="outline" className="mt-8 font-display font-medium gap-2">
               Read the Manifesto <ArrowRight size={16} />
             </Button>
           </Link>
@@ -186,26 +184,26 @@ const Index = () => {
       {/* Founders */}
       <section className="py-20 bg-muted/50">
         <div className="container">
-          <SectionHeading tag="The Crew" title="Built by practitioners, not theorists." />
+          <SectionHeading tag="The Crew" title="Built by doers, not PowerPoint warriors." />
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             {[
-            {
-              name: "Abdul Navas",
-              role: "Co-Founder & CEO",
-              bio: "Ex-textile industry. Turned a Tirupur garment background into a digital media powerhouse. Obsessed with D2C fashion and making brands that don't suck."
-            },
-            {
-              name: "Santhosh",
-              role: "Co-Founder & COO",
-              bio: "The ops brain. Runs the machine that makes everything work — from ad accounts to client delivery. If something's running smoothly, it's probably because of him."
-            }].
-            map((founder) =>
-            <Card key={founder.name} className="border-border/50">
+              {
+                name: "Abdul Navas",
+                role: "Co-Founder & CEO",
+                bio: "Grew up surrounded by textile factories in Tirupur, where the air smells like cotton and hustle. Turned that garment background into a digital media powerhouse because he was tired of seeing amazing products marketed terribly. His superpower? Making D2C fashion brands go from 'meh' to 'take my money.' Also, he's weirdly good at predicting which ad creative will win. 🎯"
+              },
+              {
+                name: "Santhosh",
+                role: "Co-Founder & COO",
+                bio: "The guy who makes sure nothing falls apart. While Abdul's out there dreaming big, Santhosh is the one building the engine that makes everything run. Ad accounts, client delivery, team ops — if something's working smoothly, it's because he lost sleep over it. Clients love him because he actually replies to messages. (A rare skill in this industry, apparently.) 😄"
+              }
+            ].map((founder) =>
+              <Card key={founder.name} className="border-border/50">
                 <CardContent className="p-8">
                   <div className="w-16 h-16 rounded-full bg-primary/20 flex items-center justify-center mb-4">
-                    <span className="font-display text-xl font-bold text-primary">{founder.name[0]}</span>
+                    <span className="font-display text-xl font-semibold text-primary">{founder.name[0]}</span>
                   </div>
-                  <h3 className="font-display text-xl font-bold">{founder.name}</h3>
+                  <h3 className="font-display text-xl font-semibold">{founder.name}</h3>
                   <p className="text-sm text-primary font-medium mt-1">{founder.role}</p>
                   <p className="text-sm text-muted-foreground mt-3">{founder.bio}</p>
                 </CardContent>
@@ -215,15 +213,13 @@ const Index = () => {
         </div>
       </section>
 
-      {/* CTA Banner */}
       <CTABanner
-        headline="Ready to stop winging it?"
-        subtext="Book a free strategy call. No pitch decks, no BS — just a conversation about your brand."
+        headline="Ready to stop winging it? 🚀"
+        subtext="Book a free strategy call. No pitch decks, no corporate jargon, no 'let me circle back' — just a real conversation about your brand over virtual chai."
         ctaLabel="Book a Free Call"
         ctaHref="https://cal.com" />
-      
-    </Layout>);
-
+    </Layout>
+  );
 };
 
 export default Index;
