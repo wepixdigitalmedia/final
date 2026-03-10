@@ -1,6 +1,7 @@
 import { Layout } from "@/components/layout/Layout";
 import { Card, CardContent } from "@/components/ui/card";
 import { CTABanner } from "@/components/shared/CTABanner";
+import { ImagePlaceholder } from "@/components/shared/ImagePlaceholder";
 import { useGSAP, heroReveal, scrollFadeIn } from "@/hooks/useGSAP";
 import { TrendingUp } from "lucide-react";
 
@@ -32,20 +33,23 @@ export default function CaseStudies() {
             {studies.map((study) => (
               <div key={study.brand} className="gsap-study opacity-0">
                 <Card className="rounded-xl border-border overflow-hidden">
-                  <CardContent className="p-8">
-                    <div className="flex items-center gap-3 mb-4">
-                      <TrendingUp className="text-foreground" size={18} />
-                      <span className="text-xs font-medium uppercase tracking-widest text-muted-foreground">{study.category}</span>
-                    </div>
-                    <h2 className="font-display text-3xl font-semibold mb-6">{study.brand}</h2>
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                      <div><p className="text-xs font-medium uppercase tracking-wider text-muted-foreground mb-2">The Problem 😩</p><p className="text-sm">{study.problem}</p></div>
-                      <div><p className="text-xs font-medium uppercase tracking-wider text-muted-foreground mb-2">What We Did 🛠️</p><p className="text-sm">{study.approach}</p></div>
-                      <div><p className="text-xs font-medium uppercase tracking-wider text-muted-foreground mb-2">The Results 🎉</p>
-                        <div className="space-y-2">{study.results.map((r) => (<div key={r.metric} className="flex justify-between"><span className="text-sm text-muted-foreground">{r.metric}</span><span className="font-display font-semibold">{r.value}</span></div>))}</div>
+                  <div className="grid grid-cols-1 md:grid-cols-[1fr_1.5fr]">
+                    <ImagePlaceholder label={`${study.brand} brand imagery`} aspectRatio="square" className="rounded-none border-0 border-r-2 md:border-b-0 border-b-2" />
+                    <CardContent className="p-8">
+                      <div className="flex items-center gap-3 mb-4">
+                        <TrendingUp className="text-foreground" size={18} />
+                        <span className="text-xs font-medium uppercase tracking-widest text-muted-foreground">{study.category}</span>
                       </div>
-                    </div>
-                  </CardContent>
+                      <h2 className="font-display text-3xl font-semibold mb-6">{study.brand}</h2>
+                      <div className="space-y-4">
+                        <div><p className="text-xs font-medium uppercase tracking-wider text-muted-foreground mb-2">The Problem 😩</p><p className="text-sm">{study.problem}</p></div>
+                        <div><p className="text-xs font-medium uppercase tracking-wider text-muted-foreground mb-2">What We Did 🛠️</p><p className="text-sm">{study.approach}</p></div>
+                        <div><p className="text-xs font-medium uppercase tracking-wider text-muted-foreground mb-2">The Results 🎉</p>
+                          <div className="space-y-2">{study.results.map((r) => (<div key={r.metric} className="flex justify-between"><span className="text-sm text-muted-foreground">{r.metric}</span><span className="font-display font-semibold">{r.value}</span></div>))}</div>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </div>
                 </Card>
               </div>
             ))}

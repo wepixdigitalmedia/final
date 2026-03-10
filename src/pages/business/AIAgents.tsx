@@ -2,6 +2,7 @@ import { Layout } from "@/components/layout/Layout";
 import { Card, CardContent } from "@/components/ui/card";
 import { SectionHeading } from "@/components/shared/SectionHeading";
 import { CTABanner } from "@/components/shared/CTABanner";
+import { ImagePlaceholder } from "@/components/shared/ImagePlaceholder";
 import { useGSAP, heroReveal, scrollFadeIn } from "@/hooks/useGSAP";
 import { Bot, MessageSquare, Users, BarChart3, Clock } from "lucide-react";
 
@@ -25,17 +26,23 @@ export default function AIAgents() {
     <Layout>
       <div ref={containerRef}>
         <section className="gsap-hero-section py-24 md:py-32">
-          <div className="container max-w-3xl">
-            <span className="gsap-hero-tag inline-block text-sm font-medium text-muted-foreground mb-4 opacity-0 px-3 py-1 rounded-full border border-border bg-muted">AI Agents</span>
-            <h1 className="gsap-hero-title font-display text-4xl md:text-5xl lg:text-6xl font-semibold opacity-0">AI agents that work while you sleep. And while you're awake. Basically always. 🤖</h1>
-            <p className="gsap-hero-desc mt-4 text-lg text-muted-foreground opacity-0">Forget basic chatbots that respond with 'sorry, I didn't understand that' every five seconds. Our AI agents are custom-built for YOUR business, trained on YOUR data, and integrated with YOUR tools. They understand context, learn from conversations, and actually take actions — not just pretend to be helpful.</p>
+          <div className="container">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div>
+                <span className="gsap-hero-tag inline-block text-sm font-medium text-muted-foreground mb-4 opacity-0 px-3 py-1 rounded-full border border-border bg-muted">AI Agents</span>
+                <h1 className="gsap-hero-title font-display text-4xl md:text-5xl lg:text-6xl font-semibold opacity-0">AI agents that work while you sleep. And while you're awake. Basically always. 🤖</h1>
+                <p className="gsap-hero-desc mt-4 text-lg text-muted-foreground opacity-0">Forget basic chatbots that respond with 'sorry, I didn't understand that' every five seconds. Our AI agents are custom-built for YOUR business, trained on YOUR data, and integrated with YOUR tools. They understand context, learn from conversations, and actually take actions — not just pretend to be helpful.</p>
+              </div>
+              <ImagePlaceholder label="AI Agent interface demo" aspectRatio="square" className="gsap-hero-cta opacity-0" />
+            </div>
           </div>
         </section>
 
         <section className="py-24 border-t border-border">
           <div className="container max-w-3xl">
             <h2 className="font-display text-3xl font-semibold mb-4">What makes our AI Agents different? 🧠</h2>
-            <p className="text-lg text-muted-foreground">Most 'AI chatbots' are glorified FAQ pages with a text bubble. Ours are different. They're trained on your company data, they integrate with your CRM, email, and WhatsApp, they learn from every conversation, and they can actually DO things — book appointments, send follow-ups, update databases. They're basically the perfect employee minus the coffee breaks.</p>
+            <p className="text-lg text-muted-foreground mb-8">Most 'AI chatbots' are glorified FAQ pages with a text bubble. Ours are different. They're trained on your company data, they integrate with your CRM, email, and WhatsApp, they learn from every conversation, and they can actually DO things — book appointments, send follow-ups, update databases. They're basically the perfect employee minus the coffee breaks.</p>
+            <ImagePlaceholder label="AI Agent architecture diagram" aspectRatio="wide" />
           </div>
         </section>
 

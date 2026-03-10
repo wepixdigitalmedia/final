@@ -56,6 +56,9 @@ export default function MetaAdsCourse() {
         <div className="container max-w-3xl text-center">
           <h2 className="font-display text-3xl md:text-4xl font-semibold">Tired of wasting money on ads that get zero results? 😤</h2>
           <p className="mt-6 text-lg text-muted-foreground">You've watched all the YouTube videos. You've tried boosting posts. You've even asked that one friend who 'knows digital marketing.' And your ROAS is still looking sadder than a Monday morning. This course fixes that. For real this time.</p>
+          <div className="mt-10">
+            <ImagePlaceholder label="Ad dashboard before vs after" aspectRatio="wide" />
+          </div>
         </div>
       </section>
 

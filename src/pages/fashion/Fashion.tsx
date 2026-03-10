@@ -3,14 +3,15 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { SectionHeading } from "@/components/shared/SectionHeading";
 import { CTABanner } from "@/components/shared/CTABanner";
+import { ImagePlaceholder } from "@/components/shared/ImagePlaceholder";
 import { ArrowRight, Camera, Rocket, BarChart3 } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useGSAP, heroReveal, scrollFadeIn, gsap } from "@/hooks/useGSAP";
 
 const services = [
-  { icon: Rocket, title: "Kickstarter Program", description: "60 days. Zero to selling. We build your store, shoot your products, run your ads, and hold your hand through the whole thing. It's like a bootcamp, but for your brand. 🚀", href: "/fashion/kickstarter" },
-  { icon: Camera, title: "WePixStudio", description: "AI-powered content creation that makes your ₹500 product look like it belongs in Vogue. Seriously, your competitors will be confused. 📸", href: "/fashion/wepixstudio" },
-  { icon: BarChart3, title: "Meta Ads Management", description: "Full-funnel ad management powered by our MCS Framework. We don't just run ads — we build a system that prints money (legally). 💰", href: "/fashion/book" },
+  { icon: Rocket, title: "Kickstarter Program", description: "60 days. Zero to selling. We build your store, shoot your products, run your ads, and hold your hand through the whole thing. It's like a bootcamp, but for your brand. 🚀", href: "/fashion/kickstarter", img: "Kickstarter program" },
+  { icon: Camera, title: "WePixStudio", description: "AI-powered content creation that makes your ₹500 product look like it belongs in Vogue. Seriously, your competitors will be confused. 📸", href: "/fashion/wepixstudio", img: "WePixStudio demo" },
+  { icon: BarChart3, title: "Meta Ads Management", description: "Full-funnel ad management powered by our MCS Framework. We don't just run ads — we build a system that prints money (legally). 💰", href: "/fashion/book", img: "Ads dashboard" },
 ];
 
 const mcsSteps = [
@@ -24,7 +25,6 @@ export default function Fashion() {
   const containerRef = useGSAP((container) => {
     heroReveal(container);
     scrollFadeIn(".gsap-service-card", container, { stagger: 0.1, y: 30 });
-
     gsap.fromTo(
       container.querySelectorAll(".gsap-mcs-step"),
       { opacity: 0, scale: 0.9, y: 20 },
@@ -33,7 +33,6 @@ export default function Fashion() {
         scrollTrigger: { trigger: container.querySelector(".gsap-mcs-section"), start: "top 75%", toggleActions: "play none none none" },
       }
     );
-
     gsap.fromTo(container.querySelector(".gsap-problem"), { opacity: 0, y: 30 }, {
       opacity: 1, y: 0, duration: 0.7, ease: "power3.out",
       scrollTrigger: { trigger: container.querySelector(".gsap-problem"), start: "top 80%", toggleActions: "play none none none" },
@@ -44,21 +43,37 @@ export default function Fashion() {
     <Layout>
       <div ref={containerRef}>
         <section className="gsap-hero-section py-24 md:py-36">
-          <div className="container max-w-3xl">
-            <span className="gsap-hero-tag inline-block text-sm font-medium text-muted-foreground mb-4 opacity-0 px-3 py-1 rounded-full border border-border bg-muted">WePix Fashion</span>
-            <h1 className="gsap-hero-title font-display text-4xl md:text-5xl lg:text-6xl font-semibold leading-[1.1] opacity-0">
-              Your product is fire. Your marketing? Let's talk about that. 🔥
-            </h1>
-            <p className="gsap-hero-desc mt-6 text-lg text-muted-foreground opacity-0">
-              Here's the thing — you've spent months perfecting your designs, sourcing the best fabric, getting the stitching just right. And then your marketing is... a Canva template with Comic Sans vibes? Nah fam. We help D2C fashion brands create content that stops thumbs, run ads that convert wallets, and build a brand that people actually want to wear.
-            </p>
-            <div className="flex flex-wrap gap-3 mt-8">
-              <Link to="/fashion/kickstarter" className="gsap-hero-cta opacity-0">
-                <Button size="lg" className="rounded-lg font-medium gap-2">Start with Kickstarter <ArrowRight size={16} /></Button>
-              </Link>
-              <a href="https://cal.com" target="_blank" rel="noopener noreferrer" className="gsap-hero-cta opacity-0">
-                <Button size="lg" variant="outline" className="rounded-lg font-medium">Book a Call</Button>
-              </a>
+          <div className="container">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div>
+                <span className="gsap-hero-tag inline-block text-sm font-medium text-muted-foreground mb-4 opacity-0 px-3 py-1 rounded-full border border-border bg-muted">WePix Fashion</span>
+                <h1 className="gsap-hero-title font-display text-4xl md:text-5xl lg:text-6xl font-semibold leading-[1.1] opacity-0">
+                  Your product is fire. Your marketing? Let's talk about that. 🔥
+                </h1>
+                <p className="gsap-hero-desc mt-6 text-lg text-muted-foreground opacity-0">
+                  Here's the thing — you've spent months perfecting your designs, sourcing the best fabric, getting the stitching just right. And then your marketing is... a Canva template with Comic Sans vibes? Nah fam. We help D2C fashion brands create content that stops thumbs, run ads that convert wallets, and build a brand that people actually want to wear.
+                </p>
+                <div className="flex flex-wrap gap-3 mt-8">
+                  <Link to="/fashion/kickstarter" className="gsap-hero-cta opacity-0">
+                    <Button size="lg" className="rounded-lg font-medium gap-2">Start with Kickstarter <ArrowRight size={16} /></Button>
+                  </Link>
+                  <a href="https://cal.com" target="_blank" rel="noopener noreferrer" className="gsap-hero-cta opacity-0">
+                    <Button size="lg" variant="outline" className="rounded-lg font-medium">Book a Call</Button>
+                  </a>
+                </div>
+              </div>
+              <ImagePlaceholder label="Fashion hero image" aspectRatio="square" className="gsap-hero-cta opacity-0" />
+            </div>
+          </div>
+        </section>
+
+        {/* Fashion Portfolio Strip */}
+        <section className="py-12 border-t border-border">
+          <div className="container">
+            <div className="grid grid-cols-3 md:grid-cols-6 gap-3">
+              {Array.from({ length: 6 }).map((_, i) => (
+                <ImagePlaceholder key={i} label={`Work ${i + 1}`} aspectRatio="portrait" />
+              ))}
             </div>
           </div>
         </section>
@@ -77,7 +92,8 @@ export default function Fashion() {
               {services.map((s) => (
                 <div key={s.title} className="gsap-service-card opacity-0">
                   <Link to={s.href}>
-                    <Card className="h-full hover:shadow-md transition-all rounded-xl border-border group">
+                    <Card className="h-full hover:shadow-md transition-all rounded-xl border-border group overflow-hidden">
+                      <ImagePlaceholder label={s.img} aspectRatio="video" className="rounded-none border-0 border-b-2" />
                       <CardContent className="p-6">
                         <s.icon className="text-foreground mb-4" size={24} />
                         <h3 className="font-display text-lg font-semibold mb-2">{s.title}</h3>
