@@ -47,8 +47,17 @@ const caseStudies = [
   { brand: "Nutmeg", stat: "2.5x revenue growth", description: "Premium menswear brand that was criminally underperforming online. We repositioned them, created chef's-kiss content, and doubled their digital presence. The founder literally sent us biryani. 🍛" }
 ];
 
+const rotatingWords = ["Fashion", "Business", "Academy", "AI", "Media", "Garment Tech", "Digital Media"];
+
 const Index = () => {
-  const { displayText, showCursor } = useTypewriter();
+  const [wordIndex, setWordIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setWordIndex((prev) => (prev + 1) % rotatingWords.length);
+    }, 2000);
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <Layout>
