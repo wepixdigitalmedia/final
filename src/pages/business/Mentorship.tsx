@@ -1,6 +1,7 @@
 import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { CTABanner } from "@/components/shared/CTABanner";
+import { ImagePlaceholder } from "@/components/shared/ImagePlaceholder";
 import { useGSAP, heroReveal, gsap } from "@/hooks/useGSAP";
 import { Check, ArrowRight } from "lucide-react";
 
@@ -31,6 +32,9 @@ export default function Mentorship() {
             <span className="gsap-hero-tag inline-block text-sm font-medium text-muted-foreground mb-4 opacity-0 px-3 py-1 rounded-full border border-border bg-muted">Mentorship</span>
             <h1 className="gsap-hero-title font-display text-4xl md:text-5xl lg:text-6xl font-semibold opacity-0">Premium 1:1 Business Mentorship. For founders who are done with guesswork. 🧭</h1>
             <p className="gsap-hero-desc mt-4 text-lg text-muted-foreground opacity-0">Let's be real — running a business can feel like you're driving blindfolded while everyone on LinkedIn pretends they have it all figured out. This mentorship program gives you a copilot who's actually been on the road. Strategy, accountability, and hands-on execution support from people who've built what you're building.</p>
+            <div className="mt-10">
+              <ImagePlaceholder label="Mentorship session photo" aspectRatio="wide" />
+            </div>
           </div>
         </section>
 

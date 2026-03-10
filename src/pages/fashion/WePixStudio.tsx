@@ -2,6 +2,7 @@ import { Layout } from "@/components/layout/Layout";
 import { Card, CardContent } from "@/components/ui/card";
 import { SectionHeading } from "@/components/shared/SectionHeading";
 import { CTABanner } from "@/components/shared/CTABanner";
+import { ImagePlaceholder } from "@/components/shared/ImagePlaceholder";
 import { useGSAP, heroReveal, scrollFadeIn } from "@/hooks/useGSAP";
 import { Sparkles, Image, Video, Palette } from "lucide-react";
 
@@ -34,23 +35,23 @@ export default function WePixStudio() {
             <SectionHeading tag="The Magic" title="See the transformation ✨" description="You send us basic product photos. We send back content that looks like it belongs in a lookbook. It's basically magic, except it's AI and a lot of design expertise." />
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <Card className="rounded-xl border-border overflow-hidden">
-                <div className="aspect-square bg-muted/50 flex items-center justify-center">
-                  <div className="text-center p-8">
-                    <p className="text-sm text-muted-foreground uppercase tracking-wider mb-2">Before 😐</p>
-                    <div className="w-28 h-28 mx-auto bg-muted rounded-xl flex items-center justify-center"><Image className="text-muted-foreground" size={40} /></div>
-                    <p className="text-sm text-muted-foreground mt-4">Raw product photo (we've all been there)</p>
-                  </div>
-                </div>
+                <ImagePlaceholder label="Before — Raw product photo" aspectRatio="square" className="rounded-none border-0" />
               </Card>
               <Card className="rounded-xl border-border overflow-hidden">
-                <div className="aspect-square bg-muted/30 flex items-center justify-center">
-                  <div className="text-center p-8">
-                    <p className="text-sm text-foreground font-medium uppercase tracking-wider mb-2">After 🤩</p>
-                    <div className="w-28 h-28 mx-auto bg-muted rounded-xl flex items-center justify-center"><Sparkles className="text-foreground" size={40} /></div>
-                    <p className="text-sm text-muted-foreground mt-4">Styled, brand-ready creative (you're welcome)</p>
-                  </div>
-                </div>
+                <ImagePlaceholder label="After — Styled, brand-ready creative" aspectRatio="square" className="rounded-none border-0" />
               </Card>
+            </div>
+          </div>
+        </section>
+
+        {/* Gallery of AI-generated content */}
+        <section className="py-16">
+          <div className="container max-w-5xl">
+            <SectionHeading tag="Portfolio" title="Some of our AI-generated work" />
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+              {Array.from({ length: 8 }).map((_, i) => (
+                <ImagePlaceholder key={i} label={`Sample ${i + 1}`} aspectRatio="portrait" />
+              ))}
             </div>
           </div>
         </section>

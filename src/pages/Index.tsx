@@ -4,6 +4,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { AnimatedCounter } from "@/components/shared/AnimatedCounter";
 import { SectionHeading } from "@/components/shared/SectionHeading";
 import { CTABanner } from "@/components/shared/CTABanner";
+import { ImagePlaceholder } from "@/components/shared/ImagePlaceholder";
 import { ArrowRight, Sparkles, GraduationCap, Briefcase, ShoppingBag } from "lucide-react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
@@ -108,6 +109,18 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Client Logos */}
+      <section className="py-16 border-b border-border">
+        <div className="container">
+          <p className="text-xs font-medium uppercase tracking-widest text-muted-foreground text-center mb-8">Trusted by brands like</p>
+          <div className="grid grid-cols-3 md:grid-cols-6 gap-6">
+            {Array.from({ length: 6 }).map((_, i) => (
+              <ImagePlaceholder key={i} label={`Logo ${i + 1}`} aspectRatio="video" className="border border-border rounded-lg" />
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Brand Navigator */}
       <section className="py-20 md:py-28">
         <div className="container">
@@ -126,6 +139,7 @@ const Index = () => {
                 transition={{ delay: i * 0.1, duration: 0.5 }}>
                 <Link to={card.href}>
                   <Card className="group h-full hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border-border/50">
+                    <ImagePlaceholder label={`${card.title} cover`} aspectRatio="video" className="rounded-t-xl rounded-b-none border-0 border-b-2" />
                     <CardContent className="p-6">
                       <div className={`w-12 h-12 rounded-lg bg-gradient-to-br ${card.color} flex items-center justify-center mb-4`}>
                         <card.icon className="text-foreground" size={24} />
@@ -161,6 +175,7 @@ const Index = () => {
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1, duration: 0.5 }}>
                 <Card className="h-full border-border/50">
+                  <ImagePlaceholder label={`${study.brand} results`} aspectRatio="video" className="rounded-t-xl rounded-b-none border-0 border-b-2" />
                   <CardContent className="p-6">
                     <span className="text-xs font-display font-medium uppercase tracking-widest text-primary">{study.brand}</span>
                     <p className="font-display text-2xl font-semibold mt-2">{study.stat}</p>
@@ -212,11 +227,9 @@ const Index = () => {
                 bio: "The guy who makes sure nothing falls apart. While Abdul's out there dreaming big, Santhosh is the one building the engine that makes everything run. Ad accounts, client delivery, team ops — if something's working smoothly, it's because he lost sleep over it. Clients love him because he actually replies to messages. (A rare skill in this industry, apparently.) 😄"
               }
             ].map((founder) =>
-              <Card key={founder.name} className="border-border/50">
+              <Card key={founder.name} className="border-border/50 overflow-hidden">
+                <ImagePlaceholder label={`${founder.name} photo`} aspectRatio="square" className="rounded-none border-0 border-b-2" />
                 <CardContent className="p-8">
-                  <div className="w-16 h-16 rounded-full bg-primary/20 flex items-center justify-center mb-4">
-                    <span className="font-display text-xl font-semibold text-primary">{founder.name[0]}</span>
-                  </div>
                   <h3 className="font-display text-xl font-semibold">{founder.name}</h3>
                   <p className="text-sm text-primary font-medium mt-1">{founder.role}</p>
                   <p className="text-sm text-muted-foreground mt-3">{founder.bio}</p>

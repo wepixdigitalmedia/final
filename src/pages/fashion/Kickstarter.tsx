@@ -1,6 +1,7 @@
 import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { CTABanner } from "@/components/shared/CTABanner";
+import { ImagePlaceholder } from "@/components/shared/ImagePlaceholder";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { useGSAP, heroReveal, gsap } from "@/hooks/useGSAP";
 import { Check } from "lucide-react";
@@ -40,6 +41,9 @@ export default function Kickstarter() {
             <span className="gsap-hero-tag inline-block text-sm font-medium text-muted-foreground mb-4 opacity-0 px-3 py-1 rounded-full border border-border bg-muted">Kickstarter Program</span>
             <h1 className="gsap-hero-title font-display text-4xl md:text-5xl lg:text-6xl font-semibold opacity-0">From zero to selling in 60 days. No, seriously. 🚀</h1>
             <p className="gsap-hero-desc mt-4 text-lg text-muted-foreground opacity-0">The all-in-one launch program for D2C fashion brands who are done with the 'I'll figure it out myself' approach. We've launched dozens of brands from scratch — store, content, ads, strategy — everything you need to go from 'I have products in my room' to 'omg we just got 50 orders.'</p>
+            <div className="mt-10">
+              <ImagePlaceholder label="Kickstarter program timeline infographic" aspectRatio="wide" />
+            </div>
           </div>
         </section>
 
