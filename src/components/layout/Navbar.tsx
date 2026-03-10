@@ -99,11 +99,7 @@ export function Navbar() {
               </Link>
             ))}
             <div className="px-6 pt-2">
-              <a href="https://cal.com" target="_blank" rel="noopener noreferrer">
-                <Button size="sm" className="w-full rounded-lg font-medium">
-                  Book a Call
-                </Button>
-              </a>
+              <BookingFormDialog triggerLabel="Book a Call" triggerSize="sm" triggerClassName="w-full" />
             </div>
           </div>
         )}
