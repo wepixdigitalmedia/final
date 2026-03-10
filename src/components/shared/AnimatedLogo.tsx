@@ -37,7 +37,7 @@ export function AnimatedLogo() {
               stiffness: 400,
               damping: 30,
             }}
-            className="inline-block text-primary whitespace-nowrap"
+            className="inline-block text-primary whitespace-nowrap font-medium"
           >
             {categories[index]}
           </motion.span>
