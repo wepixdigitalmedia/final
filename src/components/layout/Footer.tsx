@@ -66,14 +66,22 @@ export function Footer() {
           ))}
         </div>
 
-        <div className="mt-12 pt-8 border-t border-border grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="mt-12 pt-8 border-t border-border grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           <div>
-            <p className="text-xs text-muted-foreground uppercase tracking-wider mb-2">Tirupur Office</p>
+            <p className="text-xs text-muted-foreground uppercase tracking-wider mb-1">Tirupur</p>
             <p className="text-sm text-muted-foreground">WePix Digital Media, Tirupur, Tamil Nadu, India</p>
           </div>
           <div>
-            <p className="text-xs text-muted-foreground uppercase tracking-wider mb-2">Bangalore Office</p>
+            <p className="text-xs text-muted-foreground uppercase tracking-wider mb-1">Bangalore</p>
             <p className="text-sm text-muted-foreground">WePix Digital Media, Bangalore, Karnataka, India</p>
+          </div>
+          <div>
+            <p className="text-xs text-muted-foreground uppercase tracking-wider mb-1">Chennai</p>
+            <p className="text-sm text-muted-foreground">WePix Digital Media, Chennai, Tamil Nadu, India</p>
+          </div>
+          <div>
+            <p className="text-xs text-muted-foreground uppercase tracking-wider mb-1">UAE</p>
+            <p className="text-sm text-muted-foreground">WePix Digital Media, Dubai, United Arab Emirates</p>
           </div>
         </div>
 
