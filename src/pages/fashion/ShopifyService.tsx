@@ -8,7 +8,7 @@ import { ImagePlaceholder } from "@/components/shared/ImagePlaceholder";
 import { useGSAP, heroReveal, scrollFadeIn } from "@/hooks/useGSAP";
 import { ArrowRight, Check, ShoppingBag, Palette, Zap, BarChart3, Search, Smartphone, Shield, Headphones } from "lucide-react";
 import { motion } from "framer-motion";
-import shopifyPartnerBadge from "@/assets/shopify-partner-badge.png";
+import shopifyPartnerBadge from "@/assets/shopify-partner.svg";
 
 const CTA_URL = "https://cal.com";
 
@@ -89,13 +89,13 @@ export default function ShopifyService() {
         <section className="gsap-hero-section py-20 md:py-28">
           <div className="container max-w-4xl">
             <div className="flex flex-col items-center text-center">
-              <img src={shopifyPartnerBadge} alt="Shopify Partner" className="gsap-hero-tag w-16 h-16 mb-6 opacity-0" />
+              <img src={shopifyPartnerBadge} alt="Shopify Partner" className="gsap-hero-tag h-10 w-auto mb-6 opacity-0" />
               <span className="gsap-hero-tag inline-block text-sm font-medium text-muted-foreground mb-4 opacity-0 px-3 py-1 rounded-full border border-border bg-muted">Official Shopify Partner</span>
               <h1 className="gsap-hero-title font-display text-3xl md:text-4xl lg:text-5xl font-semibold leading-[1.15] opacity-0">
                 Build your premium Shopify store for Fashion & D2C
               </h1>
               <p className="gsap-hero-desc mt-4 text-base text-muted-foreground max-w-2xl opacity-0">
-                We're not just another Shopify agency. We're an official Shopify Partner that specializes in fashion and D2C brands — building stores that look premium, load fast, and convert like crazy. From Tirupur startups to pan-India fashion labels, we've built stores that collectively do crores in revenue.
+                Beautiful D2C Shopify stores AND high-end model content generated from your raw iPhone shots using <a href="https://wepixstudio.app" target="_blank" rel="noopener noreferrer" className="font-medium text-foreground underline underline-offset-2 hover:text-primary transition-colors">WePixStudio.App</a> — our proprietary AI tool. From store design to product photography, we handle the full visual stack so your brand looks premium from day one.
               </p>
               <div className="gsap-hero-cta mt-8 flex gap-4 opacity-0">
                 <a href={CTA_URL} target="_blank" rel="noopener noreferrer">
@@ -199,10 +199,39 @@ export default function ShopifyService() {
           </div>
         </section>
 
+        {/* WePixStudio Integration */}
+        <section className="py-16 border-t border-border">
+          <div className="container max-w-4xl">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+              <div>
+                <span className="inline-block text-xs font-medium text-muted-foreground mb-3 px-3 py-1 rounded-full border border-border bg-muted">Powered by WePixStudio</span>
+                <h2 className="font-display text-xl md:text-2xl font-semibold mb-3">Your store + AI content. One team.</h2>
+                <p className="text-sm text-muted-foreground mb-4">
+                  Most agencies build your store and leave you scrambling for product photos. We don't. With WePixStudio.App — our proprietary AI tool — we generate high-end model content directly from your raw iPhone shots. No studio, no photographer, no ₹50K per shoot. Just upload your garment photos and get professional, brand-ready lifestyle images in minutes.
+                </p>
+                <ul className="space-y-2 mb-6">
+                  {["AI model photoshoots from raw product images", "Consistent brand aesthetic across 100s of SKUs", "Launch-ready content in minutes, not weeks", "Starting at ₹999/month on WePixStudio.App"].map((item) => (
+                    <li key={item} className="flex items-start gap-2 text-sm text-muted-foreground">
+                      <Check size={14} className="text-foreground shrink-0 mt-0.5" /> {item}
+                    </li>
+                  ))}
+                </ul>
+                <a href="https://wepixstudio.app/register" target="_blank" rel="noopener noreferrer">
+                  <Button variant="outline" className="font-medium gap-2">Try WePixStudio Free <ArrowRight size={16} /></Button>
+                </a>
+              </div>
+              <div className="grid grid-cols-2 gap-3">
+                <ImagePlaceholder label="Raw iPhone shot" aspectRatio="portrait" />
+                <ImagePlaceholder label="AI-generated result" aspectRatio="portrait" />
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Trust */}
         <section className="py-16 bg-muted/30">
           <div className="container max-w-3xl text-center">
-            <img src={shopifyPartnerBadge} alt="Shopify Partner" className="w-12 h-12 mx-auto mb-4" />
+            <img src={shopifyPartnerBadge} alt="Shopify Partner" className="h-8 w-auto mx-auto mb-4" />
             <h2 className="font-display text-xl md:text-2xl font-semibold mb-3">Official Shopify Partner</h2>
             <p className="text-sm text-muted-foreground max-w-lg mx-auto">
               As a certified Shopify Partner, we have access to exclusive tools, priority support from Shopify, and deep expertise in the platform. Your store is in safe, certified hands.
