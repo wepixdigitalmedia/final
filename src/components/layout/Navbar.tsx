@@ -43,11 +43,22 @@ const subNavs: Record<string, { label: string; href: string }[]> = {
 export function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const location = useLocation();
+  const subNavRef = useRef<HTMLDivElement>(null);
 
   const activeSection = Object.keys(subNavs).find((key) =>
     location.pathname.startsWith(key)
   );
   const subLinks = activeSection ? subNavs[activeSection] : null;
+
+  useEffect(() => {
+    if (!subNavRef.current || window.innerWidth >= 768) return;
+    const el = subNavRef.current;
+    if (el.scrollWidth <= el.clientWidth) return;
+    const tl = gsap.timeline({ delay: 0.3 });
+    tl.to(el, { scrollLeft: 80, duration: 0.4, ease: "power2.inOut" })
+      .to(el, { scrollLeft: 0, duration: 0.4, ease: "power2.inOut" });
+    return () => { tl.kill(); };
+  }, [activeSection]);
 
   return (
     <>
