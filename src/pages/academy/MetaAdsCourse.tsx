@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { ImagePlaceholder } from "@/components/shared/ImagePlaceholder";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { WhatsAppButton } from "@/components/layout/WhatsAppButton";
 import { useGSAP, heroReveal, scrollFadeIn } from "@/hooks/useGSAP";
