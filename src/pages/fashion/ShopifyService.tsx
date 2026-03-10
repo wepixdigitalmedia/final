@@ -89,7 +89,7 @@ export default function ShopifyService() {
         <section className="gsap-hero-section py-20 md:py-28">
           <div className="container max-w-4xl">
             <div className="flex flex-col items-center text-center">
-              <img src={shopifyPartnerBadge} alt="Shopify Partner" className="gsap-hero-tag w-16 h-16 mb-6 opacity-0" />
+              <img src={shopifyPartnerBadge} alt="Shopify Partner" className="gsap-hero-tag h-10 w-auto mb-6 opacity-0" />
               <span className="gsap-hero-tag inline-block text-sm font-medium text-muted-foreground mb-4 opacity-0 px-3 py-1 rounded-full border border-border bg-muted">Official Shopify Partner</span>
               <h1 className="gsap-hero-title font-display text-3xl md:text-4xl lg:text-5xl font-semibold leading-[1.15] opacity-0">
                 Build your premium Shopify store for Fashion & D2C
