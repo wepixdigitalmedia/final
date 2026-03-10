@@ -1,115 +1,58 @@
 import { Layout } from "@/components/layout/Layout";
 import { Card, CardContent } from "@/components/ui/card";
-import { SectionHeading } from "@/components/shared/SectionHeading";
 import { CTABanner } from "@/components/shared/CTABanner";
-import { motion } from "framer-motion";
+import { useGSAP, heroReveal, scrollFadeIn } from "@/hooks/useGSAP";
 import { TrendingUp } from "lucide-react";
 
 const studies = [
-  {
-    brand: "Taasza",
-    category: "Ethnic Wear",
-    problem: "New brand with zero online presence. No store, no content, no ad history.",
-    approach: "Built Shopify store, ran full product shoot, launched Meta Ads with MCS Framework.",
-    results: [
-      { metric: "ROAS", value: "3x" },
-      { metric: "Monthly Revenue", value: "₹5L" },
-      { metric: "Timeline", value: "60 days" },
-    ],
-  },
-  {
-    brand: "BoonBabies",
-    category: "Kids Fashion",
-    problem: "Great products but inconsistent branding, low online sales, and generic content.",
-    approach: "Complete brand refresh. New content strategy, WePixStudio assets, targeted Meta campaigns.",
-    results: [
-      { metric: "Monthly Revenue", value: "₹10L+" },
-      { metric: "Ad Creative Tests", value: "50+" },
-      { metric: "Content Pieces", value: "200+" },
-    ],
-  },
-  {
-    brand: "Nutmeg",
-    category: "Premium Menswear",
-    problem: "Strong product but underperforming online. Competing against bigger brands with bigger budgets.",
-    approach: "Repositioned brand voice, created premium content, ran highly targeted conversion campaigns.",
-    results: [
-      { metric: "Revenue Growth", value: "2.5x" },
-      { metric: "CPA Reduction", value: "40%" },
-      { metric: "ROAS", value: "4.2x" },
-    ],
-  },
+  { brand: "Taasza", category: "Ethnic Wear", problem: "New brand with zero online presence.", approach: "Built Shopify store, product shoot, Meta Ads with MCS Framework.", results: [{ metric: "ROAS", value: "3x" }, { metric: "Monthly Revenue", value: "₹5L" }, { metric: "Timeline", value: "60 days" }] },
+  { brand: "BoonBabies", category: "Kids Fashion", problem: "Great products but inconsistent branding.", approach: "Complete brand refresh, WePixStudio assets, targeted Meta campaigns.", results: [{ metric: "Monthly Revenue", value: "₹10L+" }, { metric: "Ad Creatives", value: "50+" }, { metric: "Content Pieces", value: "200+" }] },
+  { brand: "Nutmeg", category: "Premium Menswear", problem: "Strong product but underperforming online.", approach: "Repositioned brand, premium content, conversion campaigns.", results: [{ metric: "Revenue Growth", value: "2.5x" }, { metric: "CPA Reduction", value: "40%" }, { metric: "ROAS", value: "4.2x" }] },
 ];
 
 export default function CaseStudies() {
+  const containerRef = useGSAP((container) => {
+    heroReveal(container);
+    scrollFadeIn(".gsap-study", container, { stagger: 0.12, y: 30 });
+  });
+
   return (
     <Layout>
-      <section className="bg-hero text-hero-foreground py-24 md:py-32">
-        <div className="container max-w-3xl">
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
-            <span className="inline-block text-xs font-display font-semibold uppercase tracking-widest text-primary mb-4">Case Studies</span>
-            <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">
-              Real brands. Real results.
-            </h1>
-            <p className="mt-4 text-lg text-hero-foreground/60">
-              No fluff, no vanity metrics. Here's exactly what happened when brands trusted us.
-            </p>
-          </motion.div>
-        </div>
-      </section>
+      <div ref={containerRef}>
+        <section className="gsap-hero-section py-24 md:py-32">
+          <div className="container max-w-3xl">
+            <span className="gsap-hero-tag inline-block text-sm font-medium text-muted-foreground mb-4 opacity-0 px-3 py-1 rounded-full border border-border bg-muted">Case Studies</span>
+            <h1 className="gsap-hero-title font-display text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight opacity-0">Real brands. Real results.</h1>
+            <p className="gsap-hero-desc mt-4 text-lg text-muted-foreground opacity-0">No fluff, no vanity metrics.</p>
+          </div>
+        </section>
 
-      <section className="py-20">
-        <div className="container max-w-4xl space-y-12">
-          {studies.map((study, i) => (
-            <motion.div
-              key={study.brand}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
-            >
-              <Card className="border-border/50 overflow-hidden">
-                <CardContent className="p-8">
-                  <div className="flex items-center gap-3 mb-4">
-                    <TrendingUp className="text-primary" size={20} />
-                    <span className="text-xs font-display font-semibold uppercase tracking-widest text-primary">{study.category}</span>
-                  </div>
-                  <h2 className="font-display text-3xl font-bold mb-6">{study.brand}</h2>
-                  
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
-                    <div>
-                      <p className="text-xs font-display font-semibold uppercase tracking-wider text-muted-foreground mb-2">Problem</p>
-                      <p className="text-sm">{study.problem}</p>
+        <section className="py-24 border-t border-border">
+          <div className="container max-w-4xl space-y-8">
+            {studies.map((study) => (
+              <div key={study.brand} className="gsap-study opacity-0">
+                <Card className="rounded-xl border-border overflow-hidden">
+                  <CardContent className="p-8">
+                    <div className="flex items-center gap-3 mb-4">
+                      <TrendingUp className="text-foreground" size={18} />
+                      <span className="text-xs font-medium uppercase tracking-widest text-muted-foreground">{study.category}</span>
                     </div>
-                    <div>
-                      <p className="text-xs font-display font-semibold uppercase tracking-wider text-muted-foreground mb-2">Approach</p>
-                      <p className="text-sm">{study.approach}</p>
-                    </div>
-                    <div>
-                      <p className="text-xs font-display font-semibold uppercase tracking-wider text-muted-foreground mb-2">Results</p>
-                      <div className="space-y-2">
-                        {study.results.map((r) => (
-                          <div key={r.metric} className="flex justify-between">
-                            <span className="text-sm text-muted-foreground">{r.metric}</span>
-                            <span className="font-display font-bold text-primary">{r.value}</span>
-                          </div>
-                        ))}
+                    <h2 className="font-display text-3xl font-bold mb-6">{study.brand}</h2>
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                      <div><p className="text-xs font-medium uppercase tracking-wider text-muted-foreground mb-2">Problem</p><p className="text-sm">{study.problem}</p></div>
+                      <div><p className="text-xs font-medium uppercase tracking-wider text-muted-foreground mb-2">Approach</p><p className="text-sm">{study.approach}</p></div>
+                      <div><p className="text-xs font-medium uppercase tracking-wider text-muted-foreground mb-2">Results</p>
+                        <div className="space-y-2">{study.results.map((r) => (<div key={r.metric} className="flex justify-between"><span className="text-sm text-muted-foreground">{r.metric}</span><span className="font-display font-bold">{r.value}</span></div>))}</div>
                       </div>
                     </div>
-                  </div>
-                </CardContent>
-              </Card>
-            </motion.div>
-          ))}
-        </div>
-      </section>
-
-      <CTABanner
-        headline="Want results like these?"
-        subtext="Let's talk about your brand."
-        ctaLabel="Book a Free Call"
-        ctaHref="https://cal.com"
-      />
+                  </CardContent>
+                </Card>
+              </div>
+            ))}
+          </div>
+        </section>
+      </div>
+      <CTABanner headline="Want results like these?" subtext="Let's talk about your brand." ctaLabel="Book a Free Call" ctaHref="https://cal.com" />
     </Layout>
   );
 }
