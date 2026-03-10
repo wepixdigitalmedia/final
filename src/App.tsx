@@ -29,6 +29,10 @@ import AIAgents from "./pages/business/AIAgents";
 import Mentorship from "./pages/business/Mentorship";
 import BusinessContact from "./pages/business/BusinessContact";
 import NotFound from "./pages/NotFound";
+import Privacy from "./pages/Privacy";
+import Terms from "./pages/Terms";
+import CookiePolicy from "./pages/CookiePolicy";
+import Legal from "./pages/Legal";
 
 const queryClient = new QueryClient();
 
@@ -64,6 +68,10 @@ const App = () => (
           <Route path="/business/ai-agents" element={<AIAgents />} />
           <Route path="/business/mentorship" element={<Mentorship />} />
           <Route path="/business/contact" element={<BusinessContact />} />
+          <Route path="/privacy" element={<Privacy />} />
+          <Route path="/terms" element={<Terms />} />
+          <Route path="/cookie" element={<CookiePolicy />} />
+          <Route path="/legal" element={<Legal />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
