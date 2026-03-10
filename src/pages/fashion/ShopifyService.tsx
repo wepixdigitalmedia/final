@@ -199,10 +199,39 @@ export default function ShopifyService() {
           </div>
         </section>
 
+        {/* WePixStudio Integration */}
+        <section className="py-16 border-t border-border">
+          <div className="container max-w-4xl">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+              <div>
+                <span className="inline-block text-xs font-medium text-muted-foreground mb-3 px-3 py-1 rounded-full border border-border bg-muted">Powered by WePixStudio</span>
+                <h2 className="font-display text-xl md:text-2xl font-semibold mb-3">Your store + AI content. One team.</h2>
+                <p className="text-sm text-muted-foreground mb-4">
+                  Most agencies build your store and leave you scrambling for product photos. We don't. With WePixStudio.App — our proprietary AI tool — we generate high-end model content directly from your raw iPhone shots. No studio, no photographer, no ₹50K per shoot. Just upload your garment photos and get professional, brand-ready lifestyle images in minutes.
+                </p>
+                <ul className="space-y-2 mb-6">
+                  {["AI model photoshoots from raw product images", "Consistent brand aesthetic across 100s of SKUs", "Launch-ready content in minutes, not weeks", "Starting at ₹999/month on WePixStudio.App"].map((item) => (
+                    <li key={item} className="flex items-start gap-2 text-sm text-muted-foreground">
+                      <Check size={14} className="text-foreground shrink-0 mt-0.5" /> {item}
+                    </li>
+                  ))}
+                </ul>
+                <a href="https://wepixstudio.app/register" target="_blank" rel="noopener noreferrer">
+                  <Button variant="outline" className="font-medium gap-2">Try WePixStudio Free <ArrowRight size={16} /></Button>
+                </a>
+              </div>
+              <div className="grid grid-cols-2 gap-3">
+                <ImagePlaceholder label="Raw iPhone shot" aspectRatio="portrait" />
+                <ImagePlaceholder label="AI-generated result" aspectRatio="portrait" />
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Trust */}
         <section className="py-16 bg-muted/30">
           <div className="container max-w-3xl text-center">
-            <img src={shopifyPartnerBadge} alt="Shopify Partner" className="w-12 h-12 mx-auto mb-4" />
+            <img src={shopifyPartnerBadge} alt="Shopify Partner" className="h-8 w-auto mx-auto mb-4" />
             <h2 className="font-display text-xl md:text-2xl font-semibold mb-3">Official Shopify Partner</h2>
             <p className="text-sm text-muted-foreground max-w-lg mx-auto">
               As a certified Shopify Partner, we have access to exclusive tools, priority support from Shopify, and deep expertise in the platform. Your store is in safe, certified hands.
