@@ -12,6 +12,7 @@ const mainLinks = [
   { label: "Academy", href: "/academy" },
   { label: "Business", href: "/business" },
   { label: "About", href: "/about" },
+  { label: "Careers", href: "/careers" },
   { label: "Contact", href: "/contact" },
 ];
 

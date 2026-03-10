@@ -10,6 +10,8 @@ import Manifesto from "./pages/Manifesto";
 import Contact from "./pages/Contact";
 import People from "./pages/People";
 import Handbook from "./pages/Handbook";
+import Careers from "./pages/Careers";
+import Perennial from "./pages/Perennial";
 import Blogs from "./pages/Blogs";
 import DigitalStore from "./pages/DigitalStore";
 import Fashion from "./pages/fashion/Fashion";
@@ -45,6 +47,8 @@ const App = () => (
           <Route path="/blogs" element={<Blogs />} />
           <Route path="/digital-store" element={<DigitalStore />} />
           <Route path="/manifesto" element={<Manifesto />} />
+          <Route path="/careers" element={<Careers />} />
+          <Route path="/perennial" element={<Perennial />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/fashion" element={<Fashion />} />
           <Route path="/fashion/kickstarter" element={<Kickstarter />} />

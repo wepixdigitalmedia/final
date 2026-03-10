@@ -247,6 +247,80 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Founder Content and Insights */}
+      <section className="py-20">
+        <div className="container">
+          <SectionHeading tag="Insights" title="Founder Content and Insights" />
+
+          {/* Instagram Reels */}
+          <div className="max-w-5xl mx-auto mb-16">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+              <ImagePlaceholder label="Phone screen reel preview" aspectRatio="portrait" className="rounded-xl max-w-xs mx-auto lg:mx-0" />
+              <div>
+                <span className="text-xs font-medium uppercase tracking-widest text-primary mb-2 block">Instagram Reels</span>
+                <h3 className="font-display text-2xl font-semibold mb-3">From the Founder</h3>
+                <p className="text-muted-foreground">Short form insights and behind the scenes content from Abdul Navas and the WePix team about building brands, experiments, marketing strategies, and business growth.</p>
+                <div className="flex gap-3 mt-4">
+                  <a href="https://instagram.com/abdul_navas" target="_blank" rel="noopener noreferrer" className="text-sm text-primary hover:underline">@abdul_navas</a>
+                  <a href="https://instagram.com/wepixindia" target="_blank" rel="noopener noreferrer" className="text-sm text-primary hover:underline">@wepixindia</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* LinkedIn Articles */}
+          <div className="max-w-5xl mx-auto mb-16">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
+              <div>
+                <span className="text-xs font-medium uppercase tracking-widest text-primary mb-2 block">LinkedIn Articles</span>
+                <h3 className="font-display text-2xl font-semibold mb-3">Long Form Thoughts</h3>
+                <p className="text-muted-foreground mb-6">Articles written by the team about entrepreneurship, digital systems, marketing frameworks, and building companies.</p>
+              </div>
+              <div className="space-y-4">
+                {[1, 2, 3].map((n) => (
+                  <Card key={n} className="border-border/50">
+                    <CardContent className="p-4 flex gap-4 items-start">
+                      <ImagePlaceholder label={`Article ${n}`} aspectRatio="square" className="rounded-lg w-20 h-20 shrink-0" />
+                      <div>
+                        <h4 className="font-display text-sm font-semibold">Article Title {n}</h4>
+                        <p className="text-xs text-muted-foreground mt-1">A short snippet about the article topic and key takeaways for readers.</p>
+                        <span className="text-xs text-primary mt-2 inline-block cursor-pointer hover:underline">Read article</span>
+                      </div>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Testimonials */}
+          <div className="max-w-5xl mx-auto">
+            <div className="text-center mb-10">
+              <span className="text-xs font-medium uppercase tracking-widest text-primary mb-2 block">Testimonials</span>
+              <h3 className="font-display text-2xl font-semibold">What People Say About Working With Us</h3>
+              <p className="text-muted-foreground mt-2 max-w-xl mx-auto">Feedback from founders, brands, and companies who have worked with the WePix team.</p>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {[1, 2, 3].map((n) => (
+                <Card key={n} className="border-border/50">
+                  <CardContent className="p-6">
+                    <div className="flex items-center gap-3 mb-4">
+                      <ImagePlaceholder label={`Profile ${n}`} aspectRatio="square" className="rounded-full w-12 h-12 shrink-0" />
+                      <div>
+                        <h4 className="font-display text-sm font-semibold">Client Name</h4>
+                        <p className="text-xs text-muted-foreground">Role, Company</p>
+                      </div>
+                    </div>
+                    <p className="text-sm text-muted-foreground italic">"Testimonial text about the experience working with WePix and the results achieved."</p>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+            <p className="text-center text-xs text-muted-foreground mt-6">Powered by <a href="https://sayabout.us" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">sayabout.us</a></p>
+          </div>
+        </div>
+      </section>
+
       <CTABanner
         headline="Ready to stop winging it?"
         subtext="Book a free strategy call. No pitch decks, no corporate jargon, no 'let me circle back' — just a real conversation about your brand over virtual chai."
