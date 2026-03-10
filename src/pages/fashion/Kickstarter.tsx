@@ -1,6 +1,7 @@
 import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { CTABanner } from "@/components/shared/CTABanner";
+import { ImagePlaceholder } from "@/components/shared/ImagePlaceholder";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { useGSAP, heroReveal, gsap } from "@/hooks/useGSAP";
 import { Check } from "lucide-react";
