@@ -53,6 +53,7 @@ const caseStudies = [
 
 const Index = () => {
   const { displayText, showCursor } = useTypewriter();
+  const [vslOpen, setVslOpen] = useState(false);
 
   return (
     <Layout>
