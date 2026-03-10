@@ -1,6 +1,7 @@
 import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { ImagePlaceholder } from "@/components/shared/ImagePlaceholder";
 import { useGSAP, heroReveal, gsap } from "@/hooks/useGSAP";
 import { Users, MessageSquare, BookOpen, ArrowRight, Check } from "lucide-react";
 
