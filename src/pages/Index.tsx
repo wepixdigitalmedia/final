@@ -1,4 +1,3 @@
-import { useState, useEffect } from "react";
 import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -8,7 +7,8 @@ import { CTABanner } from "@/components/shared/CTABanner";
 import { ImagePlaceholder } from "@/components/shared/ImagePlaceholder";
 import { ArrowRight, Sparkles, GraduationCap, Briefcase, ShoppingBag } from "lucide-react";
 import { Link } from "react-router-dom";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
+import { useTypewriter } from "@/hooks/useTypewriter";
 
 const brandCards = [
   {
@@ -47,17 +47,8 @@ const caseStudies = [
   { brand: "Nutmeg", stat: "2.5x revenue growth", description: "Premium menswear brand that was criminally underperforming online. We repositioned them, created chef's-kiss content, and doubled their digital presence. The founder literally sent us biryani. 🍛" }
 ];
 
-const rotatingWords = ["Fashion", "Business", "Academy", "AI", "Media", "Garment Tech", "Digital Media"];
-
 const Index = () => {
-  const [wordIndex, setWordIndex] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setWordIndex((prev) => (prev + 1) % rotatingWords.length);
-    }, 2000);
-    return () => clearInterval(interval);
-  }, []);
+  const { displayText, showCursor } = useTypewriter();
 
   return (
     <Layout>
@@ -75,21 +66,9 @@ const Index = () => {
                 Digital Media Group
               </span>
               <h1 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.15]">
-                WePix.{" "}
-                <span className="inline-block relative h-[1.2em] overflow-hidden align-bottom">
-                  <AnimatePresence mode="wait">
-                    <motion.span
-                      key={rotatingWords[wordIndex]}
-                      initial={{ y: "100%", opacity: 0 }}
-                      animate={{ y: 0, opacity: 1 }}
-                      exit={{ y: "-100%", opacity: 0 }}
-                      transition={{ type: "spring", stiffness: 400, damping: 30 }}
-                      className="inline-block text-gradient"
-                    >
-                      {rotatingWords[wordIndex]}
-                    </motion.span>
-                  </AnimatePresence>
-                </span>
+                We don't just run ads.{" "}
+                <span className="text-gradient">{displayText}</span>
+                <span className={`inline-block w-[3px] h-[0.85em] bg-foreground ml-0.5 align-middle rounded-sm transition-opacity duration-100 ${showCursor ? "opacity-100" : "opacity-0"}`} />
               </h1>
               <p className="mt-5 text-base md:text-lg text-hero-foreground/60">
                 Picture this: you've got an amazing product, but your marketing looks like it was done by your cousin's friend who "knows Canva." Yeah, we fix that. Fashion, education, business — one crew that handles everything so you can stop losing sleep over your Instagram reach. 😮‍💨
