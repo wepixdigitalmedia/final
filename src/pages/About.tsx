@@ -3,7 +3,9 @@ import { SectionHeading } from "@/components/shared/SectionHeading";
 import { CTABanner } from "@/components/shared/CTABanner";
 import { ImagePlaceholder } from "@/components/shared/ImagePlaceholder";
 import { Card, CardContent } from "@/components/ui/card";
-import { Users, Lightbulb, Target, Heart } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Users, Lightbulb, Target, Heart, ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 import { useGSAP, heroReveal, scrollFadeIn, gsap } from "@/hooks/useGSAP";
 
 const values = [
