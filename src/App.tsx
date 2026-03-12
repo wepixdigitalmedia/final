@@ -1,5 +1,6 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { ThemeProvider } from "next-themes";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -37,46 +38,49 @@ import Legal from "./pages/Legal";
 const queryClient = new QueryClient();
 
 const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter>
-        <ScrollToTop />
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/people" element={<People />} />
-          <Route path="/handbook" element={<Handbook />} />
-          <Route path="/blogs" element={<Blogs />} />
-          <Route path="/digital-store" element={<DigitalStore />} />
-          <Route path="/manifesto" element={<Manifesto />} />
-          <Route path="/careers" element={<Careers />} />
-          <Route path="/perennial" element={<Perennial />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/fashion" element={<Fashion />} />
-          <Route path="/fashion/kickstarter" element={<Kickstarter />} />
-          <Route path="/fashion/wepixstudio" element={<WePixStudio />} />
-          <Route path="/fashion/case-studies" element={<CaseStudies />} />
-          <Route path="/fashion/shopify" element={<ShopifyService />} />
-          <Route path="/fashion/book" element={<BookACall />} />
-          <Route path="/academy" element={<Academy />} />
-          <Route path="/academy/meta-ads-course" element={<MetaAdsCourse />} />
-          <Route path="/academy/webinar" element={<Webinar />} />
-          <Route path="/academy/community" element={<Community />} />
-          <Route path="/business" element={<Business />} />
-          <Route path="/business/ai-agents" element={<AIAgents />} />
-          <Route path="/business/mentorship" element={<Mentorship />} />
-          <Route path="/business/contact" element={<BusinessContact />} />
-          <Route path="/privacy" element={<Privacy />} />
-          <Route path="/terms" element={<Terms />} />
-          <Route path="/cookie" element={<CookiePolicy />} />
-          <Route path="/legal" element={<Legal />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </BrowserRouter>
-    </TooltipProvider>
-  </QueryClientProvider>
+  <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+    <QueryClientProvider client={queryClient}>
+      <TooltipProvider>
+        <Toaster />
+        <Sonner />
+        <BrowserRouter>
+          <ScrollToTop />
+          <Routes>
+            <Route path="/" element={<Index />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/people" element={<People />} />
+            <Route path="/handbook" element={<Handbook />} />
+            <Route path="/blogs" element={<Blogs />} />
+            <Route path="/digital-store" element={<DigitalStore />} />
+            <Route path="/manifesto" element={<Manifesto />} />
+            <Route path="/careers" element={<Careers />} />
+            <Route path="/perennial" element={<Perennial />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/fashion" element={<Fashion />} />
+            <Route path="/fashion/kickstarter" element={<Kickstarter />} />
+            <Route path="/fashion/wepixstudio" element={<WePixStudio />} />
+            <Route path="/fashion/case-studies" element={<CaseStudies />} />
+            <Route path="/fashion/shopify" element={<ShopifyService />} />
+            <Route path="/fashion/book" element={<BookACall />} />
+            <Route path="/academy" element={<Academy />} />
+            <Route path="/academy/meta-ads-course" element={<MetaAdsCourse />} />
+            <Route path="/academy/webinar" element={<Webinar />} />
+            <Route path="/academy/community" element={<Community />} />
+            <Route path="/business" element={<Business />} />
+            <Route path="/business/ai-agents" element={<AIAgents />} />
+            <Route path="/business/mentorship" element={<Mentorship />} />
+            <Route path="/business/contact" element={<BusinessContact />} />
+            <Route path="/privacy" element={<Privacy />} />
+            <Route path="/terms" element={<Terms />} />
+            <Route path="/cookie" element={<CookiePolicy />} />
+            <Route path="/legal" element={<Legal />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </BrowserRouter>
+      </TooltipProvider>
+    </QueryClientProvider>
+  </ThemeProvider>
 );
 
 export default App;
+

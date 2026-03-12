@@ -118,9 +118,9 @@ export default function Manifesto() {
         <div className="container max-w-4xl">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
-              <span className="inline-block text-sm font-medium text-muted-foreground mb-4 px-3 py-1 rounded-full border border-border bg-muted">Our Philosophy</span>
-              <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-semibold mb-6">Our Manifesto</h1>
-              <p className="text-lg text-muted-foreground leading-relaxed">
+              <span className="inline-block text-[0.8125rem] font-medium text-muted-foreground mb-4 px-3 py-1 rounded-full border border-border bg-muted">Our Philosophy</span>
+              <h1 className="font-display text-3xl md:text-4xl lg:text-5xl font-semibold mb-6">Our Manifesto</h1>
+              <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
                 Here's our manifesto, shaped by years of experience and success, which we now share with you to guide and inspire your journey!
               </p>
             </motion.div>
@@ -144,10 +144,10 @@ export default function Manifesto() {
                 transition={{ delay: 0.05, duration: 0.5 }}
                 className="py-10 border-b border-border last:border-b-0"
               >
-                <span className="text-xs font-medium text-muted-foreground tracking-widest mb-3 block">
+                <span className="text-[0.6875rem] font-semibold text-muted-foreground tracking-[0.15em] mb-3 block">
                   {String(i + 1).padStart(2, "0")}
                 </span>
-                <h2 className="font-display text-xl md:text-2xl font-semibold mb-4">{p.title}</h2>
+                <h2 className="font-display text-lg md:text-xl font-semibold mb-4">{p.title}</h2>
                 <p className="text-muted-foreground leading-relaxed">{p.body}</p>
                 {p.bullets && (
                   <ul className="mt-3 space-y-1.5 list-disc list-inside text-muted-foreground">
@@ -183,8 +183,8 @@ export default function Manifesto() {
             transition={{ duration: 0.5 }}
             className="text-center space-y-6"
           >
-            <h2 className="font-display text-3xl md:text-4xl font-semibold">Ready to Be Part of the Journey?</h2>
-            <p className="text-lg text-muted-foreground max-w-xl mx-auto">
+            <h2 className="font-display text-2xl md:text-3xl lg:text-4xl font-semibold">Ready to Be Part of the Journey?</h2>
+            <p className="text-base md:text-lg text-muted-foreground leading-relaxed max-w-xl mx-auto">
               Whether you want to join our team or grow your brand, we'd love to hear from you.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">

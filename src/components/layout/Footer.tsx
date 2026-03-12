@@ -50,19 +50,19 @@ function MediumIcon({ size = 18 }: { size?: number }) {
 export function Footer() {
   return (
     <footer className="border-t border-border bg-background">
-      <div className="container py-16">
+      <div className="container py-20">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-12">
           <div className="lg:col-span-2">
             <Link to="/" className="font-display text-2xl font-bold tracking-tight">
               WePix
             </Link>
-            <p className="mt-3 text-muted-foreground text-sm max-w-xs">
+            <p className="mt-3 text-muted-foreground text-[0.8125rem] max-w-xs leading-relaxed">
               Digital Media. Built Different.
             </p>
-            <a href="mailto:hello@wepix.in" className="inline-block mt-2 text-sm text-muted-foreground hover:text-foreground transition-colors">
+            <a href="mailto:hello@wepix.in" className="inline-block mt-3 text-[0.8125rem] text-muted-foreground hover:text-foreground transition-colors">
               hello@wepix.in
             </a>
-            <a href="tel:+917540080090" className="flex items-center gap-1.5 mt-2 text-sm text-muted-foreground hover:text-foreground transition-colors">
+            <a href="tel:+917540080090" className="flex items-center gap-1.5 mt-2 text-[0.8125rem] text-muted-foreground hover:text-foreground transition-colors">
               <Phone size={14} />
               +91 7540080090
             </a>
@@ -80,13 +80,13 @@ export function Footer() {
 
           {Object.entries(footerLinks).map(([title, links]) => (
             <div key={title}>
-              <h4 className="font-medium text-sm text-muted-foreground uppercase tracking-wider mb-4">
+              <h4 className="font-semibold text-[0.6875rem] text-muted-foreground uppercase tracking-[0.15em] mb-4">
                 {title}
               </h4>
               <ul className="space-y-3">
                 {links.map((link) => (
                   <li key={link.href}>
-                    <Link to={link.href} className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                    <Link to={link.href} className="text-[0.8125rem] text-muted-foreground hover:text-foreground transition-colors">
                       {link.label}
                     </Link>
                   </li>
@@ -96,35 +96,35 @@ export function Footer() {
           ))}
         </div>
 
-        <div className="mt-12 pt-8 border-t border-border grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="mt-14 pt-8 border-t border-border grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {[
             { city: "Tirupur", address: "Sheriff Colony, Tirupur" },
             { city: "Bangalore", address: "HSR Layout, Bangalore" },
             { city: "Chennai", address: "Casagrand Amberly, Navalur, Chennai" },
             { city: "Dubai", address: "Al Safa St - Downtown Dubai" },
           ].map((loc) => (
-            <div key={loc.city} className="flex items-start gap-2.5">
+            <div key={loc.city} className="flex items-start gap-3">
               <div className="shrink-0 w-8 h-8 rounded-lg bg-muted flex items-center justify-center mt-0.5">
                 <MapPin size={14} className="text-muted-foreground" />
               </div>
               <div>
-                <p className="text-xs text-muted-foreground uppercase tracking-wider mb-0.5">{loc.city}</p>
-                <p className="text-sm text-muted-foreground">{loc.address}</p>
+                <p className="text-[0.6875rem] text-muted-foreground uppercase tracking-[0.15em] mb-0.5">{loc.city}</p>
+                <p className="text-[0.8125rem] text-muted-foreground">{loc.address}</p>
               </div>
             </div>
           ))}
         </div>
 
         <div className="mt-8 pt-8 border-t border-border flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-xs text-muted-foreground">
+          <p className="text-[0.6875rem] text-muted-foreground tracking-wide">
             &copy; 2026 WePix Digital Media LLP (India) |{" "}
             <Link to="/perennial" className="hover:text-foreground transition-colors">
               Perennial Group (A Consortium)
             </Link>
           </p>
           <div className="flex gap-6">
-            <Link to="/privacy" className="text-xs text-muted-foreground hover:text-foreground transition-colors">Privacy Policy</Link>
-            <Link to="/terms" className="text-xs text-muted-foreground hover:text-foreground transition-colors">Terms of Service</Link>
+            <Link to="/privacy" className="text-[0.6875rem] text-muted-foreground hover:text-foreground transition-colors tracking-wide">Privacy Policy</Link>
+            <Link to="/terms" className="text-[0.6875rem] text-muted-foreground hover:text-foreground transition-colors tracking-wide">Terms of Service</Link>
           </div>
         </div>
       </div>

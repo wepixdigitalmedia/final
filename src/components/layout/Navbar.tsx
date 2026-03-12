@@ -4,6 +4,7 @@ import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { AnimatedLogo } from "@/components/shared/AnimatedLogo";
 import { BookingFormDialog } from "@/components/shared/BookingFormDialog";
+import { ThemeToggle } from "@/components/layout/ThemeToggle";
 import { gsap } from "@/hooks/useGSAP";
 
 const mainLinks = [
@@ -63,7 +64,7 @@ export function Navbar() {
   return (
     <>
       <nav className="sticky top-0 z-50 bg-background/80 backdrop-blur-lg border-b border-border">
-        <div className="container flex items-center justify-between h-16">
+        <div className="container flex items-center justify-between h-[4.5rem]">
           <AnimatedLogo />
 
           {/* Desktop */}
@@ -73,7 +74,7 @@ export function Navbar() {
                 key={link.href}
                 to={link.href}
                 className={cn(
-                  "px-3 py-2 text-sm font-medium rounded-lg transition-colors text-muted-foreground hover:text-foreground hover:bg-muted",
+                  "px-3 py-2 text-[0.8125rem] font-medium tracking-wide rounded-lg transition-colors text-muted-foreground hover:text-foreground hover:bg-muted",
                   (location.pathname === link.href || (link.href !== "/" && location.pathname.startsWith(link.href))) &&
                     "text-foreground bg-muted"
                 )}
@@ -81,16 +82,20 @@ export function Navbar() {
                 {link.label}
               </Link>
             ))}
-            <BookingFormDialog triggerLabel="Book a Call" triggerSize="sm" triggerClassName="ml-3" />
+            <ThemeToggle />
+            <BookingFormDialog triggerLabel="Book a Call" triggerSize="sm" triggerClassName="ml-2" />
           </div>
 
           {/* Mobile toggle */}
-          <button
-            className="md:hidden text-foreground"
-            onClick={() => setMobileOpen(!mobileOpen)}
-          >
-            {mobileOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+          <div className="flex md:hidden items-center gap-1">
+            <ThemeToggle />
+            <button
+              className="text-foreground p-2"
+              onClick={() => setMobileOpen(!mobileOpen)}
+            >
+              {mobileOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          </div>
         </div>
 
         {/* Mobile menu */}
@@ -102,7 +107,7 @@ export function Navbar() {
                 to={link.href}
                 onClick={() => setMobileOpen(false)}
                 className={cn(
-                  "block px-6 py-3 text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-muted",
+                  "block px-6 py-3 text-[0.8125rem] font-medium tracking-wide text-muted-foreground hover:text-foreground hover:bg-muted",
                   (location.pathname === link.href || (link.href !== "/" && location.pathname.startsWith(link.href))) &&
                     "text-foreground"
                 )}
@@ -119,14 +124,14 @@ export function Navbar() {
 
       {/* Context subnav */}
       {subLinks && (
-        <div className="sticky top-16 z-40 bg-background/80 backdrop-blur-lg border-b border-border">
+        <div className="sticky top-[4.5rem] z-40 bg-background/80 backdrop-blur-lg border-b border-border">
           <div ref={subNavRef} className="container flex items-center gap-1 overflow-x-auto py-2 scrollbar-hide">
             {subLinks.map((link) => (
               <Link
                 key={link.href}
                 to={link.href}
                 className={cn(
-                  "px-3 py-1.5 text-sm font-medium rounded-lg whitespace-nowrap transition-colors text-muted-foreground hover:text-foreground hover:bg-muted",
+                  "px-3 py-1.5 text-[0.8125rem] font-medium tracking-wide rounded-lg whitespace-nowrap transition-colors text-muted-foreground hover:text-foreground hover:bg-muted",
                   location.pathname === link.href && "bg-muted text-foreground"
                 )}
               >

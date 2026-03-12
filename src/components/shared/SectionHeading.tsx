@@ -30,15 +30,15 @@ export function SectionHeading({ tag, title, description, className, align = "ce
   });
 
   return (
-    <div ref={containerRef} className={cn(align === "center" ? "text-center" : "text-left", "mb-12", className)}>
+    <div ref={containerRef} className={cn(align === "center" ? "text-center" : "text-left", "mb-14", className)}>
       {tag && (
-        <span className="inline-block text-xs font-medium uppercase tracking-widest text-muted-foreground mb-3 opacity-0">
+        <span className="inline-block text-[0.6875rem] font-semibold uppercase tracking-[0.15em] text-muted-foreground mb-3 opacity-0">
           {tag}
         </span>
       )}
-      <h2 className="font-display text-3xl md:text-4xl font-semibold opacity-0">{title}</h2>
+      <h2 className="font-display text-2xl md:text-3xl lg:text-4xl font-semibold opacity-0">{title}</h2>
       {description && (
-        <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto opacity-0">{description}</p>
+        <p className="mt-4 text-base md:text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto opacity-0">{description}</p>
       )}
     </div>
   );

@@ -23,9 +23,9 @@ export function AnimatedLogo() {
   }, []);
 
   return (
-    <Link to="/" className="flex items-baseline font-display text-xl font-semibold tracking-[0.04em] text-foreground">
-      <span>WePix.</span>
-      <span className="relative inline-flex overflow-hidden h-[1.5em] items-end pb-0.5 ml-1">
+    <Link to="/" className="flex items-center font-display text-xl tracking-[0.04em] text-foreground">
+      <span className="font-bold">WePix.</span>
+      <span className="relative inline-flex overflow-hidden h-[1.5em] items-center ml-1.5 md:ml-2">
         <AnimatePresence mode="wait">
           <motion.span
             key={categories[index]}
@@ -37,7 +37,7 @@ export function AnimatedLogo() {
               stiffness: 400,
               damping: 30,
             }}
-            className="inline-block text-primary whitespace-nowrap font-medium"
+            className="inline-block text-primary whitespace-nowrap font-medium tracking-tight"
           >
             {categories[index]}
           </motion.span>

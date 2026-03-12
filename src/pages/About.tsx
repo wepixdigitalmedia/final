@@ -51,11 +51,11 @@ export default function About() {
           <div className="container">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div>
-                <span className="gsap-hero-tag inline-block text-sm font-medium text-muted-foreground mb-4 opacity-0 px-3 py-1 rounded-full border border-border bg-muted">About Us</span>
-                <h1 className="gsap-hero-title font-display text-3xl md:text-4xl lg:text-5xl font-semibold leading-[1.15] opacity-0">
+                <span className="gsap-hero-tag inline-block text-[0.8125rem] font-medium text-muted-foreground mb-4 opacity-0 px-3 py-1 rounded-full border border-border bg-muted">About Us</span>
+                <h1 className="gsap-hero-title font-display text-2xl md:text-3xl lg:text-[2.75rem] xl:text-5xl font-semibold leading-[1.15] opacity-0">
                   Two guys from <TirupurTooltip /> who got tired of trash marketing and decided to fix it.
                 </h1>
-                <p className="gsap-hero-desc mt-5 text-base text-muted-foreground opacity-0">
+                <p className="gsap-hero-desc mt-5 text-[0.9375rem] text-muted-foreground leading-relaxed opacity-0">
                   WePix started because we were frustrated. Frustrated with agencies charging lakhs for mediocre work. Frustrated with marketers who couldn't tell the difference between reach and revenue.
                 </p>
               </div>
@@ -89,8 +89,8 @@ export default function About() {
             <div className="space-y-0">
               {timeline.map((item) => (
                 <div key={item.year} className="gsap-timeline-item flex gap-6 py-5 border-b border-border last:border-0 opacity-0">
-                  <span className="font-display text-xl font-semibold text-foreground shrink-0 w-14">{item.year}</span>
-                  <p className="text-muted-foreground">{item.event}</p>
+                  <span className="font-display text-lg font-semibold text-foreground shrink-0 w-14">{item.year}</span>
+                  <p className="text-muted-foreground text-[0.9375rem] leading-relaxed">{item.event}</p>
                 </div>
               ))}
             </div>
@@ -106,8 +106,8 @@ export default function About() {
                   <Card className="h-full rounded-xl border-border">
                     <CardContent className="p-6">
                       <v.icon className="text-foreground mb-3" size={24} />
-                      <h3 className="font-display text-lg font-semibold">{v.title}</h3>
-                      <p className="text-sm text-muted-foreground mt-2">{v.description}</p>
+                      <h3 className="font-display text-base font-semibold">{v.title}</h3>
+                      <p className="text-[0.8125rem] text-muted-foreground mt-2 leading-relaxed">{v.description}</p>
                     </CardContent>
                   </Card>
                 </div>
@@ -124,14 +124,14 @@ export default function About() {
                 <ImagePlaceholder label="Tirupur office photo" aspectRatio="video" className="rounded-none border-0 border-b-2" />
                 <CardContent className="p-4">
                   <h3 className="font-display font-semibold"><TirupurTooltip />, Tamil Nadu</h3>
-                  <p className="text-sm text-muted-foreground">HQ — Where it all started (and where the best filter coffee is)</p>
+                  <p className="text-[0.8125rem] text-muted-foreground">HQ — Where it all started (and where the best filter coffee is)</p>
                 </CardContent>
               </Card>
               <Card className="rounded-xl border-border overflow-hidden">
                 <ImagePlaceholder label="Bangalore office photo" aspectRatio="video" className="rounded-none border-0 border-b-2" />
                 <CardContent className="p-4">
                   <h3 className="font-display font-semibold">Bangalore, Karnataka</h3>
-                  <p className="text-sm text-muted-foreground">Business & B2B division (the fancy one)</p>
+                  <p className="text-[0.8125rem] text-muted-foreground">Business & B2B division (the fancy one)</p>
                 </CardContent>
               </Card>
             </div>

@@ -12,7 +12,27 @@ import { ArrowRight, Sparkles, GraduationCap, Briefcase, ShoppingBag, Play } fro
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import { StackedReels } from "@/components/shared/StackedReels";
+import { WistiaLeadForm } from "@/components/shared/WistiaLeadForm";
+import { LinkedInFeed } from "@/components/shared/LinkedInFeed";
 import { useTypewriter } from "@/hooks/useTypewriter";
+import velauraLogo from "@/assets/brands/velaura.png";
+import pinkstoriesLogo from "@/assets/brands/pinkstories.webp";
+import yazhliLogo from "@/assets/brands/yazhli.webp";
+import ishikaLogo from "@/assets/brands/ishika.png";
+import reviashLogo from "@/assets/brands/reviash.png";
+import lemoonLogo from "@/assets/brands/lemoon.png";
+import fregorLogo from "@/assets/brands/fregor.png";
+
+const trustedBrands = [
+  { name: "Velaura", src: velauraLogo, href: "https://velaura.in/?utm_source=wepix.in&utm_medium=partner_logo", className: "h-auto w-24 md:w-32" },
+  { name: "Pink Stories", src: pinkstoriesLogo, href: "https://pinkstories.ae/?utm_source=wepix.in&utm_medium=partner_logo", className: "h-auto w-28 md:w-36" },
+  { name: "Yazhli", src: yazhliLogo, href: "https://yazhlicollection.com/?utm_source=wepix.in&utm_medium=partner_logo", className: "h-8 md:h-12 w-auto" },
+  { name: "Ishika Trends", src: ishikaLogo, href: "https://ishikatrends.com/?utm_source=wepix.in&utm_medium=partner_logo", className: "h-10 md:h-14 w-auto" },
+  { name: "Reviash", src: reviashLogo, href: "https://reviash.com/?utm_source=wepix.in&utm_medium=partner_logo", className: "h-auto w-16 md:w-24" },
+  { name: "Lemoon Baby", src: lemoonLogo, href: "https://www.lemoonbaby.in/?utm_source=wepix.in&utm_medium=partner_logo", className: "h-auto w-24 md:w-32" },
+  { name: "Fregor", src: fregorLogo, href: "https://fregor.in/?utm_source=wepix.in&utm_medium=partner_logo", className: "h-auto w-16 md:w-24" },
+];
 
 const brandCards = [
   {
@@ -66,18 +86,18 @@ const Index = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7 }}>
-              
-              <span className="inline-block text-xs font-display font-medium uppercase tracking-widest text-primary mb-6">
+
+              <span className="inline-block text-[0.6875rem] font-display font-semibold uppercase tracking-[0.15em] text-primary mb-6">
                 Digital Media Group
               </span>
-              <div className="min-h-[10rem] md:min-h-[9rem] lg:min-h-[7.5rem]">
-                <h1 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.15]">
+              <div className="min-h-[8rem] md:min-h-[8rem] lg:min-h-[7.5rem] w-full">
+                <h1 className="font-display text-2xl md:text-3xl lg:text-[2.75rem] xl:text-5xl font-bold leading-[1.15] break-words hyphens-auto">
                   We don't just run ads.{" "}
                   <span className="text-gradient">{displayText}</span>
                   <span className={`inline-block w-[3px] h-[0.85em] bg-foreground ml-0.5 align-middle rounded-sm transition-opacity duration-100 ${showCursor ? "opacity-100" : "opacity-0"}`} />
                 </h1>
               </div>
-              <p className="mt-5 text-base md:text-lg text-hero-foreground/60">
+              <p className="mt-5 text-[0.9375rem] md:text-base text-hero-foreground/60 leading-relaxed">
                 Picture this: you've got an amazing product, but your marketing looks like it was done by your cousin's friend who "knows Canva." Yeah, we fix that. Fashion, education, business — one crew that handles everything so you can stop losing sleep over your Instagram reach.
               </p>
               <div className="flex flex-wrap gap-4 mt-10">
@@ -97,69 +117,75 @@ const Index = () => {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.7, delay: 0.3 }}
-              className="rounded-xl overflow-hidden border border-border shadow-lg cursor-pointer group relative"
+              className="rounded-xl overflow-hidden border border-border shadow-lg cursor-pointer group relative aspect-video"
               onClick={() => setVslOpen(true)}
             >
               <img
                 src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/21eDkPqQcXCF2sJcyeMn/media/68a62b3d280b9e3bebb53f6c.gif"
                 alt="WePix VSL"
-                className="w-full h-auto"
+                className="w-full h-full object-cover"
                 loading="eager"
               />
               <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors duration-300 flex items-center justify-center">
-                <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-primary text-primary-foreground rounded-full p-3">
-                  <Play className="h-6 w-6 fill-current" />
+                <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-primary text-primary-foreground rounded-full p-4 shadow-xl">
+                  <Play className="h-8 w-8 ml-1 fill-current" />
                 </div>
               </div>
             </motion.div>
 
             <Dialog open={vslOpen} onOpenChange={setVslOpen}>
-              <DialogContent className="sm:max-w-lg max-h-[90vh] p-0 overflow-hidden">
-                <DialogTitle className="sr-only">LP VSL Opt-In</DialogTitle>
-                <iframe
-                  src="https://portal.wepix.in/widget/form/p4gfS3Vcg7tDEWAgjyYF"
-                  className="w-full border-none rounded-lg"
-                  style={{ height: "600px", minHeight: "400px" }}
-                  title="LP VSL Opt-In"
-                />
+              <DialogContent className="sm:max-w-3xl lg:max-w-4xl p-0 overflow-hidden bg-transparent border-none shadow-none [&>button]:text-white [&>button]:hover:text-primary [&>button]:bg-black/50 [&>button]:backdrop-blur-sm [&>button]:w-8 [&>button]:h-8 [&>button]:rounded-full [&>button]:-right-2 [&>button]:-top-2">
+                <DialogTitle className="sr-only">Strategy Video Access</DialogTitle>
+                <WistiaLeadForm mediaId="86i9yszwdd" />
               </DialogContent>
             </Dialog>
           </div>
         </div>
       </section>
 
-      {/* Numbers Bar */}
-      <section className="py-16 border-b border-border">
+      <section className="py-20 border-b border-border">
         <div className="container grid grid-cols-2 md:grid-cols-4 gap-8">
           <AnimatedCounter end={50} suffix="+" label="Brands Who Trust Us" />
-          <AnimatedCounter end={2} suffix="Cr+" prefix="₹" label="Ad Spend We've Managed" />
+          <AnimatedCounter end={2} suffix="Cr+" prefix="INR " label="Ad Spend We've Managed" />
           <AnimatedCounter end={10} suffix="K+" label="Creatives Crafted" />
           <AnimatedCounter end={3} suffix="x" label="Avg. ROAS (yeah, really)" />
         </div>
       </section>
 
       {/* Client Logos */}
-      <section className="py-16 border-b border-border overflow-hidden">
+      <section className="py-20 border-b border-border overflow-hidden">
         <div className="container">
-          <p className="text-xs font-medium uppercase tracking-widest text-muted-foreground text-center mb-8">Trusted by brands like</p>
+          <p className="text-[0.6875rem] font-semibold uppercase tracking-[0.15em] text-muted-foreground text-center mb-8">Trusted by brands like</p>
         </div>
         <div className="relative">
-          <div className="flex animate-marquee gap-6 w-max">
-            {Array.from({ length: 12 }).map((_, i) => (
-              <ImagePlaceholder key={i} label={`Logo ${(i % 6) + 1}`} aspectRatio="video" className="border border-border rounded-lg w-40 shrink-0" />
+          <div className="flex animate-marquee gap-8 md:gap-16 w-max items-center">
+            {[...trustedBrands, ...trustedBrands, ...trustedBrands, ...trustedBrands].map((brand, i) => (
+              <a
+                key={i}
+                href={brand.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="shrink-0 flex items-center justify-center transition-all duration-300 hover:-translate-y-1"
+              >
+                <img
+                  src={brand.src}
+                  alt={brand.name}
+                  className={`object-contain grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-300 ${brand.className || "h-8 md:h-12 w-auto max-w-[140px] md:max-w-[180px]"}`}
+                />
+              </a>
             ))}
           </div>
         </div>
       </section>
 
       {/* Brand Navigator */}
-      <section className="py-20 md:py-28">
+      <section className="py-16 md:py-28 lg:py-32">
         <div className="container">
           <SectionHeading
             tag="What We Do"
             title="Four verticals. One obsession."
             description="We're not your average agency that slaps a logo on everything and calls it a day. WePix runs four distinct verticals — each with its own team, strategy, and unhealthy amount of passion. Think of us as the Avengers of marketing, minus the capes (okay, sometimes capes)." />
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {brandCards.map((card, i) =>
               <motion.div
@@ -175,9 +201,9 @@ const Index = () => {
                       <div className={`w-12 h-12 rounded-lg bg-gradient-to-br ${card.color} flex items-center justify-center mb-4`}>
                         <card.icon className="text-foreground" size={24} />
                       </div>
-                      <h3 className="font-display text-xl font-semibold mb-2">{card.title}</h3>
-                      <p className="text-sm text-muted-foreground">{card.description}</p>
-                      <div className="mt-4 flex items-center text-sm font-medium text-primary opacity-0 group-hover:opacity-100 transition-opacity">
+                      <h3 className="font-display text-lg font-semibold mb-2">{card.title}</h3>
+                      <p className="text-[0.8125rem] text-muted-foreground leading-relaxed">{card.description}</p>
+                      <div className="mt-4 flex items-center text-[0.8125rem] font-medium text-primary opacity-0 group-hover:opacity-100 transition-opacity">
                         Explore <ArrowRight size={14} className="ml-1" />
                       </div>
                     </CardContent>
@@ -190,13 +216,13 @@ const Index = () => {
       </section>
 
       {/* Case Studies Teaser */}
-      <section className="py-20 bg-muted/50">
+      <section className="py-16 md:py-28 bg-muted/50">
         <div className="container">
           <SectionHeading
             tag="Results"
             title="Real brands. Real money. Real stories."
             description="We don't do vanity metrics. Nobody cares about your 'reach' when you can't pay rent. Here's what happened when brands stopped settling for mid agencies and trusted us with their growth." />
-          
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {caseStudies.map((study, i) =>
               <motion.div
@@ -208,9 +234,9 @@ const Index = () => {
                 <Card className="h-full border-border/50">
                   <ImagePlaceholder label={`${study.brand} results`} aspectRatio="video" className="rounded-t-xl rounded-b-none border-0 border-b-2" />
                   <CardContent className="p-6">
-                    <span className="text-xs font-display font-medium uppercase tracking-widest text-primary">{study.brand}</span>
-                    <p className="font-display text-2xl font-semibold mt-2">{study.stat}</p>
-                    <p className="text-sm text-muted-foreground mt-3">{study.description}</p>
+                    <span className="text-[0.6875rem] font-display font-semibold uppercase tracking-[0.15em] text-primary">{study.brand}</span>
+                    <p className="font-display text-xl font-semibold mt-2">{study.stat}</p>
+                    <p className="text-[0.8125rem] text-muted-foreground mt-3 leading-relaxed">{study.description}</p>
                   </CardContent>
                 </Card>
               </motion.div>
@@ -227,10 +253,10 @@ const Index = () => {
       </section>
 
       {/* Manifesto Teaser */}
-      <section className="py-20">
+      <section className="py-16 md:py-20">
         <div className="container max-w-3xl text-center">
           <SectionHeading tag="Our Philosophy" title="We have opinions. Strong ones." />
-          <p className="text-lg text-muted-foreground -mt-6">
+          <p className="text-base md:text-lg text-muted-foreground leading-relaxed -mt-6">
             "We don't believe in cookie-cutter marketing. We don't believe in 'just boost the post bro.' We believe in building brands that people genuinely care about — the kind where customers slide into your DMs saying 'I NEED this.' We wrote a whole manifesto about it because we're dramatic like that."
           </p>
           <Link to="/manifesto">
@@ -242,28 +268,33 @@ const Index = () => {
       </section>
 
       {/* Founders */}
-      <section className="py-20 bg-muted/50">
+      <section className="py-16 md:py-28 bg-muted/50">
         <div className="container">
           <SectionHeading tag="The Crew" title="Built by doers, not PowerPoint warriors." />
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
-                name: "Abdul Navas",
-                role: "Co-Founder & CEO",
-                bio: (<>Grew up surrounded by textile factories in <TirupurTooltip />, where the air smells like cotton and hustle. Turned that garment background into a digital media powerhouse because he was tired of seeing amazing products marketed terribly. His superpower? Making D2C fashion brands go from 'meh' to 'take my money.' Also, he's weirdly good at predicting which ad creative will win.</>)
+                name: "N Abdul Navas",
+                role: "Founder & CEO, Fashion brand expert and growth consultant",
+                bio: (<>Grew up in <TirupurTooltip /> (The garment capital) breathing cotton and hustle. Broke out of the traditional textile matrix to build a digital empire because seeing fire products with trash marketing physically hurt him. Superpower? Scaling D2C fashion brands from 'who?' to sold-out faster than a sneaker drop. Oh, and his ROAS predictions? Lowkey psychic.</>)
               },
               {
-                name: "Santhosh",
-                role: "Co-Founder & COO",
-                bio: "The guy who makes sure nothing falls apart. While Abdul's out there dreaming big, Santhosh is the one building the engine that makes everything run. Ad accounts, client delivery, team ops — if something's working smoothly, it's because he lost sleep over it. Clients love him because he actually replies to messages. (A rare skill in this industry, apparently.)"
+                name: "R Santhosh",
+                role: "Co-Founder & CFO - Finance Controller, Principal Consultant for Brands",
+                bio: "The guy holding the bag (in a good way). While Abdul is out plotting world domination, Santhosh is the one making sure the math actually maths. Budgets, scaling cash flow, financial ops — he guards the treasury like it's his life. He literally loves Excel sheets more than most people love their pets. Total goat at keeping the agency and our clients highly profitable."
+              },
+              {
+                name: "B Vignesh",
+                role: "COO at WePix Business (Lead Gen Expert)",
+                bio: "Basically the cheat code for B2B growth. Vignesh doesn't just 'generate leads,' he builds absolute machines that make your sales team sweat trying to keep up. While everyone else is crying over algorithm changes, he's out here securing the bag for clients using high-level systems that actually convert. The definition of 'talk is cheap, show me the leads.'"
               }
             ].map((founder) =>
               <Card key={founder.name} className="border-border/50 overflow-hidden">
                 <ImagePlaceholder label={`${founder.name} photo`} aspectRatio="square" className="rounded-none border-0 border-b-2" />
                 <CardContent className="p-8">
-                  <h3 className="font-display text-xl font-semibold">{founder.name}</h3>
-                  <p className="text-sm text-primary font-medium mt-1">{founder.role}</p>
-                  <p className="text-sm text-muted-foreground mt-3">{founder.bio}</p>
+                  <h3 className="font-display text-lg font-semibold">{founder.name}</h3>
+                  <p className="text-[0.8125rem] text-primary font-medium mt-1">{founder.role}</p>
+                  <p className="text-[0.8125rem] text-muted-foreground mt-3 leading-relaxed">{founder.bio}</p>
                 </CardContent>
               </Card>
             )}
@@ -272,21 +303,23 @@ const Index = () => {
       </section>
 
       {/* Founder Content and Insights */}
-      <section className="py-20">
+      <section className="py-16 md:py-20">
         <div className="container">
           <SectionHeading tag="Insights" title="Founder Content and Insights" />
 
           {/* Instagram Reels */}
           <div className="max-w-5xl mx-auto mb-16">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
-              <ImagePlaceholder label="Phone screen reel preview" aspectRatio="portrait" className="rounded-xl max-w-xs mx-auto lg:mx-0" />
+              <div className="flex justify-center lg:justify-start">
+                <StackedReels />
+              </div>
               <div>
-                <span className="text-xs font-medium uppercase tracking-widest text-primary mb-2 block">Instagram Reels</span>
-                <h3 className="font-display text-2xl font-semibold mb-3">From the Founder</h3>
-                <p className="text-muted-foreground">Short form insights and behind the scenes content from Abdul Navas and the WePix team about building brands, experiments, marketing strategies, and business growth.</p>
+                <span className="text-[0.6875rem] font-semibold uppercase tracking-[0.15em] text-primary mb-2 block">Instagram Reels</span>
+                <h3 className="font-display text-xl font-semibold mb-3">From the Founder</h3>
+                <p className="text-muted-foreground text-[0.9375rem] leading-relaxed">Short form insights and behind the scenes content from Abdul Navas and the WePix team about building brands, experiments, marketing strategies, and business growth.</p>
                 <div className="flex gap-3 mt-4">
-                  <a href="https://instagram.com/abdul_navas" target="_blank" rel="noopener noreferrer" className="text-sm text-primary hover:underline">@abdul_navas</a>
-                  <a href="https://instagram.com/wepixindia" target="_blank" rel="noopener noreferrer" className="text-sm text-primary hover:underline">@wepixindia</a>
+                  <a href="https://instagram.com/abdul_navas" target="_blank" rel="noopener noreferrer" className="text-[0.8125rem] text-primary hover:underline">@abdul_navas</a>
+                  <a href="https://instagram.com/wepixindia" target="_blank" rel="noopener noreferrer" className="text-[0.8125rem] text-primary hover:underline">@wepixindia</a>
                 </div>
               </div>
             </div>
@@ -294,35 +327,15 @@ const Index = () => {
 
           {/* LinkedIn Articles */}
           <div className="max-w-5xl mx-auto mb-16">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
-              <div>
-                <span className="text-xs font-medium uppercase tracking-widest text-primary mb-2 block">LinkedIn Articles</span>
-                <h3 className="font-display text-2xl font-semibold mb-3">Long Form Thoughts</h3>
-                <p className="text-muted-foreground mb-6">Articles written by the team about entrepreneurship, digital systems, marketing frameworks, and building companies.</p>
-              </div>
-              <div className="space-y-4">
-                {[1, 2, 3].map((n) => (
-                  <Card key={n} className="border-border/50">
-                    <CardContent className="p-4 flex gap-4 items-start">
-                      <ImagePlaceholder label={`Article ${n}`} aspectRatio="square" className="rounded-lg w-20 h-20 shrink-0" />
-                      <div>
-                        <h4 className="font-display text-sm font-semibold">Article Title {n}</h4>
-                        <p className="text-xs text-muted-foreground mt-1">A short snippet about the article topic and key takeaways for readers.</p>
-                        <span className="text-xs text-primary mt-2 inline-block cursor-pointer hover:underline">Read article</span>
-                      </div>
-                    </CardContent>
-                  </Card>
-                ))}
-              </div>
-            </div>
+            <LinkedInFeed />
           </div>
 
           {/* Testimonials */}
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-10">
-              <span className="text-xs font-medium uppercase tracking-widest text-primary mb-2 block">Testimonials</span>
-              <h3 className="font-display text-2xl font-semibold">What People Say About Working With Us</h3>
-              <p className="text-muted-foreground mt-2 max-w-xl mx-auto">Feedback from founders, brands, and companies who have worked with the WePix team.</p>
+              <span className="text-[0.6875rem] font-semibold uppercase tracking-[0.15em] text-primary mb-2 block">Testimonials</span>
+              <h3 className="font-display text-xl font-semibold">What People Say About Working With Us</h3>
+              <p className="text-muted-foreground text-[0.9375rem] leading-relaxed mt-2 max-w-xl mx-auto">Feedback from founders, brands, and companies who have worked with the WePix team.</p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {[1, 2, 3].map((n) => (
@@ -331,16 +344,16 @@ const Index = () => {
                     <div className="flex items-center gap-3 mb-4">
                       <ImagePlaceholder label={`Profile ${n}`} aspectRatio="square" className="rounded-full w-12 h-12 shrink-0" />
                       <div>
-                        <h4 className="font-display text-sm font-semibold">Client Name</h4>
-                        <p className="text-xs text-muted-foreground">Role, Company</p>
+                        <h4 className="font-display text-[0.8125rem] font-semibold">Client Name</h4>
+                        <p className="text-[0.6875rem] text-muted-foreground">Role, Company</p>
                       </div>
                     </div>
-                    <p className="text-sm text-muted-foreground italic">"Testimonial text about the experience working with WePix and the results achieved."</p>
+                    <p className="text-[0.8125rem] text-muted-foreground italic leading-relaxed">"Testimonial text about the experience working with WePix and the results achieved."</p>
                   </CardContent>
                 </Card>
               ))}
             </div>
-            <p className="text-center text-xs text-muted-foreground mt-6">Powered by <a href="https://sayabout.us" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">sayabout.us</a></p>
+            <p className="text-center text-[0.6875rem] text-muted-foreground mt-6">Powered by <a href="https://sayabout.us" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">sayabout.us</a></p>
           </div>
         </div>
       </section>

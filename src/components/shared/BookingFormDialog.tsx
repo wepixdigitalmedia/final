@@ -70,7 +70,11 @@ export function BookingFormDialog({
         <Button
           size={triggerSize}
           variant={triggerVariant}
-          className={cn("rounded-lg font-medium", showArrow && "gap-2", triggerClassName)}
+          className={cn(
+            "rounded-lg font-medium shadow-[inset_0_0_12px_rgba(255,255,255,0.25)] dark:shadow-[inset_0_0_12px_rgba(0,0,0,0.25)]",
+            showArrow && "gap-2",
+            triggerClassName
+          )}
           onClick={() => setOpen(true)}
         >
           {triggerLabel} {showArrow && <ArrowRight size={16} />}
