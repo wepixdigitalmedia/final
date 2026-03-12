@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Instagram, Youtube, Linkedin, MapPin, Facebook, Twitter } from "lucide-react";
+import { Instagram, Youtube, Linkedin, MapPin, Facebook, Twitter, Phone } from "lucide-react";
 
 const footerLinks = {
   "Brand Verticals": [
@@ -61,6 +61,10 @@ export function Footer() {
             </p>
             <a href="mailto:hello@wepix.in" className="inline-block mt-2 text-sm text-muted-foreground hover:text-foreground transition-colors">
               hello@wepix.in
+            </a>
+            <a href="tel:+917540080090" className="flex items-center gap-1.5 mt-2 text-sm text-muted-foreground hover:text-foreground transition-colors">
+              <Phone size={14} />
+              +91 7540080090
             </a>
             <div className="flex gap-4 mt-6">
               {socialLinks.map((social) => (
