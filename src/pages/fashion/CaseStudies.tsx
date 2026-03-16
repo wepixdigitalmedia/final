@@ -38,10 +38,25 @@ export default function CaseStudies() {
           <div className="container">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
               {studies.map((study) => (
-                <div key={study.brand} className="gsap-study opacity-0">
-                  <Card className="rounded-xl border-border overflow-hidden h-full hover:shadow-lg transition-shadow duration-300">
-                    <ImagePlaceholder label={`${study.brand} brand imagery`} aspectRatio="square" className="rounded-none border-0" />
-                    <CardContent className="p-5">
+              <div key={study.brand} className="gsap-study opacity-0">
+                <Card className="rounded-xl border-border overflow-hidden h-full hover:shadow-lg transition-shadow duration-300">
+                  {study.brand === "Taasza" ? (
+                    <div className="aspect-square rounded-none border-0 overflow-hidden">
+                      <img
+                        src="/case-studies/taasza-analytics.png"
+                        alt="Taasza analytics dashboard"
+                        className="w-full h-full object-cover"
+                        loading="lazy"
+                      />
+                    </div>
+                  ) : (
+                    <ImagePlaceholder
+                      label={`${study.brand} brand imagery`}
+                      aspectRatio="square"
+                      className="rounded-none border-0"
+                    />
+                  )}
+                  <CardContent className="p-5">
                       <div className="flex items-center justify-between mb-3">
                         <span className="text-[10px] font-medium uppercase tracking-widest text-muted-foreground">{study.category}</span>
                         <span className="flex items-center gap-1 text-xs font-semibold text-foreground">

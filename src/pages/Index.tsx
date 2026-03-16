@@ -23,6 +23,21 @@ import ishikaLogo from "@/assets/brands/ishika.png";
 import reviashLogo from "@/assets/brands/reviash.png";
 import lemoonLogo from "@/assets/brands/lemoon.png";
 import fregorLogo from "@/assets/brands/fregor.png";
+import caseStudyPlaceholder from "@/assets/sections/case_study_placeholder.webp";
+import verticalsPlaceholder from "@/assets/sections/verticals_placeholder.jpg";
+import fashionVertical from "@/assets/sections/vertical_fashion.png";
+import academyVertical from "@/assets/sections/vertical_academy.png";
+import businessVertical from "@/assets/sections/vertical_business.png";
+import sourcingVertical from "@/assets/sections/vertical_sourcing.png";
+import abdulNavasPhoto from "@/assets/founders/abdul-navas.png";
+import santhoshPhoto from "@/assets/founders/santhosh.png";
+import vigneshPhoto from "@/assets/founders/vignesh.png";
+import testimonialProfile1 from "@/assets/testimonials/profile-1.png";
+import testimonialProfile2 from "@/assets/testimonials/profile-2.png";
+import testimonialProfile3 from "@/assets/testimonials/profile-3.png";
+import resultsRealBrands from "@/assets/sections/results_real_brands_v3.png";
+import resultsRealMoney from "@/assets/sections/results_real_money.png";
+import resultsRealStories from "@/assets/sections/results_real_stories_v2.png";
 
 const trustedBrands = [
   { name: "Velaura", src: velauraLogo, href: "https://velaura.in/?utm_source=wepix.in&utm_medium=partner_logo", className: "h-auto w-24 md:w-32" },
@@ -40,35 +55,53 @@ const brandCards = [
     title: "Fashion",
     description: "Your clothes deserve better than a boring Instagram grid. We do content, ads, and growth — the whole shebang.",
     href: "/fashion",
-    color: "from-primary/20 to-primary/5"
+    color: "from-primary/20 to-primary/5",
+    image: fashionVertical
   },
   {
     icon: GraduationCap,
     title: "Academy",
     description: "Learn Meta Ads from people who've actually burned their own money figuring it out. No cap, just real playbooks.",
     href: "/academy",
-    color: "from-blue-500/20 to-blue-500/5"
+    color: "from-blue-500/20 to-blue-500/5",
+    image: academyVertical
   },
   {
     icon: Briefcase,
     title: "Business",
     description: "B2B doesn't have to be boring. AI agents, lead gen, and marketing that makes your competitors nervous.",
     href: "/business",
-    color: "from-purple-500/20 to-purple-500/5"
+    color: "from-purple-500/20 to-purple-500/5",
+    image: businessVertical
   },
   {
     icon: Sparkles,
     title: "Sourcing",
     description: (<>Straight from <TirupurTooltip /> — the garment capital. Quality fabrics, honest pricing, no middleman drama.</>),
     href: "/contact",
-    color: "from-orange-500/20 to-orange-500/5"
+    color: "from-orange-500/20 to-orange-500/5",
+    image: sourcingVertical
   }
 ];
-
 const caseStudies = [
-  { brand: "Taasza", stat: "3x ROAS in 60 days", description: "They came to us with zero online presence and a prayer. We gave them a Shopify store, fire content, and Meta Ads that actually slapped. Two months later? ₹5L/month rolling in." },
-  { brand: "BoonBabies", stat: "₹10L+ monthly revenue", description: "A kids' fashion brand with adorable products but zero marketing game. We built everything from scratch — branding, content, store, ads. Now their DMs are busier than a Mumbai local train." },
-  { brand: "Nutmeg", stat: "2.5x revenue growth", description: "Premium menswear brand that was criminally underperforming online. We repositioned them, created chef's-kiss content, and doubled their digital presence. The founder literally sent us biryani." }
+  { 
+    brand: "Real Brands", 
+    stat: "3x ROAS in 60 days", 
+    description: "We don't just run ads; we build legacies. From luxury fashion to high-growth D2C, we've scaled over 50 brands by treating their growth like our own.",
+    image: resultsRealBrands
+  },
+  { 
+    brand: "Real Money", 
+    stat: "₹10L+ Monthly Revenue", 
+    description: "Cash flow is the only metric that matters. We've managed over ₹2 Cr in ad spend, optimizing every rupee to ensure your bottom line keeps growing.",
+    image: resultsRealMoney
+  },
+  { 
+    brand: "Real Stories", 
+    stat: "2.5x Revenue Growth", 
+    description: "Behind every data point is a founder's dream. We turn struggling storefronts into success stories that get people talking—and buying.",
+    image: resultsRealStories
+  }
 ];
 
 const Index = () => {
@@ -196,7 +229,13 @@ const Index = () => {
                 transition={{ delay: i * 0.1, duration: 0.5 }}>
                 <Link to={card.href}>
                   <Card className="group h-full hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border-border/50">
-                    <ImagePlaceholder label={`${card.title} cover`} aspectRatio="video" className="rounded-t-xl rounded-b-none border-0 border-b-2" />
+                    <div className="aspect-video overflow-hidden rounded-t-xl">
+                      <img 
+                        src={card.image} 
+                        alt={`${card.title} cover`} 
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      />
+                    </div>
                     <CardContent className="p-6">
                       <div className={`w-12 h-12 rounded-lg bg-gradient-to-br ${card.color} flex items-center justify-center mb-4`}>
                         <card.icon className="text-foreground" size={24} />
@@ -215,15 +254,15 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Case Studies Teaser */}
+      {/* Case Studies Teaser / Results */}
       <section className="py-16 md:py-28 bg-muted/50">
         <div className="container">
           <SectionHeading
-            tag="Results"
+            tag="Our Results"
             title="Real brands. Real money. Real stories."
-            description="We don't do vanity metrics. Nobody cares about your 'reach' when you can't pay rent. Here's what happened when brands stopped settling for mid agencies and trusted us with their growth." />
+            description="We don't do vanity metrics. Nobody cares about your 'reach' when you can't pay rent. Here's what happens when brands stop settling for mid agencies and trust us with their growth." />
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {caseStudies.map((study, i) =>
               <motion.div
                 key={study.brand}
@@ -231,21 +270,27 @@ const Index = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1, duration: 0.5 }}>
-                <Card className="h-full border-border/50">
-                  <ImagePlaceholder label={`${study.brand} results`} aspectRatio="video" className="rounded-t-xl rounded-b-none border-0 border-b-2" />
+                <Card className="h-full border-border/50 overflow-hidden group hover:shadow-xl transition-all duration-500">
+                  <div className="aspect-video overflow-hidden">
+                    <img
+                      src={study.image}
+                      alt={study.brand}
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                  </div>
                   <CardContent className="p-6">
                     <span className="text-[0.6875rem] font-display font-semibold uppercase tracking-[0.15em] text-primary">{study.brand}</span>
-                    <p className="font-display text-xl font-semibold mt-2">{study.stat}</p>
-                    <p className="text-[0.8125rem] text-muted-foreground mt-3 leading-relaxed">{study.description}</p>
+                    <p className="font-display text-2xl font-bold mt-2 text-gradient">{study.stat}</p>
+                    <p className="text-[0.875rem] text-muted-foreground mt-3 leading-relaxed">{study.description}</p>
                   </CardContent>
                 </Card>
               </motion.div>
             )}
           </div>
-          <div className="text-center mt-10">
+          <div className="text-center mt-12">
             <Link to="/fashion/case-studies">
-              <Button variant="outline" className="font-display font-medium gap-2">
-                View All Case Studies <ArrowRight size={16} />
+              <Button variant="outline" className="font-display font-medium gap-2 px-8 py-6 rounded-full border-primary/20 hover:border-primary">
+                View All Case Studies <ArrowRight size={18} />
               </Button>
             </Link>
           </div>
@@ -276,21 +321,35 @@ const Index = () => {
               {
                 name: "N Abdul Navas",
                 role: "Founder & CEO, Fashion brand expert and growth consultant",
-                bio: (<>Grew up in <TirupurTooltip /> (The garment capital) breathing cotton and hustle. Broke out of the traditional textile matrix to build a digital empire because seeing fire products with trash marketing physically hurt him. Superpower? Scaling D2C fashion brands from 'who?' to sold-out faster than a sneaker drop. Oh, and his ROAS predictions? Lowkey psychic.</>)
+                bio: (<>Grew up in <TirupurTooltip /> (The garment capital) breathing cotton and hustle. Broke out of the traditional textile matrix to build a digital empire because seeing fire products with trash marketing physically hurt him. Superpower? Scaling D2C fashion brands from 'who?' to sold-out faster than a sneaker drop. Oh, and his ROAS predictions? Lowkey psychic.</>),
+                photo: abdulNavasPhoto
               },
               {
                 name: "R Santhosh",
                 role: "Co-Founder & CFO - Finance Controller, Principal Consultant for Brands",
-                bio: "The guy holding the bag (in a good way). While Abdul is out plotting world domination, Santhosh is the one making sure the math actually maths. Budgets, scaling cash flow, financial ops — he guards the treasury like it's his life. He literally loves Excel sheets more than most people love their pets. Total goat at keeping the agency and our clients highly profitable."
+                bio: "The guy holding the bag (in a good way). While Abdul is out plotting world domination, Santhosh is the one making sure the math actually maths. Budgets, scaling cash flow, financial ops — he guards the treasury like it's his life. He literally loves Excel sheets more than most people love their pets. Total goat at keeping the agency and our clients highly profitable.",
+                photo: santhoshPhoto
               },
               {
                 name: "B Vignesh",
                 role: "COO at WePix Business (Lead Gen Expert)",
-                bio: "Basically the cheat code for B2B growth. Vignesh doesn't just 'generate leads,' he builds absolute machines that make your sales team sweat trying to keep up. While everyone else is crying over algorithm changes, he's out here securing the bag for clients using high-level systems that actually convert. The definition of 'talk is cheap, show me the leads.'"
+                bio: "Basically the cheat code for B2B growth. Vignesh doesn't just 'generate leads,' he builds absolute machines that make your sales team sweat trying to keep up. While everyone else is crying over algorithm changes, he's out here securing the bag for clients using high-level systems that actually convert. The definition of 'talk is cheap, show me the leads.'",
+                photo: vigneshPhoto
               }
             ].map((founder) =>
               <Card key={founder.name} className="border-border/50 overflow-hidden">
-                <ImagePlaceholder label={`${founder.name} photo`} aspectRatio="square" className="rounded-none border-0 border-b-2" />
+                {("photo" in founder && founder.photo) ? (
+                  <div className="aspect-square rounded-none border-0 border-b-2 overflow-hidden">
+                    <img
+                      src={founder.photo}
+                      alt={`${founder.name} photo`}
+                      className="w-full h-full object-cover"
+                      loading="lazy"
+                    />
+                  </div>
+                ) : (
+                  <ImagePlaceholder label={`${founder.name} photo`} aspectRatio="square" className="rounded-none border-0 border-b-2" />
+                )}
                 <CardContent className="p-8">
                   <h3 className="font-display text-lg font-semibold">{founder.name}</h3>
                   <p className="text-[0.8125rem] text-primary font-medium mt-1">{founder.role}</p>
@@ -342,7 +401,36 @@ const Index = () => {
                 <Card key={n} className="border-border/50">
                   <CardContent className="p-6">
                     <div className="flex items-center gap-3 mb-4">
-                      <ImagePlaceholder label={`Profile ${n}`} aspectRatio="square" className="rounded-full w-12 h-12 shrink-0" />
+                      {n === 1 ? (
+                        <div className="rounded-full w-12 h-12 shrink-0 overflow-hidden">
+                          <img
+                            src={testimonialProfile1}
+                            alt="Client profile 1"
+                            className="w-full h-full object-cover"
+                            loading="lazy"
+                          />
+                        </div>
+                      ) : n === 2 ? (
+                        <div className="rounded-full w-12 h-12 shrink-0 overflow-hidden">
+                          <img
+                            src={testimonialProfile2}
+                            alt="Client profile 2"
+                            className="w-full h-full object-cover"
+                            loading="lazy"
+                          />
+                        </div>
+                      ) : n === 3 ? (
+                        <div className="rounded-full w-12 h-12 shrink-0 overflow-hidden">
+                          <img
+                            src={testimonialProfile3}
+                            alt="Client profile 3"
+                            className="w-full h-full object-cover"
+                            loading="lazy"
+                          />
+                        </div>
+                      ) : (
+                        <ImagePlaceholder label={`Profile ${n}`} aspectRatio="square" className="rounded-full w-12 h-12 shrink-0" />
+                      )}
                       <div>
                         <h4 className="font-display text-[0.8125rem] font-semibold">Client Name</h4>
                         <p className="text-[0.6875rem] text-muted-foreground">Role, Company</p>
