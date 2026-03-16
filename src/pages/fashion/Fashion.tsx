@@ -105,11 +105,40 @@ export default function Fashion() {
           <div className="container">
             <SectionHeading tag="Services" title="Everything your fashion brand needs (and then some)" />
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-5xl mx-auto">
-              {services.map((s) => (
+            {services.map((s) => (
                 <div key={s.title} className="gsap-service-card opacity-0">
                   <Link to={s.href}>
                     <Card className="h-full hover:shadow-md transition-all rounded-xl border-border group overflow-hidden">
+                      {s.title === "Kickstarter Program" ? (
+                        <div className="rounded-none border-0 border-b-2 overflow-hidden aspect-video border-border">
+                          <img
+                            src="/services-kickstarter.png"
+                            alt="Kickstarter program"
+                            className="w-full h-full object-cover"
+                            loading="lazy"
+                          />
+                        </div>
+                      ) : s.title === "WePixStudio" ? (
+                        <div className="rounded-none border-0 border-b-2 overflow-hidden aspect-video border-border">
+                          <img
+                            src="/services-wepixstudio.png"
+                            alt="WePixStudio demo"
+                            className="w-full h-full object-cover"
+                            loading="lazy"
+                          />
+                        </div>
+                      ) : s.title === "Meta Ads Management" ? (
+                        <div className="rounded-none border-0 border-b-2 overflow-hidden aspect-video border-border">
+                          <img
+                            src="/services-meta-ads.png"
+                            alt="Meta Ads dashboard"
+                            className="w-full h-full object-cover"
+                            loading="lazy"
+                          />
+                        </div>
+                      ) : (
                       <ImagePlaceholder label={s.img} aspectRatio="video" className="rounded-none border-0 border-b-2" />
+                      )}
                       <CardContent className="p-6">
                         <s.icon className="text-foreground mb-4" size={24} />
                         <h3 className="font-display text-lg font-semibold mb-2">{s.title}</h3>
@@ -130,8 +159,38 @@ export default function Fashion() {
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 max-w-4xl mx-auto">
               {mcsSteps.map((step) => (
                 <div key={step.step} className="gsap-mcs-step text-center opacity-0">
-                  <div className="w-14 h-14 rounded-xl bg-muted flex items-center justify-center mx-auto mb-4">
-                    <span className="font-display text-xl font-semibold">{step.step}</span>
+                  <div className="w-14 h-14 rounded-xl bg-muted flex items-center justify-center mx-auto mb-4 overflow-hidden">
+                    {step.step === "M" ? (
+                      <img
+                        src="/mcs-media.png"
+                        alt="Media step icon"
+                        className="w-8 h-8 object-contain"
+                        loading="lazy"
+                      />
+                    ) : step.step === "C" ? (
+                      <img
+                        src="/mcs-creative.png"
+                        alt="Creative step icon"
+                        className="w-8 h-8 object-contain"
+                        loading="lazy"
+                      />
+                    ) : step.step === "S" ? (
+                      <img
+                        src="/mcs-strategy.png"
+                        alt="Strategy step icon"
+                        className="w-8 h-8 object-contain"
+                        loading="lazy"
+                      />
+                    ) : step.step === "4" ? (
+                      <img
+                        src="/mcs-iterate.png"
+                        alt="Iterate step icon"
+                        className="w-8 h-8 object-contain"
+                        loading="lazy"
+                      />
+                    ) : (
+                      <span className="font-display text-xl font-semibold">{step.step}</span>
+                    )}
                   </div>
                   <h3 className="font-display text-base font-semibold">{step.title}</h3>
                   <p className="text-sm text-muted-foreground mt-2">{step.description}</p>
