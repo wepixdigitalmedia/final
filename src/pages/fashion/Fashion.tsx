@@ -63,7 +63,22 @@ export default function Fashion() {
                   </span>
                 </div>
               </div>
-              <ImagePlaceholder label="Fashion hero image" aspectRatio="square" className="gsap-hero-cta opacity-0" />
+              <div className="gsap-hero-cta opacity-0">
+                <div className="rounded-xl border-2 border-dashed border-border bg-muted/40 overflow-hidden aspect-square group">
+                  <img
+                    src="/fashion-hero.png"
+                    alt="Fashion hero image (black and white)"
+                    className="w-full h-full object-cover transition-opacity duration-500 group-hover:opacity-0"
+                    loading="lazy"
+                  />
+                  <img
+                    src="/fashion-hero-color.png"
+                    alt="Fashion hero image (color)"
+                    className="w-full h-full object-cover absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+                    loading="lazy"
+                  />
+                </div>
+              </div>
             </div>
           </div>
         </section>
