@@ -88,7 +88,81 @@ export default function Fashion() {
           <div className="container">
             <div className="grid grid-cols-3 md:grid-cols-6 gap-3">
               {Array.from({ length: 6 }).map((_, i) => (
-                <ImagePlaceholder key={i} label={`Work ${i + 1}`} aspectRatio="portrait" />
+                i === 0 ? (
+                  <div
+                    key={i}
+                    className="rounded-xl border-2 border-dashed border-border bg-muted/40 overflow-hidden aspect-[3/4]"
+                  >
+                    <img
+                      src="/fashion-work-1.png"
+                      alt="Fashion work 1"
+                      className="w-full h-full object-cover"
+                      loading="lazy"
+                    />
+                  </div>
+                ) : i === 1 ? (
+                  <div
+                    key={i}
+                    className="rounded-xl border-2 border-dashed border-border bg-muted/40 overflow-hidden aspect-[3/4]"
+                  >
+                    <img
+                      src="/fashion-work-2.png"
+                      alt="Fashion work 2"
+                      className="w-full h-full object-cover"
+                      loading="lazy"
+                    />
+                  </div>
+                ) : i === 2 ? (
+                  <div
+                    key={i}
+                    className="rounded-xl border-2 border-dashed border-border bg-muted/40 overflow-hidden aspect-[3/4]"
+                  >
+                    <img
+                      src="/fashion-work-3.png"
+                      alt="Fashion work 3"
+                      className="w-full h-full object-cover"
+                      loading="lazy"
+                    />
+                  </div>
+                ) : i === 3 ? (
+                  <div
+                    key={i}
+                    className="rounded-xl border-2 border-dashed border-border bg-muted/40 overflow-hidden aspect-[3/4]"
+                  >
+                    <img
+                      src="/fashion-work-4.png"
+                      alt="Fashion work 4"
+                      className="w-full h-full object-cover"
+                      loading="lazy"
+                    />
+                  </div>
+                ) : i === 4 ? (
+                  <div
+                    key={i}
+                    className="rounded-xl border-2 border-dashed border-border bg-muted/40 overflow-hidden aspect-[3/4]"
+                  >
+                    <img
+                      src="/fashion-work-5.png"
+                      alt="Fashion work 5"
+                      className="w-full h-full object-cover"
+                      loading="lazy"
+                    />
+                  </div>
+                ) : i === 5 ? (
+                  <div
+                    key={i}
+                    className="rounded-xl border-2 border-dashed border-border bg-muted/40 overflow-hidden aspect-[3/4]"
+                  >
+                    <img
+                      src="/fashion-work-6.png"
+                      alt="Fashion work 6"
+                      className="w-full h-full object-cover"
+                      loading="lazy"
+                    />
+                  </div>
+                ) : (
+                  <ImagePlaceholder key={i} label={`Work ${i + 1}`} aspectRatio="portrait" />
+                )
               ))}
             </div>
           </div>

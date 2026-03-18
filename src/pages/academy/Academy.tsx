@@ -55,7 +55,16 @@ export default function Academy() {
                   </Link>
                 </div>
               </div>
-              <ImagePlaceholder label="Academy hero — instructor photo" aspectRatio="square" className="gsap-hero-cta opacity-0" />
+              <div className="gsap-hero-cta opacity-0">
+                <div className="rounded-xl border-2 border-dashed border-border bg-muted/40 overflow-hidden aspect-square group">
+                  <img
+                    src="/academy-hero.png"
+                    alt="Academy hero instructor"
+                    className="w-full h-full object-cover grayscale transition-[filter] duration-500 group-hover:grayscale-0"
+                    loading="lazy"
+                  />
+                </div>
+              </div>
             </div>
           </div>
         </section>
